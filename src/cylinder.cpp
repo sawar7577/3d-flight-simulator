@@ -9,9 +9,9 @@ Cylinder::Cylinder(float x, float y, float radius1 , float radius2, float ecc, f
     float angle = 0;
     float incr = 2*M_PI/vertices;
     GLfloat vertex_buffer_data[100000];
-    GLfloat *body = CylinderArray(radius1, radius2, ecc, height, vertices);
     int j = 0;
     int i = 0;
+    GLfloat *body = CylinderArray(radius1, radius2, ecc, height, vertices);
     for(i = 0 ; i < 4*vertices*9 ; ++i,++j){
         vertex_buffer_data[i] = body[i];
     }

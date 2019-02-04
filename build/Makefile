@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sawar/Documents/graphics/in_class_assignmemnt_cube/20171013
+CMAKE_SOURCE_DIR = /home/sawar/Documents/graphics/3d-flight-simulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sawar/Documents/graphics/in_class_assignmemnt_cube/20171013/build
+CMAKE_BINARY_DIR = /home/sawar/Documents/graphics/3d-flight-simulator/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sawar/Documents/graphics/in_class_assignmemnt_cube/20171013/build/CMakeFiles /home/sawar/Documents/graphics/in_class_assignmemnt_cube/20171013/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles /home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sawar/Documents/graphics/in_class_assignmemnt_cube/20171013/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -203,6 +203,33 @@ src/color.s: src/color.cpp.s
 src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
+
+src/cuboid.o: src/cuboid.cpp.o
+
+.PHONY : src/cuboid.o
+
+# target to build an object file
+src/cuboid.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.o
+.PHONY : src/cuboid.cpp.o
+
+src/cuboid.i: src/cuboid.cpp.i
+
+.PHONY : src/cuboid.i
+
+# target to preprocess a source file
+src/cuboid.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.i
+.PHONY : src/cuboid.cpp.i
+
+src/cuboid.s: src/cuboid.cpp.s
+
+.PHONY : src/cuboid.s
+
+# target to generate assembly for a file
+src/cuboid.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.s
+.PHONY : src/cuboid.cpp.s
 
 src/cylinder.o: src/cylinder.cpp.o
 
@@ -339,6 +366,60 @@ src/other_handlers.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.s
 .PHONY : src/other_handlers.cpp.s
 
+src/selfterrain.o: src/selfterrain.cpp.o
+
+.PHONY : src/selfterrain.o
+
+# target to build an object file
+src/selfterrain.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o
+.PHONY : src/selfterrain.cpp.o
+
+src/selfterrain.i: src/selfterrain.cpp.i
+
+.PHONY : src/selfterrain.i
+
+# target to preprocess a source file
+src/selfterrain.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.i
+.PHONY : src/selfterrain.cpp.i
+
+src/selfterrain.s: src/selfterrain.cpp.s
+
+.PHONY : src/selfterrain.s
+
+# target to generate assembly for a file
+src/selfterrain.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.s
+.PHONY : src/selfterrain.cpp.s
+
+src/sterrain.o: src/sterrain.cpp.o
+
+.PHONY : src/sterrain.o
+
+# target to build an object file
+src/sterrain.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o
+.PHONY : src/sterrain.cpp.o
+
+src/sterrain.i: src/sterrain.cpp.i
+
+.PHONY : src/sterrain.i
+
+# target to preprocess a source file
+src/sterrain.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.i
+.PHONY : src/sterrain.cpp.i
+
+src/sterrain.s: src/sterrain.cpp.s
+
+.PHONY : src/sterrain.s
+
+# target to generate assembly for a file
+src/sterrain.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.s
+.PHONY : src/sterrain.cpp.s
+
 src/terrain.o: src/terrain.cpp.o
 
 .PHONY : src/terrain.o
@@ -411,6 +492,9 @@ help:
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
+	@echo "... src/cuboid.o"
+	@echo "... src/cuboid.i"
+	@echo "... src/cuboid.s"
 	@echo "... src/cylinder.o"
 	@echo "... src/cylinder.i"
 	@echo "... src/cylinder.s"
@@ -426,6 +510,12 @@ help:
 	@echo "... src/other_handlers.o"
 	@echo "... src/other_handlers.i"
 	@echo "... src/other_handlers.s"
+	@echo "... src/selfterrain.o"
+	@echo "... src/selfterrain.i"
+	@echo "... src/selfterrain.s"
+	@echo "... src/sterrain.o"
+	@echo "... src/sterrain.i"
+	@echo "... src/sterrain.s"
 	@echo "... src/terrain.o"
 	@echo "... src/terrain.i"
 	@echo "... src/terrain.s"

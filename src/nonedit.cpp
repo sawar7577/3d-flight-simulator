@@ -216,6 +216,7 @@ struct VAO *create3DObject(GLenum primitive_mode, int numVertices, const GLfloat
 struct VAO *create3DObject(GLenum primitive_mode, int numVertices, const GLfloat *vertex_buffer_data, const GLfloat *color_buffer_data, GLenum fill_mode) {
     GLfloat *normal_buffer_data = new GLfloat[3 * numVertices];
     glm::vec3 nor;
+    glm::vec3 prev(0,1,0);
     for (int i = 0; i < numVertices; i++) {
         if(i%3 == 0)
         {
@@ -257,13 +258,18 @@ struct VAO *create3DObject(GLenum primitive_mode, int numVertices, const GLfloat
             ));
         }
         nor = glm::normalize(nor);
+        int flag = 1;
+        if(glm::dot(nor, prev) < 0)
+        {
+            flag = -1;
+        }
         // {
-            normal_buffer_data[3 * i]     = nor.x;
-            normal_buffer_data[3 * i + 1] = nor.y;
-            normal_buffer_data[3 * i + 2] = nor.z;
+            normal_buffer_data[3 * i]     = nor.x * flag;
+            normal_buffer_data[3 * i + 1] = nor.y * flag;
+            normal_buffer_data[3 * i + 2] = nor.z * flag;
         // }
-        cout << "i==" << i << " " << vertex_buffer_data[3*i] << " " << vertex_buffer_data[3*i+1] << " " << vertex_buffer_data[3*i+2] << endl;
-        cout << "i==" << i << " " << nor.x << " " << nor.y << " " << nor.z << endl;
+        // cout << "i==" << i << " " << vertex_buffer_data[3*i] << " " << vertex_buffer_data[3*i+1] << " " << vertex_buffer_data[3*i+2] << endl;
+        // cout << "i==" << i << " " << nor.x << " " << nor.y << " " << nor.z << endl;
         
     }
     return create3DObject(primitive_mode, numVertices, vertex_buffer_data, color_buffer_data, normal_buffer_data, fill_mode);

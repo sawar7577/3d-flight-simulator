@@ -2,8 +2,10 @@
 #include "timer.h"
 #include "ball.h"
 #include "cylinder.h"
-#include "terrain.h"
+// #include "terrain.h"
+#include "sterrain.h"
 #include "airplane.h"
+#include "cuboid.h"
 #include <time.h>
 
 
@@ -19,8 +21,10 @@ GLFWwindow *window;
 
 Ball ball1;
 Cylinder cyl1;
-Terrain terr;
+// Terrain terr;
+STerrain st;
 Airplane air;
+Cuboid d;
 int flag;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -42,12 +46,13 @@ void draw() {
 
     // Eye - Location of camera. Don't change unless you are sure!!
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
-    glm::vec3 eye ( camera_x , camera_y, camera_z );
+    glm::vec3 pos = air.position - 40.0f*air.dir;
+    glm::vec3 eye = pos;
 
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
-    glm::vec3 target (0, 0, 0);
+    glm::vec3 target (air.position.x, air.position.y , air.position.z );
     // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
-    glm::vec3 up (0, 1, 0);
+    glm::vec3 up = air.up;
 
 
     // Compute Camera matrix (view)
@@ -65,6 +70,7 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
+    st.draw(VP);
     air.draw(VP);
     // terr.draw(VP);
 }
@@ -82,35 +88,36 @@ void tick_input(GLFWwindow *window) {
     if(right  ) {
         flag = 1;
     }
-    if(flag == 1){
-        camera_x = 5;
-        camera_y = 5;
-        camera_z = 5;
-    }
-    else
-    {
-        camera_x = 5;
-        camera_y = 0;
+    // if(flag == 1){
+        camera_x = 0;
+        camera_y = 170;
         camera_z = 0;
-    }
+    // }
+    // else
+    // {
+    //     camera_x = 500.0f;
+    //     camera_y = 0.0f;
+    //     camera_z = 0.0f;
+    // }
     if(up)
     {
         cyl1.rotation += 1.0f;
-        terr.rotation += 1.0f;
+        // terr.rotation += 1.0f;
 
     }
     if(down)
     {
         cyl1.rotation -= 1.0f;
-        terr.rotation -= 1.0f;    
+        // terr.rotation -= 1.0f;    
     }
     
 }
 
-void tick_elements() {
-    // cyl1.tick();
+void tick_elements(GLFWwindow *window) {
+    air.tick(window);
     // terr.tick();
-    air.tick();
+    // d.tick();
+    st.tick();
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -123,6 +130,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     // cyl1        = Cylinder(0,0,2.0f,2.0f,1.0f,5.0f, 4, COLOR_RED);
     // terr        = Terrain(0,0,60,60, COLOR_RED);
     air         = Airplane(0,0,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
+    // d           = Cuboid(0, 0, 2.0f, 1.0f, 1.0f, 2.0f, 3.0f,COLOR_RED);
+    st             = STerrain(0,0,129,COLOR_RED);
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform
@@ -147,8 +156,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 800;
-    int height = 800;
+    int width  = 1000;
+    int height = 1000;
 
     window = initGLFW(width, height);
 
@@ -164,7 +173,7 @@ int main(int argc, char **argv) {
             // Swap Frame Buffer in double buffering
             glfwSwapBuffers(window);
 
-            tick_elements();
+            tick_elements(window);
             tick_input(window);
         }
 
@@ -181,9 +190,9 @@ bool detect_collision(bounding_box_t a, bounding_box_t b) {
 }
 
 void reset_screen() {
-    float top    = screen_center_y + 8 / screen_zoom;
-    float bottom = screen_center_y - 8 / screen_zoom;
-    float left   = screen_center_x - 8 / screen_zoom;
-    float right  = screen_center_x + 8 / screen_zoom;
-    Matrices.projection = glm::ortho(left, right, bottom, top, -1000.0f, 50000.0f);
+    float top    = screen_center_y + 30 / screen_zoom;
+    float bottom = screen_center_y - 30 / screen_zoom;
+    float left   = screen_center_x - 30 / screen_zoom;
+    float right  = screen_center_x + 30 / screen_zoom;
+    Matrices.projection = glm::perspective(45.0f, (right - left)/(top - bottom), 1.0f, 500.0f);
 }

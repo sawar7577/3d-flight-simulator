@@ -12,18 +12,18 @@ out vec3 color;
 void main()
 {
     // Ambient light
-    float strength = 1.0f;
+    float strength = 0.5f;
     vec3 ambient = strength*vec3(1.0f,1.0f,1.0f);
     
     
     // Diffuse light
-    vec3 posdirvec = normalize(fragPos - vec3(0.0f, 2500.0f , 0.0f));;
+    vec3 posdirvec = normalize(fragPos - vec3(2500.0f, 2500.0f , 2500.0f));;
     vec3 diffuseColor = vec3(1.0f,1.0f,1.0f);
     float diffuse = clamp(dot(fragPos, Normal),0,1);
-    vec3 diffuseFinal = 10.0f * diffuse * diffuseColor;
+    vec3 diffuseFinal = 0.5f * diffuse * diffuseColor;
 
 
     // Output color = color specified in the vertex shader,
     // interpolated between all 3 surrounding vertices of the triangle
-    color = fragColor*(ambient + diffuseFinal);
+    color = (fragColor * ((diffuseFinal + ambient)));
 }
