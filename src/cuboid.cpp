@@ -2,6 +2,12 @@
 #include "main.h"
 
 Cuboid::Cuboid(float x, float y, float length1 , float length2, float breadth1, float breadth2, float height, color_t color) {
+    this->length1 = length1;
+    this->length2 = length2;
+    this->breadth1 = breadth1;
+    this->breadth2 = breadth2;
+    this->height = height;
+
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
     

@@ -6,6 +6,7 @@
 
 class Cuboid {
 public:
+    float length1, length2, breadth1, breadth2, height;
     Cuboid() {}
     Cuboid(float x, float y, float length1 , float length2, float breadth1, float breadth2, float height, color_t color);
     GLfloat * CuboidArray(float length1, float length2, float breadth1, float breadth2, float height);
