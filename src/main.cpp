@@ -25,6 +25,7 @@ Cylinder cyl1;
 STerrain st;
 Airplane air;
 Cuboid d;
+Cuboid sky;
 int flag;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -46,17 +47,24 @@ void draw() {
 
     // Eye - Location of camera. Don't change unless you are sure!!
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
-    glm::vec3 pos = air.position - 40.0f*air.dir;
-    glm::vec3 eye = pos;
+    glm::vec3 pos = air.position - 20.0f*air.dir;
+    glm::vec3 pos2= air.position;    
+    pos2.y = 100.0f;
+    glm::vec3 eye[2];
+    eye[0] = pos;
+    eye[1] = pos2;
+
 
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
     glm::vec3 target (air.position.x, air.position.y , air.position.z );
     // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
-    glm::vec3 up = air.up;
+    glm::vec3 up[2];
+    up[0] = air.up;
+    up[1] = glm::vec3(0,0,-1);
 
 
     // Compute Camera matrix (view)
-    Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for 3D
+    Matrices.view = glm::lookAt( eye[flag], target, up[flag] ); // Rotating Camera for 3D
     // Don't change unless you are sure!!
     // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
@@ -72,6 +80,7 @@ void draw() {
     // Scene render
     st.draw(VP);
     air.draw(VP);
+    sky.draw(VP);
     // terr.draw(VP);
 }
 
@@ -80,12 +89,12 @@ void tick_input(GLFWwindow *window) {
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up = glfwGetKey(window, GLFW_KEY_UP);
     int down = glfwGetKey(window, GLFW_KEY_DOWN);
-
-
-    if (left  ) {
+    int u = glfwGetKey(window, GLFW_KEY_X);
+    int f = glfwGetKey(window, GLFW_KEY_Z);
+    if (u) {
         flag = 0;
     }
-    if(right  ) {
+    if(f) {
         flag = 1;
     }
     // if(flag == 1){
@@ -129,8 +138,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     // ball1       = Ball(0, 0, COLOR_RED);
     // cyl1        = Cylinder(0,0,2.0f,2.0f,1.0f,5.0f, 4, COLOR_RED);
     // terr        = Terrain(0,0,60,60, COLOR_RED);
-    air         = Airplane(0,0,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
-    // d           = Cuboid(0, 0, 2.0f, 1.0f, 1.0f, 2.0f, 3.0f,COLOR_RED);
+    air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
+    sky         = Cuboid(0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
     st             = STerrain(0,0,129,COLOR_RED);
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");

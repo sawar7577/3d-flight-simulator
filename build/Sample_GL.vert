@@ -19,7 +19,7 @@ void main ()
     // The color of each vertex will be interpolated
     // to produce the color of each fragment
     fragColor = vertexColor;
-    Normal = mat3(MVP) * normal;
+    Normal = (mat3(MVP) * normal);
     fragPos = mat3(MVP) * vertexPosition;
     // Output position of the vertex, in clip space : MVP * position
     gl_Position = MVP * v;

@@ -7,23 +7,26 @@ in vec3 Normal;
 
 
 // output data
+uniform vec3 lightpos;
 out vec3 color;
 
 void main()
 {
     // Ambient light
-    float strength = 0.5f;
-    vec3 ambient = strength*vec3(1.0f,1.0f,1.0f);
+    float strength = 1.0f;
+    vec3 ambient = strength*normalize(vec3(1.0f,1.0f,1.0f));
     
     
     // Diffuse light
-    vec3 posdirvec = normalize(fragPos - vec3(2500.0f, 2500.0f , 2500.0f));;
-    vec3 diffuseColor = vec3(1.0f,1.0f,1.0f);
-    float diffuse = clamp(dot(fragPos, Normal),0,1);
-    vec3 diffuseFinal = 0.5f * diffuse * diffuseColor;
-
+    // lightpos = vec3(2500.0f,2500.0f,2500.0f);
+    vec3 posdirvec = normalize(vec3(2500.0f,2500.0f,2500.0f) - fragPos);;
+    vec3 diffuseColor = normalize(vec3(1.0f,1.0f,1.0f));
+    float diffuse = clamp(dot(posdirvec, normalize(Normal)),0,1);
+    vec3 diffuseFinal = (diffuse * diffuseColor);
 
     // Output color = color specified in the vertex shader,
     // interpolated between all 3 surrounding vertices of the triangle
-    color = (fragColor * ((diffuseFinal + ambient)));
+    color =  fragColor * (ambient + diffuseFinal);
+    // color = (fragColor );
+
 }

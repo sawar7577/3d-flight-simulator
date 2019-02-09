@@ -5,7 +5,7 @@
 Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, float height, int vertices, color_t color) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->pitch = 0;
+    this->pitch = -M_PI/2;
     this->yaw = 0;
     this->roll = 0;
     this->dir = glm::vec3(0,1,0);
@@ -60,46 +60,14 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
 void Airplane::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
+
     glm::mat4 p(1.0f);
     glm::mat4 r(1.0f);
     glm::mat4 y(1.0f);
-    p[0][0] = 1;
-    p[0][1] = 0;
-    p[0][2] = 0;
-
-    p[1][0] = 0;
-    p[1][1] = cos(this->pitch);
-    p[1][2] = sin(this->pitch);
-
-    p[2][0] = 0;
-    p[2][1] = -sin(this->pitch);
-    p[2][2] = cos(this->pitch);
-
-
-    r[0][0] = cos(this->yaw);
-    r[0][1] = sin(this->yaw);
-    r[0][2] = 0;
+    p = glm::rotate(this->pitch,glm::vec3(1,0,0));
+    r = glm::rotate(this->yaw,glm::vec3(0,0,-1));
+    y = glm::rotate(this->roll,glm::vec3(0,-1,0));
     
-    r[1][0] = -sin(this->yaw);
-    r[1][1] = cos(this->yaw);
-    r[1][2] = 0;
-    
-    r[2][0] = 0;
-    r[2][1] = 0;
-    r[2][2] = 1;
-
-    y[1][0] = 0;
-    y[1][1] = 1;
-    y[1][2] = 0;
-    
-    y[0][0] = cos(this->roll);
-    y[0][1] = 0;
-    y[0][2] = sin(this->roll);
-    
-    y[2][0] = -sin(this->roll);
-    y[2][1] = 0;
-    y[2][2] = cos(this->roll);
-
     this->rotate *= p;
     this->rotate *= y;
     this->rotate *= r;
