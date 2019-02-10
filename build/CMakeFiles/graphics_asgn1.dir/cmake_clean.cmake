@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.o"

@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/main.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/nonedit.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/other_handlers.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+  "/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o"

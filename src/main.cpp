@@ -2,10 +2,11 @@
 #include "timer.h"
 #include "ball.h"
 #include "cylinder.h"
-// #include "terrain.h"
 #include "sterrain.h"
 #include "airplane.h"
 #include "cuboid.h"
+#include "ring.h"
+#include "collision.h"
 #include <time.h>
 
 
@@ -26,7 +27,9 @@ STerrain st;
 Airplane air;
 Cuboid d;
 Cuboid sky;
+Ring r;
 int flag;
+int stop;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -39,7 +42,7 @@ Timer t60(1.0 / 60);
 /* Edit this function according to your assignment */
 void draw() {
     // clear the color and depth in the frame buffer
-    glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    if(stop == 0)glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     // use the loaded shader program
     // Don't change unless you know what you are doing
@@ -49,7 +52,7 @@ void draw() {
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
     glm::vec3 pos = air.position - 20.0f*air.dir;
     glm::vec3 pos2= air.position;    
-    pos2.y = 100.0f;
+    pos2.y = air.position.y + 100.0f;
     glm::vec3 eye[2];
     eye[0] = pos;
     eye[1] = pos2;
@@ -61,6 +64,13 @@ void draw() {
     glm::vec3 up[2];
     up[0] = air.up;
     up[1] = glm::vec3(0,0,-1);
+
+
+    glm::vec3 testTarget = r.position;
+    glm::vec3 testEye = glm::vec3(100,100,100);
+    glm::vec3 testUp = glm::vec3(0,0,-1);
+
+    // Matrices.view = glm::lookAt( testEye, testTarget, testUp ); // Rotating Camera for 3D
 
 
     // Compute Camera matrix (view)
@@ -78,9 +88,13 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
+    if(stop == 0) {
     st.draw(VP);
     air.draw(VP);
     sky.draw(VP);
+    r.draw(VP);
+    d.draw(VP);
+    }
     // terr.draw(VP);
 }
 
@@ -123,10 +137,12 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements(GLFWwindow *window) {
+   if(stop == 0) {
     air.tick(window);
     // terr.tick();
     // d.tick();
     st.tick();
+   }
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -139,8 +155,10 @@ void initGL(GLFWwindow *window, int width, int height) {
     // cyl1        = Cylinder(0,0,2.0f,2.0f,1.0f,5.0f, 4, COLOR_RED);
     // terr        = Terrain(0,0,60,60, COLOR_RED);
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
-    sky         = Cuboid(0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
-    st             = STerrain(0,0,129,COLOR_RED);
+    sky         = Cuboid(0, 0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
+    d           = Cuboid(100,100,100, 10, 10, 10 ,10 ,10, COLOR_GREEN);
+    st          = STerrain(0,0,129,COLOR_RED);
+    r           = Ring(0,100,0,20,20,COLOR_BLACK);
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform
@@ -184,6 +202,9 @@ int main(int argc, char **argv) {
 
             tick_elements(window);
             tick_input(window);
+            if(!checkCollision(d, glm::mat4(1.0f), air.bounding, air.rotate)){
+                stop = 1;
+            }
         }
 
         // Poll for Keyboard and mouse events
@@ -193,10 +214,6 @@ int main(int argc, char **argv) {
     quit(window);
 }
 
-bool detect_collision(bounding_box_t a, bounding_box_t b) {
-    return (abs(a.x - b.x) * 2 < (a.width + b.width)) &&
-           (abs(a.y - b.y) * 2 < (a.height + b.height));
-}
 
 void reset_screen() {
     float top    = screen_center_y + 30 / screen_zoom;

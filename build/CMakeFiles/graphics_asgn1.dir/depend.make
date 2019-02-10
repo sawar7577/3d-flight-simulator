@@ -27,10 +27,12 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/airplane.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/collision.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ring.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/sterrain.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/timer.h
 
@@ -39,6 +41,10 @@ CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o: ../src/ring.cpp
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o: ../src/ring.h
 
 CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o: ../src/selfterrain.cpp
 

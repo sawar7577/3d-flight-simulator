@@ -1,3 +1,0 @@
-/home/sawar/Documents/graphics/3d-flight-simulator/CMakeFiles/edit_cache.dir
-/home/sawar/Documents/graphics/3d-flight-simulator/CMakeFiles/rebuild_cache.dir
-/home/sawar/Documents/graphics/3d-flight-simulator/CMakeFiles/graphics_asgn1.dir

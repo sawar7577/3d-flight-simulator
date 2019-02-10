@@ -30,6 +30,12 @@ main.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/color.cpp
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
@@ -91,6 +97,10 @@ airplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 cuboid.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+ring.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
+collision.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
 time.h
 -
 
@@ -157,6 +167,16 @@ glm/gtx/transform.hpp
 -
 glm/gtc/matrix_transform.hpp
 -
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.cpp
+ring.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 
