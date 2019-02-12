@@ -42,16 +42,16 @@ bool checkAxis(glm::vec3 axis, Cuboid A, glm::mat4 rotateA, Cuboid B, glm::mat4 
 
     pointA = glm::vec3(glm::translate(A.position) * rotateA * glm::vec4(0,0,0,1));
     pointB = glm::vec3(glm::translate(B.position) * rotateB * glm::vec4(1,1,1,1));
-    std::cout << " A " << pointA.x << " " << pointA.y << " " << pointA.z << std::endl;
-    std::cout << " B " << pointB.x << " " << pointB.y << " " << pointB.z << std::endl;
+    // std::cout << " A " << pointA.x << " " << pointA.y << " " << pointA.z << std::endl;
+    // std::cout << " B " << pointB.x << " " << pointB.y << " " << pointB.z << std::endl;
 
-    std::cout << "B" << std::endl;
-    for(int i = 0 ; i < 3 ; ++i) {
-        for(int j = 0 ; j < 3; ++j) {
-            std::cout << rotateB[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
+    // std::cout << "B" << std::endl;
+    // for(int i = 0 ; i < 3 ; ++i) {
+    //     for(int j = 0 ; j < 3; ++j) {
+    //         std::cout << rotateB[i][j] << " ";
+    //     }
+    //     std::cout << std::endl;
+    // }
 
 
     if(

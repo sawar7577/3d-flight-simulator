@@ -7,8 +7,9 @@
 #include "cuboid.h"
 #include "ring.h"
 #include "collision.h"
+#include "missile.h"
 #include <time.h>
-
+#include <list>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ GLFWwindow *window;
 * Customizable functions *
 **************************/
 
+
 Ball ball1;
 Cylinder cyl1;
 // Terrain terr;
@@ -28,13 +30,24 @@ Airplane air;
 Cuboid d;
 Cuboid sky;
 Ring r;
+Enemy en;
 int flag;
 int stop;
+list <Missile> ms;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 float camera_x = 5, camera_y = 5, camera_z = 5;
 clock_t tme;
+
+
+template <typename Type> void tick_sprite(list <Type> &l) {
+    typename list <Type> :: iterator it;
+    for(it = l.begin() ; it != l.end() ; ++it) {
+        (*it).tick();
+    }
+}
+
 
 Timer t60(1.0 / 60);
 
@@ -50,7 +63,7 @@ void draw() {
 
     // Eye - Location of camera. Don't change unless you are sure!!
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
-    glm::vec3 pos = air.position - 20.0f*air.dir;
+    glm::vec3 pos = air.position - 40.0f*air.dir;
     glm::vec3 pos2= air.position;    
     pos2.y = air.position.y + 100.0f;
     glm::vec3 eye[2];
@@ -95,6 +108,11 @@ void draw() {
     r.draw(VP);
     d.draw(VP);
     }
+    list <Missile> :: iterator it;
+    for(it = ms.begin() ; it!=ms.end() ; ++it)
+    {
+        (*it).draw(VP);
+    }
     // terr.draw(VP);
 }
 
@@ -105,6 +123,7 @@ void tick_input(GLFWwindow *window) {
     int down = glfwGetKey(window, GLFW_KEY_DOWN);
     int u = glfwGetKey(window, GLFW_KEY_X);
     int f = glfwGetKey(window, GLFW_KEY_Z);
+    int sp = glfwGetKey(window, GLFW_KEY_SPACE);
     if (u) {
         flag = 0;
     }
@@ -133,6 +152,12 @@ void tick_input(GLFWwindow *window) {
         cyl1.rotation -= 1.0f;
         // terr.rotation -= 1.0f;    
     }
+    if(sp)
+    {
+        Missile m = Missile(air.position.x, air.position.y, air.position.z, 1.0f,1.0f,30,COLOR_GREEN);
+        // m.follow = &en;
+        ms.push_back(m);
+    }
     
 }
 
@@ -143,6 +168,12 @@ void tick_elements(GLFWwindow *window) {
     // d.tick();
     st.tick();
    }
+   en.tick();
+   list <Missile> :: iterator it;
+   for(it = ms.begin() ; it!=ms.end() ; ++it)
+   {
+       (*it).tick();
+   }
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -150,7 +181,7 @@ void tick_elements(GLFWwindow *window) {
 void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
-    
+    en = Enemy(100,100,100);
     // ball1       = Ball(0, 0, COLOR_RED);
     // cyl1        = Cylinder(0,0,2.0f,2.0f,1.0f,5.0f, 4, COLOR_RED);
     // terr        = Terrain(0,0,60,60, COLOR_RED);
@@ -170,6 +201,9 @@ void initGL(GLFWwindow *window, int width, int height) {
     // Background color of the scene
     glClearColor (COLOR_BACKGROUND.r / 256.0, COLOR_BACKGROUND.g / 256.0, COLOR_BACKGROUND.b / 256.0, 0.0f); // R, G, B, A
     glClearDepth (1.0f);
+    
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable( GL_BLEND );
 
     glEnable (GL_DEPTH_TEST);
     glDepthFunc (GL_LEQUAL);

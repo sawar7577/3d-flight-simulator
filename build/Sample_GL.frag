@@ -8,7 +8,7 @@ in vec3 Normal;
 
 // output data
 uniform vec3 lightpos;
-out vec3 color;
+out vec4 color;
 
 void main()
 {
@@ -26,7 +26,7 @@ void main()
 
     // Output color = color specified in the vertex shader,
     // interpolated between all 3 surrounding vertices of the triangle
-    color =  fragColor * (ambient + diffuseFinal);
+    color =  vec4(fragColor * (ambient + diffuseFinal),1);
     // color = (fragColor );
 
 }

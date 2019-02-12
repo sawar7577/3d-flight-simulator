@@ -22,7 +22,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     for(i = 0 ; i < 36*25 ; ++i, ++j) {
         vertex_buffer_data[j] = body[i];
     }
-    std::cout << j << std::endl;
+    // std::cout << j << std::endl;
     free(body);
 
     GLfloat *front = Cylinder::CylinderArray(0.25f, 1.25f, 1, 1.5f, 25);
@@ -32,14 +32,14 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
         else
             vertex_buffer_data[j] = front[i];
     }
-    std::cout << j << std::endl;
+    // std::cout << j << std::endl;
     free(front);
 
     GLfloat *wings = Cuboid::CuboidArray(20.75f,5.75,1,1.0f, 1.5);
     for(i = 0 ; i < 6*6*3 ; ++i, ++j) {
        vertex_buffer_data[j] = wings[i];
     }
-    std::cout << j << std::endl;    
+    // std::cout << j << std::endl;    
     free(wings);
 
 
@@ -50,7 +50,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
         else
             vertex_buffer_data[j] = back[i];
     }
-    std::cout << j << std::endl;    
+    // std::cout << j << std::endl;    
     free(back);
     this->bounding = Cuboid(x,y,0,10, 10, 10, 10, 10, COLOR_RED);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color, GL_FILL);
@@ -81,7 +81,7 @@ void Airplane::draw(glm::mat4 VP) {
     int lp = glGetUniformLocation(programID, "lightpos");
     glProgramUniform3f(programID, lp, this->position.x, this->position.y, this->position.z); 
     draw3DObject(this->object);
-    draw3DObject((this->bounding).object);
+    // draw3DObject((this->bounding).object);
 }
 
 void Airplane::set_position(float x, float y) {
