@@ -1,5 +1,6 @@
 #include "main.h"
 #include "canon.h"
+#include "airplane.h"
 
 
 struct Point {
@@ -19,18 +20,20 @@ std::vector <Point> returnRectanglesss(Point a, Point b, Point c, Point d) {
 
 
 
-Canon::Canon(float x, float y, float z) : Enemy(x, y, z) {
+Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
     this->position = glm::vec3(x,y,z);
+    this->dir = glm::vec3(0,1,0);
+    this->target = target;
     GLfloat vertex_buffer_data[100001];
     float angle = 0;
-    float angle2 = 0;
+    float angle2 = -M_PI/2;
     float inc = M_PI/10;
     float inc2 = M_PI/5;
     float radius = 10.0f;
     float radius2 = 02.5f;
     float width = 1.0f;
     int j = 0;
-    for(int i = 0 ; i < 10 ; ++i){
+    for(int i = 0 ; i < 20 ; ++i){
         angle = 0;
         for(int k = 0 ; k < 10 ; ++k) {
             Point a1, b1, c1, d1;
@@ -61,21 +64,53 @@ Canon::Canon(float x, float y, float z) : Enemy(x, y, z) {
         angle2+=inc;
     }
     
-    GLfloat *body = Cylinder::CylinderArray(radius2, radius2, 1, radius2, 4);
-    for(int i = 0 ; i < 4*4*9 ; ++i){
-        if(i%3 == 1){
-            vertex_buffer_data[j++] = body[i] - 10.0f;
+    GLfloat *body = CuboidArray(1.0f,1.0f,1.0f,1.0f, 30.5f);;
+    for(int i = 0 ; i < 6*6*3 ; ++i){
+        if(i%3 == 0){
+            vertex_buffer_data[j++] = body[i] - 2.0f;
+        }
+        else if(i%3 == 1) {
+            vertex_buffer_data[j++] = body[i] + 5.0f;
         }
         else {
             vertex_buffer_data[j++] = body[i];
         }
     }
-    free(body);
+    for(int i = 0 ; i < 6*6*3 ; ++i){
+        if(i%3 == 0){
+            vertex_buffer_data[j++] = body[i] + 2.0f;
+        }
+        else if(i%3 == 1) {
+            vertex_buffer_data[j++] = body[i] + 5.0f;
+        }
+        else {
+            vertex_buffer_data[j++] = body[i];
+        }
+    }
+    // free(body);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
 }
 
 void Canon::tick(){
-    this->position += glm::vec3(0,-0.1f,0);
+    this->dir = (glm::normalize((this->target)->position - this->position));
+    // this->position += this->dir;
+
+    // std::cout << (this->target)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
+    glm::vec3 d = glm::normalize((this->target)->position - this->position);
+    glm::vec3 k = glm::normalize(glm::vec3(d.y,-d.x,1));
+    glm::vec3 a = glm::cross(k,d);
+    glm::vec3 b = glm::cross(a,d);
+    rotate[1][0] = d.x;
+    rotate[1][1] = d.y;
+    rotate[1][2] = d.z;
+    
+    rotate[2][0] = a.x;
+    rotate[2][1] = a.y;
+    rotate[2][2] = a.z;
+    
+    rotate[0][0] = b.x;
+    rotate[0][1] = b.y;
+    rotate[0][2] = b.z;
 }
 
 void Canon::draw(glm::mat4 VP) {

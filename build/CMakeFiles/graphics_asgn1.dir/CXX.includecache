@@ -19,6 +19,8 @@ cylinder.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
 cuboid.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+parachute.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/ball.cpp
 ball.h
@@ -35,12 +37,16 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 canon.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
+airplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 enemy.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+airplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
 cuboid.h
@@ -123,6 +129,8 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 cylinder.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.cpp
 main.h
@@ -185,6 +193,8 @@ parachute.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 dashboard.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
+canon.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
 time.h
 -
 list

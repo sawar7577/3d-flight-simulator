@@ -19,6 +19,8 @@ class Dashboard : public Cylinder, public Cuboid{
         glm::mat4 rotate;
         void tick(Airplane &air);
         void draw(glm::mat4 VP);
+        void setCrosshair(bool flag);
+
 
 
     private:

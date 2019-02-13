@@ -3,7 +3,7 @@
 #include "main.h"
 
 
-float arr[1000][1000];
+float arr[3000][3000];
 inline static float random(int range)
 {
     int ret = (rand() % (range * 2)) - range;
@@ -26,28 +26,28 @@ void algo_step(int x, int y, int size) {
     
     //Diamond steps
     arr[x+size/2][y]            = (arr[x][y] + arr[x+size/2][y+size/2] + arr[x+2*(size/2)][y])/3;
-    arr[x+size/2][y]            += random(size);
+    arr[x+size/2][y]            += random(size/3 + 1);
     arr[x+size/2][y] = std::min(mx, arr[x+size/2][y]);
     arr[x+size/2][y] = std::max(mn, arr[x+size/2][y]);
 
 
 
     arr[x+2*(size/2)][y+size/2] = (arr[x][y+2*(size/2)] + arr[x+size/2][y+size/2] + arr[x+2*(size/2)][y+2*(size/2)])/3;
-    arr[x+2*(size/2)][y+size/2] += random(size);
+    arr[x+2*(size/2)][y+size/2] += random(size/3 + 1);
     arr[x+2*(size/2)][y+size/2] = std::min(mx, arr[x+2*(size/2)][y+size/2]);
     arr[x+2*(size/2)][y+size/2] = std::max(mn, arr[x+2*(size/2)][y+size/2]);
 
 
 
     arr[x][y+size/2]            = (arr[x][y] + arr[x+size/2][y+size/2] + arr[x][y+2*(size/2)])/3;
-    arr[x][y+size/2]            += random(size); 
+    arr[x][y+size/2]            += random(size/3 + 1); 
     arr[x][y+size/2] = std::min(mx, arr[x][y+size/2]);
     arr[x][y+size/2] = std::max(mn, arr[x][y+size/2]);
 
 
 
     arr[x+size/2][y+2*(size/2)] = (arr[x][y+2*(size/2)] + arr[x+size/2][y+size/2] + arr[x+2*(size/2)][y+2*(size/2)])/3;
-    arr[x+size/2][y+2*(size/2)] += random(size);
+    arr[x+size/2][y+2*(size/2)] += random(size/3 + 1);
     arr[x+size/2][y+2*(size/2)] = std::min(mx, arr[x+size/2][y+2*(size/2)]);
     arr[x+size/2][y+2*(size/2)] = std::max(mn, arr[x+size/2][y+2*(size/2)]);
 
@@ -65,7 +65,7 @@ STerrain::STerrain(int x, int y, int width, color_t color) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0.0f;
     float scale = 1.0f;
-    float scale2 = 1.0f;
+    float scale2 = 2.5f;
 
     speed = 0.05;
     srand(0);
@@ -75,7 +75,7 @@ STerrain::STerrain(int x, int y, int width, color_t color) {
     algo_step(1,1,width);   
     int i,j,k;
     j = 0;
-    GLfloat vertex_buffer_data[1000000];
+    GLfloat vertex_buffer_data[8000000];
     for(i = 1; i < width ; ++i) {
         for(k = 1; k < width ; ++k){
 

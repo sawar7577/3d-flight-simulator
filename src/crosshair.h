@@ -14,6 +14,7 @@ class Crosshair : public Cylinder, public Cuboid{
         glm::mat4 rotate;
         void tick();
         void draw(glm::mat4 VP);
+        void changeColor(bool flag);
 
 
     private:

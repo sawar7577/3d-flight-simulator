@@ -33,3 +33,7 @@ void Dashboard::draw(glm::mat4 VP) {
 void Dashboard::tick(Airplane &air) {
     this->f.tick(air.fvalue);
 }
+
+void Dashboard::setCrosshair(bool flag) {
+    this->cross.changeColor(flag);
+}

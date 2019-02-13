@@ -13,6 +13,8 @@ class Parachute :  public Enemy {
         glm::mat4 rotate;
         void tick();
         void draw(glm::mat4 VP);
+        glm::vec3 locationScreen(glm::mat4 VP);
+
 
 
     private:

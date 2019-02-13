@@ -1,6 +1,7 @@
 #include "main.h"
 #include "cylinder.h"
 #include "cuboid.h"
+#include "parachute.h"
 
 #ifndef AIRPLANE_H
 #define AIRPLANE_H
@@ -10,6 +11,7 @@ class Airplane : public Cylinder, public Cuboid{
 public:
     float pitch, yaw, roll;
     float fvalue;
+    Parachute *target;
     Cuboid bounding;
     Airplane() {}
     Airplane(float x, float y, float radius1, float radius2, float ecc, float height, int vertices, color_t color);

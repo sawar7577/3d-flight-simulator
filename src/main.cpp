@@ -10,6 +10,7 @@
 #include "missile.h"
 #include "parachute.h"
 #include "dashboard.h"
+#include "canon.h"
 #include <time.h>
 #include <list>
 
@@ -26,6 +27,7 @@ GLFWwindow *window;
 
 Ball ball1;
 Cylinder cyl1;
+Canon c;
 // Terrain terr;
 STerrain st;
 Airplane air;
@@ -33,11 +35,12 @@ Cuboid d;
 Cuboid sky;
 Ring r;
 Enemy en;
-Parachute *p;
+Parachute p;
 Dashboard dash;
 int flag;
 int stop;
 list <Missile> ms;
+list <Parachute> ps;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -50,6 +53,35 @@ template <typename Type> void tick_sprite(list <Type> &l) {
     for(it = l.begin() ; it != l.end() ; ++it) {
         (*it).tick();
     }
+}
+
+template <typename Type> void draw_sprite(list <Type> &l, glm::mat4 VP) {
+    typename list <Type> :: iterator it;
+    for(it = l.begin() ; it != l.end() ; ++it) {
+        (*it).draw(VP);
+    }
+}
+
+template <typename Type> Type * check_enemy(list <Type> &l) {
+    float top    = screen_center_y + 30 / screen_zoom;
+    float bottom = screen_center_y - 30 / screen_zoom;
+    float left   = screen_center_x - 30 / screen_zoom;
+    float right  = screen_center_x + 30 / screen_zoom;
+    typename list <Type> :: iterator it;
+    for(it = l.begin() ; it != l.end() ; ++it) {
+        glm::mat4 VP = glm::ortho(left, right, bottom, top, 0.0f, 500.0f) * Matrices.view;
+        glm::vec3 loc = (*it).locationScreen(VP);
+        std::cout << loc.x << " " << loc.y << " " << loc.z << std::endl;
+        if(glm::dot(loc,loc) < 0.3f) {
+            std::cout << "yes" << std::endl;
+            dash.setCrosshair(true);
+            air.target = &(*it);
+            return &(*it);
+        }
+    }
+    dash.setCrosshair(false);
+    air.target = NULL;
+    return NULL;
 }
 
 
@@ -67,7 +99,7 @@ void draw() {
 
     // Eye - Location of camera. Don't change unless you are sure!!
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
-    glm::vec3 pos = air.position - 40.0f*air.dir;
+    glm::vec3 pos = air.position - 40.0f*air.dir + 20.0f*air.up;
     glm::vec3 pos2= air.position;    
     pos2.y = air.position.y + 100.0f;
     glm::vec3 eye[2];
@@ -98,6 +130,7 @@ void draw() {
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
     // Don't change unless you are sure!!
     glm::mat4 VP = Matrices.projection * Matrices.view;
+    check_enemy(ps);
 
     // Send our transformation to the currently bound shader, in the "MVP" uniform
     // For each model you render, since the MVP will be different (at least the M part)
@@ -105,21 +138,14 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
-    if(stop == 0) {
     st.draw(VP);
     air.draw(VP);
     sky.draw(VP);
     r.draw(VP);
+    c.draw(VP);
     dash.draw(VP);
-    // d.draw(VP);
-    p->draw(VP);
-    }
-    list <Missile> :: iterator it;
-    for(it = ms.begin() ; it!=ms.end() ; ++it)
-    {
-        (*it).draw(VP);
-    }
-    // terr.draw(VP);
+    draw_sprite(ms, VP);
+    draw_sprite(ps, VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -160,8 +186,8 @@ void tick_input(GLFWwindow *window) {
     }
     if(sp)
     {
-        Missile m = Missile(air.position.x, air.position.y, air.position.z, 1.0f,1.0f,30,COLOR_GREEN);
-        m.follow = p;
+        Missile m = Missile(air.position.x, air.position.y, air.position.z, 1.0f,1.0f,30, air.dir, COLOR_GREEN);
+        m.follow = air.target;
         // m.setPointer(p);
         std::cout << &p << std::endl;
         ms.push_back(m);
@@ -175,15 +201,14 @@ void tick_elements(GLFWwindow *window) {
     // terr.tick();
     // d.tick();
     st.tick();
-    p->tick();
+    // p.tick();
     dash.tick(air);
    }
 //    en.tick();
-   list <Missile> :: iterator it;
-   for(it = ms.begin() ; it!=ms.end() ; ++it)
-   {
-       (*it).tick();
-   }
+    tick_sprite(ps);
+    tick_sprite(ms);
+    c.tick();
+
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -198,9 +223,11 @@ void initGL(GLFWwindow *window, int width, int height) {
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
     sky         = Cuboid(0, 0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
     d           = Cuboid(100,100,100, 10, 10, 10 ,10 ,10, COLOR_GREEN);
-    st          = STerrain(0,0,129,COLOR_RED);
+    st          = STerrain(0,0,513,COLOR_RED);
     r           = Ring(0,100,0,20,20,COLOR_BLACK);
-    p           = new Parachute(100,100,100);
+    p           = Parachute(100,100,100);
+    c           = Canon(200,200,200, &air);
+    ps.push_back(p);
     dash        = Dashboard(0,0,0);
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -248,9 +275,9 @@ int main(int argc, char **argv) {
 
             tick_elements(window);
             tick_input(window);
-            if(!checkCollision(d, glm::mat4(1.0f), air.bounding, air.rotate)){
-                stop = 1;
-            }
+            // if(!checkCollision(d, glm::mat4(1.0f), air.bounding, air.rotate)){
+            //     stop = 1;
+            // }
         }
 
         // Poll for Keyboard and mouse events

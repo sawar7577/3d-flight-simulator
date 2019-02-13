@@ -111,7 +111,7 @@ void Airplane::tick(GLFWwindow *window) {
     if(glfwGetKey(window, GLFW_KEY_E)){
         this->yaw = 0.01f;
     }
-    this->position += this->dir/2.0f;
+    this->position += this->dir/4.0f;
     this->bounding.position = this->position;
 }
 
