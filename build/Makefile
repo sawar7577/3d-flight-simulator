@@ -177,6 +177,33 @@ src/ball.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ball.cpp.s
 .PHONY : src/ball.cpp.s
 
+src/canon.o: src/canon.cpp.o
+
+.PHONY : src/canon.o
+
+# target to build an object file
+src/canon.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o
+.PHONY : src/canon.cpp.o
+
+src/canon.i: src/canon.cpp.i
+
+.PHONY : src/canon.i
+
+# target to preprocess a source file
+src/canon.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/canon.cpp.i
+.PHONY : src/canon.cpp.i
+
+src/canon.s: src/canon.cpp.s
+
+.PHONY : src/canon.s
+
+# target to generate assembly for a file
+src/canon.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/canon.cpp.s
+.PHONY : src/canon.cpp.s
+
 src/color.o: src/color.cpp.o
 
 .PHONY : src/color.o
@@ -203,6 +230,33 @@ src/color.s: src/color.cpp.s
 src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
+
+src/crosshair.o: src/crosshair.cpp.o
+
+.PHONY : src/crosshair.o
+
+# target to build an object file
+src/crosshair.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.o
+.PHONY : src/crosshair.cpp.o
+
+src/crosshair.i: src/crosshair.cpp.i
+
+.PHONY : src/crosshair.i
+
+# target to preprocess a source file
+src/crosshair.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.i
+.PHONY : src/crosshair.cpp.i
+
+src/crosshair.s: src/crosshair.cpp.s
+
+.PHONY : src/crosshair.s
+
+# target to generate assembly for a file
+src/crosshair.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.s
+.PHONY : src/crosshair.cpp.s
 
 src/cuboid.o: src/cuboid.cpp.o
 
@@ -258,6 +312,33 @@ src/cylinder.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.s
 .PHONY : src/cylinder.cpp.s
 
+src/dashboard.o: src/dashboard.cpp.o
+
+.PHONY : src/dashboard.o
+
+# target to build an object file
+src/dashboard.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o
+.PHONY : src/dashboard.cpp.o
+
+src/dashboard.i: src/dashboard.cpp.i
+
+.PHONY : src/dashboard.i
+
+# target to preprocess a source file
+src/dashboard.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.i
+.PHONY : src/dashboard.cpp.i
+
+src/dashboard.s: src/dashboard.cpp.s
+
+.PHONY : src/dashboard.s
+
+# target to generate assembly for a file
+src/dashboard.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.s
+.PHONY : src/dashboard.cpp.s
+
 src/enemy.o: src/enemy.cpp.o
 
 .PHONY : src/enemy.o
@@ -284,6 +365,33 @@ src/enemy.s: src/enemy.cpp.s
 src/enemy.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.s
 .PHONY : src/enemy.cpp.s
+
+src/fuel.o: src/fuel.cpp.o
+
+.PHONY : src/fuel.o
+
+# target to build an object file
+src/fuel.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o
+.PHONY : src/fuel.cpp.o
+
+src/fuel.i: src/fuel.cpp.i
+
+.PHONY : src/fuel.i
+
+# target to preprocess a source file
+src/fuel.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.i
+.PHONY : src/fuel.cpp.i
+
+src/fuel.s: src/fuel.cpp.s
+
+.PHONY : src/fuel.s
+
+# target to generate assembly for a file
+src/fuel.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.s
+.PHONY : src/fuel.cpp.s
 
 src/input.o: src/input.cpp.o
 
@@ -419,6 +527,33 @@ src/other_handlers.s: src/other_handlers.cpp.s
 src/other_handlers.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.s
 .PHONY : src/other_handlers.cpp.s
+
+src/parachute.o: src/parachute.cpp.o
+
+.PHONY : src/parachute.o
+
+# target to build an object file
+src/parachute.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o
+.PHONY : src/parachute.cpp.o
+
+src/parachute.i: src/parachute.cpp.i
+
+.PHONY : src/parachute.i
+
+# target to preprocess a source file
+src/parachute.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.i
+.PHONY : src/parachute.cpp.i
+
+src/parachute.s: src/parachute.cpp.s
+
+.PHONY : src/parachute.s
+
+# target to generate assembly for a file
+src/parachute.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.s
+.PHONY : src/parachute.cpp.s
 
 src/ring.o: src/ring.cpp.o
 
@@ -570,18 +705,30 @@ help:
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
+	@echo "... src/canon.o"
+	@echo "... src/canon.i"
+	@echo "... src/canon.s"
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
+	@echo "... src/crosshair.o"
+	@echo "... src/crosshair.i"
+	@echo "... src/crosshair.s"
 	@echo "... src/cuboid.o"
 	@echo "... src/cuboid.i"
 	@echo "... src/cuboid.s"
 	@echo "... src/cylinder.o"
 	@echo "... src/cylinder.i"
 	@echo "... src/cylinder.s"
+	@echo "... src/dashboard.o"
+	@echo "... src/dashboard.i"
+	@echo "... src/dashboard.s"
 	@echo "... src/enemy.o"
 	@echo "... src/enemy.i"
 	@echo "... src/enemy.s"
+	@echo "... src/fuel.o"
+	@echo "... src/fuel.i"
+	@echo "... src/fuel.s"
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
@@ -597,6 +744,9 @@ help:
 	@echo "... src/other_handlers.o"
 	@echo "... src/other_handlers.i"
 	@echo "... src/other_handlers.s"
+	@echo "... src/parachute.o"
+	@echo "... src/parachute.i"
+	@echo "... src/parachute.s"
 	@echo "... src/ring.o"
 	@echo "... src/ring.i"
 	@echo "... src/ring.s"

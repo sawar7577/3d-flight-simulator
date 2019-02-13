@@ -11,7 +11,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     this->dir = glm::vec3(0,1,0);
     this->up = glm::vec3(0,0,1);
     this->rotate = glm::mat4(1.0f);
-
+    this->fvalue = 1.0f;
     this->velocity = glm::vec3(1.0f);
   
     speed = 1;
@@ -92,6 +92,7 @@ void Airplane::tick(GLFWwindow *window) {
     this->pitch = 0.0f;
     this->yaw = 0.0f;
     this->roll = 0.0f;
+    this->fvalue = std::max(this->fvalue-0.0001f,0.0f);
     if(glfwGetKey(window, GLFW_KEY_UP)){
         this->pitch = 0.01f;
     }
@@ -110,7 +111,7 @@ void Airplane::tick(GLFWwindow *window) {
     if(glfwGetKey(window, GLFW_KEY_E)){
         this->yaw = 0.01f;
     }
-    this->position += this->dir/10.0f;
+    this->position += this->dir/2.0f;
     this->bounding.position = this->position;
 }
 

@@ -30,6 +30,18 @@ main.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+canon.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+enemy.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
 cuboid.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
@@ -39,6 +51,20 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/color.cpp
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+crosshair.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.cpp
 cuboid.h
@@ -60,6 +86,32 @@ main.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+dashboard.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
+crosshair.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+fuel.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+airplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+crosshair.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+fuel.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+airplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.cpp
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
@@ -71,6 +123,20 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 cylinder.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+fuel.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/input.cpp
 iostream
@@ -115,6 +181,10 @@ collision.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
 missile.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
+parachute.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+dashboard.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
 time.h
 -
 list
@@ -155,6 +225,8 @@ cylinder.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
 enemy.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+parachute.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/nonedit.cpp
 iostream
@@ -199,6 +271,18 @@ glm/gtc/matrix_transform.hpp
 -
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+parachute.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+enemy.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/ring.cpp
 ring.h

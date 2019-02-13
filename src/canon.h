@@ -1,15 +1,15 @@
 #include "main.h"
 #include "enemy.h"
 
-#ifndef PARACHUTE_H
-#define PARACHUTE_H
+#ifndef CANON_H
+#define CANON_H
 
-class Parachute :  public Enemy {
+class Canon :  public Enemy {
     public:
         glm::vec3 position;
         float radius;
-        Parachute() {}
-        Parachute(float x, float y, float z);
+        Canon() {}
+        Canon(float x, float y, float z);
         glm::mat4 rotate;
         void tick();
         void draw(glm::mat4 VP);

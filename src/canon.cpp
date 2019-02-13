@@ -1,12 +1,12 @@
 #include "main.h"
-#include "parachute.h"
+#include "canon.h"
 
 
 struct Point {
     float x, y, z;
 };
 
-std::vector <Point> returnRectangless(Point a, Point b, Point c, Point d) {
+std::vector <Point> returnRectanglesss(Point a, Point b, Point c, Point d) {
     std::vector <Point> rec;
     rec.push_back(a);
     rec.push_back(b);
@@ -19,7 +19,7 @@ std::vector <Point> returnRectangless(Point a, Point b, Point c, Point d) {
 
 
 
-Parachute::Parachute(float x, float y, float z) : Enemy(x, y, z) {
+Canon::Canon(float x, float y, float z) : Enemy(x, y, z) {
     this->position = glm::vec3(x,y,z);
     GLfloat vertex_buffer_data[100001];
     float angle = 0;
@@ -50,7 +50,7 @@ Parachute::Parachute(float x, float y, float z) : Enemy(x, y, z) {
             c1.z = radius*sin(angle+inc2)*cos(angle2+inc);
             c1.y = radius*sin(angle2+inc);
 
-            std::vector < Point > recs = returnRectangless(a1,b1,c1,d1);
+            std::vector < Point > recs = returnRectanglesss(a1,b1,c1,d1);
             for(int m = 0 ; m < recs.size() ; ++m) {
                 vertex_buffer_data[j++] = recs[m].x;
                 vertex_buffer_data[j++] = recs[m].y;
@@ -74,11 +74,11 @@ Parachute::Parachute(float x, float y, float z) : Enemy(x, y, z) {
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
 }
 
-void Parachute::tick(){
+void Canon::tick(){
     this->position += glm::vec3(0,-0.1f,0);
 }
 
-void Parachute::draw(glm::mat4 VP) {
+void Canon::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
 

@@ -50,13 +50,31 @@ Missile::Missile(float x, float y, float z, float radius, float length, int vert
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color, GL_FILL);
 }
 
+// template <typename Type> void Missile::setPointer(Type *track) {
+//     // follow = (Type *)track;
+// }
+
 
 void Missile::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
     if(this->follow != NULL)
     {
-    std::cout << (this->follow)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
+               
+    }
+    Matrices.model = (translate * this->rotate);
+    glm::mat4 MVP = VP * Matrices.model;
+    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
+    draw3DObject(this->object);
+}
+
+void Missile::tick()
+{
+    if(this->follow != NULL){
+        
+        this->position += (1.0f*glm::normalize((this->follow)->position - this->position));
+ 
+        std::cout << (this->follow)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
         glm::vec3 d = glm::normalize((this->follow)->position - this->position);
         glm::vec3 k = glm::normalize(d + glm::vec3(0,1,0));
         glm::vec3 a = glm::cross(k,d);
@@ -72,18 +90,10 @@ void Missile::draw(glm::mat4 VP) {
         rotate[0][0] = b.x;
         rotate[0][1] = b.y;
         rotate[0][2] = b.z;
-        
+
     }
-    Matrices.model = (translate * this->rotate);
-    glm::mat4 MVP = VP * Matrices.model;
-    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    draw3DObject(this->object);
 }
 
-void Missile::tick()
-{
-    if(this->follow != NULL)
-        this->position += (0.1f*glm::normalize((this->follow)->position - this->position));
-}
+
 
 

@@ -9,6 +9,7 @@
 class Airplane : public Cylinder, public Cuboid{
 public:
     float pitch, yaw, roll;
+    float fvalue;
     Cuboid bounding;
     Airplane() {}
     Airplane(float x, float y, float radius1, float radius2, float ecc, float height, int vertices, color_t color);

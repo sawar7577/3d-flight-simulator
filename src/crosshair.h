@@ -1,15 +1,16 @@
 #include "main.h"
-#include "enemy.h"
+#include "cylinder.h"
+#include "cuboid.h"
 
-#ifndef PARACHUTE_H
-#define PARACHUTE_H
+#ifndef CROSSHAIR_H
+#define CROSSHAIR_H
 
-class Parachute :  public Enemy {
+class Crosshair : public Cylinder, public Cuboid{
     public:
         glm::vec3 position;
         float radius;
-        Parachute() {}
-        Parachute(float x, float y, float z);
+        Crosshair() {}
+        Crosshair(float x, float y, float z);
         glm::mat4 rotate;
         void tick();
         void draw(glm::mat4 VP);

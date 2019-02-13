@@ -8,6 +8,8 @@
 #include "ring.h"
 #include "collision.h"
 #include "missile.h"
+#include "parachute.h"
+#include "dashboard.h"
 #include <time.h>
 #include <list>
 
@@ -31,6 +33,8 @@ Cuboid d;
 Cuboid sky;
 Ring r;
 Enemy en;
+Parachute *p;
+Dashboard dash;
 int flag;
 int stop;
 list <Missile> ms;
@@ -106,7 +110,9 @@ void draw() {
     air.draw(VP);
     sky.draw(VP);
     r.draw(VP);
-    d.draw(VP);
+    dash.draw(VP);
+    // d.draw(VP);
+    p->draw(VP);
     }
     list <Missile> :: iterator it;
     for(it = ms.begin() ; it!=ms.end() ; ++it)
@@ -155,7 +161,9 @@ void tick_input(GLFWwindow *window) {
     if(sp)
     {
         Missile m = Missile(air.position.x, air.position.y, air.position.z, 1.0f,1.0f,30,COLOR_GREEN);
-        // m.follow = &en;
+        m.follow = p;
+        // m.setPointer(p);
+        std::cout << &p << std::endl;
         ms.push_back(m);
     }
     
@@ -167,8 +175,10 @@ void tick_elements(GLFWwindow *window) {
     // terr.tick();
     // d.tick();
     st.tick();
+    p->tick();
+    dash.tick(air);
    }
-   en.tick();
+//    en.tick();
    list <Missile> :: iterator it;
    for(it = ms.begin() ; it!=ms.end() ; ++it)
    {
@@ -181,7 +191,7 @@ void tick_elements(GLFWwindow *window) {
 void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
-    en = Enemy(100,100,100);
+    // en = Enemy(100,100,100);
     // ball1       = Ball(0, 0, COLOR_RED);
     // cyl1        = Cylinder(0,0,2.0f,2.0f,1.0f,5.0f, 4, COLOR_RED);
     // terr        = Terrain(0,0,60,60, COLOR_RED);
@@ -190,6 +200,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     d           = Cuboid(100,100,100, 10, 10, 10 ,10 ,10, COLOR_GREEN);
     st          = STerrain(0,0,129,COLOR_RED);
     r           = Ring(0,100,0,20,20,COLOR_BLACK);
+    p           = new Parachute(100,100,100);
+    dash        = Dashboard(0,0,0);
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform
