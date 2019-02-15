@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,163 +6,163 @@
 
 #IncludeRegexTransform: 
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.cpp
+/home/sankalp/3d-flight-simulator/src/airplane.cpp
 airplane.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+/home/sankalp/3d-flight-simulator/src/airplane.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+/home/sankalp/3d-flight-simulator/src/airplane.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 parachute.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+/home/sankalp/3d-flight-simulator/src/parachute.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ball.cpp
+/home/sankalp/3d-flight-simulator/src/ball.cpp
 ball.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ball.h
+/home/sankalp/3d-flight-simulator/src/ball.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ball.h
+/home/sankalp/3d-flight-simulator/src/ball.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.cpp
+/home/sankalp/3d-flight-simulator/src/bullet.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 bullet.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+/home/sankalp/3d-flight-simulator/src/bullet.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+/home/sankalp/3d-flight-simulator/src/bullet.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.cpp
+/home/sankalp/3d-flight-simulator/src/canon.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 canon.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
+/home/sankalp/3d-flight-simulator/src/canon.h
 airplane.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+/home/sankalp/3d-flight-simulator/src/airplane.h
 bullet.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+/home/sankalp/3d-flight-simulator/src/bullet.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
+/home/sankalp/3d-flight-simulator/src/canon.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 enemy.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+/home/sankalp/3d-flight-simulator/src/enemy.h
 airplane.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+/home/sankalp/3d-flight-simulator/src/airplane.h
 bullet.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+/home/sankalp/3d-flight-simulator/src/bullet.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
+/home/sankalp/3d-flight-simulator/src/collision.h
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/color.cpp
+/home/sankalp/3d-flight-simulator/src/color.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.cpp
+/home/sankalp/3d-flight-simulator/src/crosshair.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 crosshair.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+/home/sankalp/3d-flight-simulator/src/crosshair.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+/home/sankalp/3d-flight-simulator/src/crosshair.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.cpp
+/home/sankalp/3d-flight-simulator/src/cuboid.cpp
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.cpp
+/home/sankalp/3d-flight-simulator/src/cylinder.cpp
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.cpp
+/home/sankalp/3d-flight-simulator/src/dashboard.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 dashboard.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
+/home/sankalp/3d-flight-simulator/src/dashboard.h
 crosshair.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+/home/sankalp/3d-flight-simulator/src/crosshair.h
 fuel.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+/home/sankalp/3d-flight-simulator/src/fuel.h
 airplane.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+/home/sankalp/3d-flight-simulator/src/airplane.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
+/home/sankalp/3d-flight-simulator/src/dashboard.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 crosshair.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
+/home/sankalp/3d-flight-simulator/src/crosshair.h
 fuel.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+/home/sankalp/3d-flight-simulator/src/fuel.h
 airplane.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+/home/sankalp/3d-flight-simulator/src/airplane.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.cpp
+/home/sankalp/3d-flight-simulator/src/enemy.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 enemy.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+/home/sankalp/3d-flight-simulator/src/enemy.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+/home/sankalp/3d-flight-simulator/src/enemy.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.cpp
+/home/sankalp/3d-flight-simulator/src/fuel.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 fuel.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+/home/sankalp/3d-flight-simulator/src/fuel.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
+/home/sankalp/3d-flight-simulator/src/fuel.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/input.cpp
+/home/sankalp/3d-flight-simulator/src/input.cpp
 iostream
 -
 cmath
@@ -182,43 +182,43 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.cpp
+/home/sankalp/3d-flight-simulator/src/main.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 timer.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h
+/home/sankalp/3d-flight-simulator/src/timer.h
 ball.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ball.h
+/home/sankalp/3d-flight-simulator/src/ball.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 sterrain.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.h
+/home/sankalp/3d-flight-simulator/src/sterrain.h
 airplane.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+/home/sankalp/3d-flight-simulator/src/airplane.h
 cuboid.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+/home/sankalp/3d-flight-simulator/src/cuboid.h
 ring.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
+/home/sankalp/3d-flight-simulator/src/ring.h
 collision.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
+/home/sankalp/3d-flight-simulator/src/collision.h
 missile.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
+/home/sankalp/3d-flight-simulator/src/missile.h
 parachute.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+/home/sankalp/3d-flight-simulator/src/parachute.h
 dashboard.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
+/home/sankalp/3d-flight-simulator/src/dashboard.h
 canon.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
+/home/sankalp/3d-flight-simulator/src/canon.h
 bullet.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+/home/sankalp/3d-flight-simulator/src/bullet.h
 time.h
 -
 list
 -
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 iostream
 -
 cmath
@@ -242,23 +242,23 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/missile.cpp
+/home/sankalp/3d-flight-simulator/src/missile.cpp
 missile.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
+/home/sankalp/3d-flight-simulator/src/missile.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
+/home/sankalp/3d-flight-simulator/src/missile.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 cylinder.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+/home/sankalp/3d-flight-simulator/src/cylinder.h
 enemy.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+/home/sankalp/3d-flight-simulator/src/enemy.h
 parachute.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+/home/sankalp/3d-flight-simulator/src/parachute.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/nonedit.cpp
+/home/sankalp/3d-flight-simulator/src/nonedit.cpp
 iostream
 -
 cmath
@@ -278,9 +278,9 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/other_handlers.cpp
+/home/sankalp/3d-flight-simulator/src/other_handlers.cpp
 iostream
 -
 cmath
@@ -300,59 +300,61 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.cpp
+/home/sankalp/3d-flight-simulator/src/parachute.cpp
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 parachute.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+/home/sankalp/3d-flight-simulator/src/parachute.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+/home/sankalp/3d-flight-simulator/src/parachute.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 enemy.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+/home/sankalp/3d-flight-simulator/src/enemy.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.cpp
+/home/sankalp/3d-flight-simulator/src/ring.cpp
 ring.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
+/home/sankalp/3d-flight-simulator/src/ring.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
+/home/sankalp/3d-flight-simulator/src/ring.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp
+/home/sankalp/3d-flight-simulator/src/selfterrain.cpp
 bits/stdc++.h
 -
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.cpp
+/home/sankalp/3d-flight-simulator/src/sterrain.cpp
 sterrain.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.h
+/home/sankalp/3d-flight-simulator/src/sterrain.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.h
+/home/sankalp/3d-flight-simulator/src/sterrain.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.cpp
+/home/sankalp/3d-flight-simulator/src/terrain.cpp
 terrain.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.h
+/home/sankalp/3d-flight-simulator/src/terrain.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.h
+/home/sankalp/3d-flight-simulator/src/terrain.h
 main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+/home/sankalp/3d-flight-simulator/src/main.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/timer.cpp
+/home/sankalp/3d-flight-simulator/src/timer.cpp
 timer.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h
+/home/sankalp/3d-flight-simulator/src/timer.h
 GLFW/glfw3.h
 -
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h
+/home/sankalp/3d-flight-simulator/src/timer.h
+
+/home/sankalp/3d-flight-simulator/src/volcano.cpp
 

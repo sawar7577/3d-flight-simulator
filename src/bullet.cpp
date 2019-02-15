@@ -4,6 +4,7 @@
 Bullet::Bullet(float x, float y, float z, float radius, float length, int vertices, glm::vec3 d, color_t color) {
     this->position = glm::vec3(x, y, z);
     this->dir = d;
+    this->rotate = glm::mat4(1.0f);
     glm::vec3 d2 = glm::normalize(this->dir);
         glm::vec3 k = glm::normalize(d2 + glm::vec3(0,1,0));
         glm::vec3 a = glm::cross(k,d2);

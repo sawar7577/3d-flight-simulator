@@ -29,6 +29,7 @@ Parachute::Parachute(float x, float y, float z) : Enemy(x, y, z) {
     float radius = 10.0f;
     float radius2 = 02.5f;
     float width = 1.0f;
+    this->rotate = glm::mat4(1.0f);
     int j = 0;
     for(int i = 0 ; i < 10 ; ++i){
         angle = 0;

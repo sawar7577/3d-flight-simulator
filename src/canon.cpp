@@ -26,6 +26,7 @@ Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
     this->position = glm::vec3(x,y,z);
     this->dir = glm::vec3(0,1,0);
     this->target = target;
+    this->rotate = glm::mat4(1.0f);
     GLfloat vertex_buffer_data[100001];
     float angle = 0;
     float angle2 = -M_PI/2;
