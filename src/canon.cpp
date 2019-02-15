@@ -1,7 +1,9 @@
 #include "main.h"
 #include "canon.h"
 #include "airplane.h"
+#include "bullet.h"
 
+std::list <Bullet> bs;
 
 struct Point {
     float x, y, z;
@@ -94,7 +96,10 @@ Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
 void Canon::tick(){
     this->dir = (glm::normalize((this->target)->position - this->position));
     // this->position += this->dir;
-
+    int rad = rand();
+    if(rad %100 == 0) {
+        bs.push_back(Bullet(this->position.x, this->position.y, this->position.z, 1.0f, 1.0f, 5, this->dir + ((this->target)->dir)/8.0f, COLOR_BLACK));
+    }
     // std::cout << (this->target)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
     glm::vec3 d = glm::normalize((this->target)->position - this->position);
     glm::vec3 k = glm::normalize(glm::vec3(d.y,-d.x,1));

@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o"

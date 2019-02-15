@@ -75,7 +75,7 @@ STerrain::STerrain(int x, int y, int width, color_t color) {
     algo_step(1,1,width);   
     int i,j,k;
     j = 0;
-    GLfloat vertex_buffer_data[8000000];
+    GLfloat vertex_buffer_data[5000000];
     for(i = 1; i < width ; ++i) {
         for(k = 1; k < width ; ++k){
 

@@ -13,7 +13,13 @@ CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/bullet.cpp
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/bullet.h
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/cylinder.h
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/bullet.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/canon.cpp
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/canon.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/cuboid.h
@@ -67,6 +73,7 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/airplane.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bullet.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/canon.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/collision.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/crosshair.h

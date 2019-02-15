@@ -5,47 +5,47 @@ Crosshair::Crosshair(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->rotate = glm::mat4(1.0f);
     changeColor(false);
-    // GLfloat vertex_buffer_data[1000001];
-    // int j = 0;
+    GLfloat vertex_buffer_data[1000001];
+    int j = 0;
 
-    // // Crosshair
-    // GLfloat *crosshar = Cuboid::CuboidArray(0.5f,0.5f,0.5f,0.5f,2.0f);
-    // for(int i = 0 ; i < 6*6*3 ; ++i){
-    //     if(i%3 == 1) {
-    //         vertex_buffer_data[j++] = crosshar[i] + 2.0f;
-    //     }
-    //     else {
-    //         vertex_buffer_data[j++] = crosshar[i];
-    //     }
-    // }
-    // for(int i = 0 ; i < 6*6*3 ; ++i){
-    //     if(i%3 == 1) {
-    //         vertex_buffer_data[j++] = crosshar[i] - 2.0f;
-    //     }
-    //     else {
-    //         vertex_buffer_data[j++] = crosshar[i];
-    //     }
-    // }
-    // crosshar = Cuboid::CuboidArray(2.0f,2.0f,2.0f,2.0f,0.5f);
-    // for(int i = 0 ; i < 6*6*3 ; ++i){
-    //     if(i%3 == 0) {
-    //         vertex_buffer_data[j++] = crosshar[i] + 2.0f;
-    //     }
-    //     else {
-    //         vertex_buffer_data[j++] = crosshar[i];
-    //     }
-    // }
-    // for(int i = 0 ; i < 6*6*3 ; ++i){
-    //     if(i%3 == 0) {
-    //         vertex_buffer_data[j++] = crosshar[i] - 2.0f;
-    //     }
-    //     else {
-    //         vertex_buffer_data[j++] = crosshar[i];
-    //     }
-    // }
-    // free(crosshar);
+    // Crosshair
+    GLfloat *crosshar = Cuboid::CuboidArray(0.5f,0.5f,0.5f,0.5f,2.0f);
+    for(int i = 0 ; i < 6*6*3 ; ++i){
+        if(i%3 == 1) {
+            vertex_buffer_data[j++] = crosshar[i] + 2.0f;
+        }
+        else {
+            vertex_buffer_data[j++] = crosshar[i];
+        }
+    }
+    for(int i = 0 ; i < 6*6*3 ; ++i){
+        if(i%3 == 1) {
+            vertex_buffer_data[j++] = crosshar[i] - 2.0f;
+        }
+        else {
+            vertex_buffer_data[j++] = crosshar[i];
+        }
+    }
+    crosshar = Cuboid::CuboidArray(2.0f,2.0f,2.0f,2.0f,0.5f);
+    for(int i = 0 ; i < 6*6*3 ; ++i){
+        if(i%3 == 0) {
+            vertex_buffer_data[j++] = crosshar[i] + 2.0f;
+        }
+        else {
+            vertex_buffer_data[j++] = crosshar[i];
+        }
+    }
+    for(int i = 0 ; i < 6*6*3 ; ++i){
+        if(i%3 == 0) {
+            vertex_buffer_data[j++] = crosshar[i] - 2.0f;
+        }
+        else {
+            vertex_buffer_data[j++] = crosshar[i];
+        }
+    }
+    free(crosshar);
 
-    // this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
 
 }
 

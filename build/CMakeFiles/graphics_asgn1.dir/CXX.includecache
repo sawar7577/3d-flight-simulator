@@ -32,6 +32,18 @@ main.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+bullet.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.cpp
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
@@ -39,6 +51,8 @@ canon.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
 airplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+bullet.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
 main.h
@@ -47,6 +61,8 @@ enemy.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
 airplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+bullet.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
 cuboid.h
@@ -195,6 +211,8 @@ dashboard.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
 canon.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
+bullet.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
 time.h
 -
 list
@@ -208,6 +226,8 @@ cmath
 fstream
 -
 vector
+-
+list
 -
 algorithm
 -

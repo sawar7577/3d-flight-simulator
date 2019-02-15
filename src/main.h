@@ -8,6 +8,7 @@
 #include <cmath>
 #include <fstream>
 #include <vector>
+#include <list>
 
 #include <algorithm>
 
@@ -87,6 +88,8 @@ extern const color_t COLOR_RED;
 extern const color_t COLOR_GREEN;
 extern const color_t COLOR_BLACK;
 extern const color_t COLOR_BACKGROUND;
+
+
 
 extern GLuint programID;
 

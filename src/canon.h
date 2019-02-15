@@ -1,6 +1,7 @@
 #include "main.h"
 #include "enemy.h"
 #include "airplane.h"
+#include "bullet.h"
 
 #ifndef CANON_H
 #define CANON_H
@@ -23,4 +24,6 @@ class Canon :  public Enemy {
 };
 
 
+
 #endif
+extern std::list <Bullet> bs;

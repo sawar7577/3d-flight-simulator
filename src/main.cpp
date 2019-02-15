@@ -11,6 +11,7 @@
 #include "parachute.h"
 #include "dashboard.h"
 #include "canon.h"
+#include "bullet.h"
 #include <time.h>
 #include <list>
 
@@ -41,6 +42,7 @@ int flag;
 int stop;
 list <Missile> ms;
 list <Parachute> ps;
+// extern list <Bullet> bs;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -146,6 +148,7 @@ void draw() {
     dash.draw(VP);
     draw_sprite(ms, VP);
     draw_sprite(ps, VP);
+    draw_sprite(bs, VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -207,6 +210,7 @@ void tick_elements(GLFWwindow *window) {
 //    en.tick();
     tick_sprite(ps);
     tick_sprite(ms);
+    tick_sprite(bs);
     c.tick();
 
 }

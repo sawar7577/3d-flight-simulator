@@ -19,36 +19,36 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     int i = 0;
     int j = 0;
     GLfloat *body = Cylinder::CylinderArray(1.25f, 0.75f, 1, 10.0f, 25);
-    for(i = 0 ; i < 36*25 ; ++i, ++j) {
-        vertex_buffer_data[j] = body[i];
+    for(i = 0 ; i < 36*25 ; ++i) {
+        vertex_buffer_data[j++] = body[i];
     }
     // std::cout << j << std::endl;
     free(body);
 
     GLfloat *front = Cylinder::CylinderArray(0.25f, 1.25f, 1, 1.5f, 25);
-    for(i = 0 ; i < 36*25 ; ++i, ++j) {
+    for(i = 0 ; i < 36*25 ; ++i) {
         if(i%3 == 1)
-            vertex_buffer_data[j] = front[i] + 11.5f/2.0f;
+            vertex_buffer_data[j++] = front[i] + 11.5f/2.0f;
         else
-            vertex_buffer_data[j] = front[i];
+            vertex_buffer_data[j++] = front[i];
     }
     // std::cout << j << std::endl;
     free(front);
 
     GLfloat *wings = Cuboid::CuboidArray(20.75f,5.75,1,1.0f, 1.5);
-    for(i = 0 ; i < 6*6*3 ; ++i, ++j) {
-       vertex_buffer_data[j] = wings[i];
+    for(i = 0 ; i < 6*6*3 ; ++i) {
+       vertex_buffer_data[j++] = wings[i];
     }
     // std::cout << j << std::endl;    
     free(wings);
 
 
     GLfloat *back = Cylinder::CylinderArray(0.75f, 1.0f, 1, 1.0f, 25);
-    for(i = 0 ; i < 36*25 ; ++i, ++j) {
+    for(i = 0 ; i < 36*25 ; ++i) {
         if(i%3 == 1)
-            vertex_buffer_data[j] = back[i] - 5.5f;
+            vertex_buffer_data[j++] = back[i] - 5.5f;
         else
-            vertex_buffer_data[j] = back[i];
+            vertex_buffer_data[j++] = back[i];
     }
     // std::cout << j << std::endl;    
     free(back);
