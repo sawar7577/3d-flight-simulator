@@ -68,6 +68,14 @@ CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o: ../src/enemy.cpp
 CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o: ../src/enemy.h
 CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/cuboid.h
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/cylinder.h
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/enemyplane.cpp
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/enemyplane.h
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/parachute.h
+
 CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o: ../src/fuel.cpp
@@ -94,6 +102,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/dashboard.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/enemyplane.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/fuelup.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp

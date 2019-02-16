@@ -1,11 +1,11 @@
-#include "airplane.h"
+#include "enemyplane.h"
 #include "main.h"
 
 
-Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, float height, int vertices, color_t color) {
+Enemyplane::Enemyplane(float x, float y, float radius1 , float radius2, float ecc, float height, int vertices, color_t color) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->pitch = -M_PI/2;
+    this->pitch = 0;
     this->yaw = 0;
     this->roll = 0;
     this->dir = glm::vec3(0,1,0);
@@ -13,6 +13,9 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     this->rotate = glm::mat4(1.0f);
     this->fvalue = 1.0f;
     this->velocity = glm::vec3(1.0f);
+    this->pitch_v = false;
+    this->roll_v = false;
+    this->yaw_v = false;
   
     speed = 1;
     GLfloat vertex_buffer_data[100000];
@@ -57,7 +60,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
 }
 
 
-void Airplane::draw(glm::mat4 VP) {
+void Enemyplane::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
 
@@ -77,40 +80,26 @@ void Airplane::draw(glm::mat4 VP) {
 
     Matrices.model = (translate * this->rotate);
     glm::mat4 MVP = VP * Matrices.model;
-    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    int lp = glGetUniformLocation(programID, "lightpos");
-    glProgramUniform3f(programID, lp, this->position.x, this->position.y, this->position.z); 
+    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]); 
     draw3DObject(this->object);
     // draw3DObject((this->bounding).object);
 }
 
-void Airplane::set_position(float x, float y) {
+void Enemyplane::set_position(float x, float y) {
     this->position = glm::vec3(x, y, 0);
 }
 
-void Airplane::tick(GLFWwindow *window) {
-    this->pitch = 0.0f;
-    this->yaw = 0.0f;
-    this->roll = 0.0f;
-    this->fvalue = std::max(this->fvalue-0.0001f,0.0f);
-    if(glfwGetKey(window, GLFW_KEY_UP)){
-        this->pitch = 0.02f;
-    }
-    if(glfwGetKey(window, GLFW_KEY_DOWN)){
-        this->pitch = -0.02f ;    
-    }
-    if(glfwGetKey(window, GLFW_KEY_RIGHT)){
-        this->roll = -0.02f;
-    }
-    if(glfwGetKey(window, GLFW_KEY_LEFT)){
-        this->roll = 0.02f;
-    }
-    if(glfwGetKey(window, GLFW_KEY_S)){
-        this->yaw = -0.02f;
-    }
-    if(glfwGetKey(window, GLFW_KEY_E)){
-        this->yaw = 0.02f;
-    }
+void Enemyplane::tick() {
+    
+    this->pitch = this->pitch_v ? 0.01f : 0.0f;
+    this->roll = this->roll_v ? 0.01f : 0.0f;
+    this->yaw = this->yaw_v ? 0.01f : 0.0f;
+
+    this->pitch_v = random()%100 ? this->pitch_v : !this->pitch_v;
+    this->roll_v = random()%100 ? this->roll_v : !this->roll_v;
+    this->yaw_v = random()%100 ? this->yaw_v : !this->yaw_v;
+
+
     this->position += this->dir/1.0f;
     this->bounding.position = this->position;
 }

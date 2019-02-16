@@ -537,9 +537,33 @@ CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o.provides: CMakeFiles/graphics_asgn
 CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o
 
 
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o: ../src/enemyplane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o -c /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.cpp > CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.cpp -o CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o
+
+
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/dashboard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o -c /home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.i: cmake_force
@@ -563,7 +587,7 @@ CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o.provides.build: CMakeFiles/gra
 
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/input.cpp.o -c /home/sawar/Documents/graphics/3d-flight-simulator/src/input.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.i: cmake_force
@@ -587,7 +611,7 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o.provides.build: CMakeFiles/graphic
 
 CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o: ../src/selfterrain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o -c /home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.i: cmake_force
@@ -611,7 +635,7 @@ CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o.provides.build: CMakeFiles/g
 
 CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o: ../src/parachute.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o -c /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.i: cmake_force
@@ -635,7 +659,7 @@ CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o.provides.build: CMakeFiles/gra
 
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o -c /home/sawar/Documents/graphics/3d-flight-simulator/src/other_handlers.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.i: cmake_force
@@ -679,6 +703,7 @@ graphics_asgn1_OBJECTS = \
 "CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/input.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o" \
@@ -708,6 +733,7 @@ graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/input.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o
@@ -715,7 +741,7 @@ graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/build.make
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable graphics_asgn1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable graphics_asgn1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphics_asgn1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -743,6 +769,7 @@ CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/volcan
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/input.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o.requires

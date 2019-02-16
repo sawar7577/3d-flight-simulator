@@ -15,6 +15,7 @@
 #include "arrow.h"
 #include "volcano.h"
 #include "fuelup.h"
+#include "enemyplane.h"
 #include <time.h>
 #include <list>
 
@@ -33,6 +34,7 @@ Ball ball1;
 Cylinder cyl1;
 Canon c;
 Fuelup fu;
+Enemyplane ep;
 // Terrain terr;
 STerrain st;
 Airplane air;
@@ -161,6 +163,7 @@ void draw() {
     a.draw(VP);
     v.draw(VP);
     fu.draw(VP);
+    ep.draw(VP);
     dash.draw(VP);
     draw_sprite(ms, VP);
     draw_sprite(ps, VP);
@@ -220,6 +223,7 @@ void tick_elements(GLFWwindow *window) {
     // terr.tick();
     // d.tick();
     st.tick();
+    ep.tick();
     // p.tick();
     dash.tick(air);
     tick_sprite(ps);
@@ -243,6 +247,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     // cyl1        = Cylinder(0,0,2.0f,2.0f,1.0f,5.0f, 4, COLOR_RED);
     // terr        = Terrain(0,0,60,60, COLOR_RED);
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
+    ep          = Enemyplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
+    
     sky         = Cuboid(0, 0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
     d           = Cuboid(100,100,100, 10, 10, 10 ,10 ,10, COLOR_GREEN);
     st          = STerrain(0,0,513,COLOR_RED);

@@ -420,6 +420,33 @@ src/enemy.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.s
 .PHONY : src/enemy.cpp.s
 
+src/enemyplane.o: src/enemyplane.cpp.o
+
+.PHONY : src/enemyplane.o
+
+# target to build an object file
+src/enemyplane.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o
+.PHONY : src/enemyplane.cpp.o
+
+src/enemyplane.i: src/enemyplane.cpp.i
+
+.PHONY : src/enemyplane.i
+
+# target to preprocess a source file
+src/enemyplane.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.i
+.PHONY : src/enemyplane.cpp.i
+
+src/enemyplane.s: src/enemyplane.cpp.s
+
+.PHONY : src/enemyplane.s
+
+# target to generate assembly for a file
+src/enemyplane.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.s
+.PHONY : src/enemyplane.cpp.s
+
 src/fuel.o: src/fuel.cpp.o
 
 .PHONY : src/fuel.o
@@ -840,6 +867,9 @@ help:
 	@echo "... src/enemy.o"
 	@echo "... src/enemy.i"
 	@echo "... src/enemy.s"
+	@echo "... src/enemyplane.o"
+	@echo "... src/enemyplane.i"
+	@echo "... src/enemyplane.s"
 	@echo "... src/fuel.o"
 	@echo "... src/fuel.i"
 	@echo "... src/fuel.s"

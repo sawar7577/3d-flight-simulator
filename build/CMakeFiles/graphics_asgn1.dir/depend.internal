@@ -68,6 +68,14 @@ CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.cpp
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
@@ -95,6 +103,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/fuelup.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.cpp

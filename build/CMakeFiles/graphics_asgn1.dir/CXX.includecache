@@ -160,6 +160,22 @@ cylinder.h
 cuboid.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.cpp
+enemyplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+parachute.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.cpp
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
@@ -243,6 +259,8 @@ volcano.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h
 fuelup.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/fuelup.h
+enemyplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
 time.h
 -
 list

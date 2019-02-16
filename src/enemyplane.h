@@ -10,8 +10,8 @@
 class Enemyplane : public Cylinder, public Cuboid{
 public:
     float pitch, yaw, roll;
+    bool pitch_v, yaw_v, roll_v;
     float fvalue;
-    Parachute *target;
     Cuboid bounding;
     Enemyplane() {}
     Enemyplane(float x, float y, float radius1, float radius2, float ecc, float height, int vertices, color_t color);
