@@ -771,6 +771,33 @@ src/selfterrain.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.s
 .PHONY : src/selfterrain.cpp.s
 
+src/speedometer.o: src/speedometer.cpp.o
+
+.PHONY : src/speedometer.o
+
+# target to build an object file
+src/speedometer.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o
+.PHONY : src/speedometer.cpp.o
+
+src/speedometer.i: src/speedometer.cpp.i
+
+.PHONY : src/speedometer.i
+
+# target to preprocess a source file
+src/speedometer.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.i
+.PHONY : src/speedometer.cpp.i
+
+src/speedometer.s: src/speedometer.cpp.s
+
+.PHONY : src/speedometer.s
+
+# target to generate assembly for a file
+src/speedometer.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.s
+.PHONY : src/speedometer.cpp.s
+
 src/sterrain.o: src/sterrain.cpp.o
 
 .PHONY : src/sterrain.o
@@ -960,6 +987,9 @@ help:
 	@echo "... src/selfterrain.o"
 	@echo "... src/selfterrain.i"
 	@echo "... src/selfterrain.s"
+	@echo "... src/speedometer.o"
+	@echo "... src/speedometer.i"
+	@echo "... src/speedometer.s"
 	@echo "... src/sterrain.o"
 	@echo "... src/sterrain.i"
 	@echo "... src/sterrain.s"

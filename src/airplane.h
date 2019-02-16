@@ -13,6 +13,7 @@ class Airplane : public Cylinder, public Cuboid{
 public:
     float pitch, yaw, roll;
     float fvalue;
+    float speed;
     Parachute *target;
     Enemyplane *etarget;
     Cuboid bounding;
@@ -30,16 +31,15 @@ public:
     void setTarget(void *tar, int arg) {
         if(arg == 0) {
             this->target = (Parachute *)tar;
-            std::cout << "parachute" ;
+            // std::cout << "parachute" ;
         }
         if(arg == 1) {
             this->etarget = (Enemyplane *)tar;
-            std::cout << "enemyplane" ;
+            // std::cout << "enemyplane" ;
 
         }
-        std::cout << std::endl;
+        // std::cout << std::endl;
     }
-    double speed;
 private:
     VAO *object;
 };

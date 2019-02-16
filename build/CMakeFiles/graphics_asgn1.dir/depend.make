@@ -86,6 +86,7 @@ CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/enemyplane.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/parachute.h
+CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/speedometer.h
 
 CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o: ../src/cylinder.h
@@ -137,6 +138,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/missile.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ring.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/speedometer.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/sterrain.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/timer.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/volcano.h
@@ -168,6 +170,16 @@ CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o: ../src/ring.cpp
 CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o: ../src/ring.h
 
 CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o: ../src/selfterrain.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/cuboid.h
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/cylinder.h
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/enemyplane.h
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/parachute.h
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/speedometer.cpp
+CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/speedometer.h
 
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/sterrain.cpp

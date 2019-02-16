@@ -14,7 +14,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     this->fvalue = 1.0f;
     this->velocity = glm::vec3(1.0f);
   
-    speed = 1;
+    this->speed = 1;
     GLfloat vertex_buffer_data[100000];
     int i = 0;
     int j = 0;
@@ -111,7 +111,10 @@ void Airplane::tick(GLFWwindow *window) {
     if(glfwGetKey(window, GLFW_KEY_E)){
         this->yaw = 0.02f;
     }
-    this->position += this->dir/10.0f;
+    if(glfwGetKey(window, GLFW_KEY_T)){
+        this->speed += 0.02f;
+    }
+    this->position += glm::normalize(this->dir)*this->speed;
     this->bounding.position = this->position;
 }
 

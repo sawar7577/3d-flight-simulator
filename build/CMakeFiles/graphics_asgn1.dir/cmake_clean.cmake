@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o"

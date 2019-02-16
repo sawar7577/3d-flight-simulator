@@ -167,6 +167,8 @@ fuel.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/fuel.h
 airplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+speedometer.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
 main.h
@@ -185,6 +187,8 @@ compass.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/compass.h
 altimeter.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/altimeter.h
+speedometer.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.cpp
 main.h
@@ -421,6 +425,22 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp
 bits/stdc++.h
 -
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+speedometer.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+airplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.cpp
 sterrain.h

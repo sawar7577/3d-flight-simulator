@@ -3,6 +3,7 @@
 #include "crosshair.h"
 #include "fuel.h"
 #include "airplane.h"
+#include "speedometer.h"
 
 Dashboard::Dashboard(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
@@ -12,7 +13,8 @@ Dashboard::Dashboard(float x, float y, float z) {
     this->cross = Crosshair(0,0,0);
     this->cp = Compass(25,-25,0);
     this->f = Fuel(0,-25,0);
-    this->ap = Altimeter(-25,0,0);
+    this->ap = Altimeter(25,0,0);
+    this->sp = Speedometer(0,-25,0);
 }
 
 void Dashboard::draw(glm::mat4 VP) {
@@ -32,11 +34,14 @@ void Dashboard::draw(glm::mat4 VP) {
     f.draw(VP);
     cp.draw(VP);
     ap.draw(VP);
+    sp.draw(VP);
 }
 
 void Dashboard::tick(Airplane &air) {
     this->f.tick(air.fvalue);
     this->cp.changeOrientation(air);
+    this->ap.changeHeight(air);
+    this->sp.changeSpeed(air);
 }
 
 void Dashboard::setCrosshair(bool flag) {

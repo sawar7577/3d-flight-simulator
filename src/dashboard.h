@@ -6,6 +6,7 @@
 #include "airplane.h"
 #include "compass.h"
 #include "altimeter.h"
+#include "speedometer.h"
 
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
@@ -18,6 +19,7 @@ class Dashboard : public Cylinder, public Cuboid{
         Fuel f;
         Compass cp;
         Altimeter ap;
+        Speedometer sp;
         Dashboard() {}
         Dashboard(float x, float y, float z);
         glm::mat4 rotate;

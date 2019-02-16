@@ -8,15 +8,20 @@ Altimeter::Altimeter(float x, float y, float z) {
     int j = 0;
 
     // Altimeter
-    GLfloat *crosshar = Cuboid::CuboidArray(0.5f,0.5f,0.5f,0.5f,20.0f);
+    GLfloat *crosshar = Cuboid::CuboidArray(0.5f,0.5f,0.5f,0.5f,40.0f);
     for(int i = 0 ; i < 6*6*3 ; ++i){
         vertex_buffer_data[j++] = crosshar[i];
     }
-    crosshar = Cuboid::CuboidArray(2.0f,2.0f,2.0f,2.0f,0.5f);
     free(crosshar);
-
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
-
+    
+    crosshar = Cuboid::CuboidArray(2.0f,2.0f,2.0f,2.0f,0.5f);
+    j = 0;
+    for(int i = 0 ; i < 6*6*3 ; ++i) {
+        vertex_buffer_data[j++] = crosshar[i];
+    }
+    free(crosshar);
+    this->meter = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
 }
 
 void Altimeter::draw(glm::mat4 VP) {
@@ -33,4 +38,12 @@ void Altimeter::draw(glm::mat4 VP) {
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
+    Matrices.model = glm::translate(this->meterposition) * Matrices.model;
+    MVP = VP * Matrices.model;
+    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
+    draw3DObject(this->meter);
+}
+
+void Altimeter::changeHeight(Airplane &airp) {
+    this->meterposition = glm::vec3(0,-20+40*std::min((airp.position.y/1000.0f),1.0f),0);
 }

@@ -105,7 +105,7 @@ template <typename Type> void add_sprite(list <Type> &l, int seed, Point top, Po
 
 template <typename Type> void clear_lists(list <Type> &l) {
     typename list <Type> :: iterator it;
-    std::cout << l.size() << std::endl;
+    // std::cout << l.size() << std::endl;
     for(it = l.begin() ; it != l.end() ;) {
         glm::vec3 dist = (*it).position - air.position;
         if(sqrt(glm::dot(dist, dist)) > 10000 || (*it).kill) {
