@@ -4,6 +4,8 @@
 
 Enemyplane::Enemyplane(float x, float y, float radius1 , float radius2, float ecc, float height, int vertices, color_t color) {
     this->position = glm::vec3(x, y, 0);
+    this->arg = 1;
+    this->kill = false;
     this->rotation = 0;
     this->pitch = 0;
     this->yaw = 0;
@@ -100,7 +102,14 @@ void Enemyplane::tick() {
     this->yaw_v = random()%100 ? this->yaw_v : !this->yaw_v;
 
 
-    this->position += this->dir/1.0f;
+    this->position += this->dir/3.0f;
     this->bounding.position = this->position;
 }
 
+
+glm::vec3 Enemyplane::locationScreen(glm::mat4 VP) {
+    Matrices.model = glm::mat4(1.0f);
+    glm::mat4 translate = glm::translate (this->position);    // glTranslatef
+    // std::cout << this->position.y << std::endl;
+    return glm::vec3(VP * glm::vec4(this->position,1));
+}

@@ -19,6 +19,6 @@ void Enemy::draw(glm::mat4 VP) {
 glm::vec3 Enemy::locationScreen(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
-    std::cout << this->position.y << std::endl;
+    // std::cout << this->position.y << std::endl;
     return glm::vec3(VP * translate * glm::vec4(this->position,1));
 }

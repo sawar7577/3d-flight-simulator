@@ -3,6 +3,7 @@
 Fuelup::Fuelup(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->rotate = glm::mat4(1.0f);
+    this->kill = false;
     GLfloat vertex_buffer_data[100000];
 
     int j = 0;
@@ -27,6 +28,8 @@ Fuelup::Fuelup(float x, float y, float z) {
 
     free(op);
     free(crosshar);
+    this->bounding = Cuboid(x,y,z,10, 10, 10, 10, 10, COLOR_RED);
+
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_GREEN, GL_FILL);
 
 }
@@ -40,3 +43,5 @@ void Fuelup::draw(glm::mat4 VP) {
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
 }
+
+// void Fuelup::action(air)

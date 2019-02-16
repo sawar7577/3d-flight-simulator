@@ -3,6 +3,7 @@
 #include "cuboid.h"
 #include "parachute.h"
 #include "enemyplane.h"
+#include <typeinfo>
 
 #ifndef AIRPLANE_H
 #define AIRPLANE_H
@@ -26,7 +27,18 @@ public:
     void draw(glm::mat4 VP);
     void set_position(float x, float y);
     void tick(GLFWwindow *window);
-    
+    void setTarget(void *tar, int arg) {
+        if(arg == 0) {
+            this->target = (Parachute *)tar;
+            std::cout << "parachute" ;
+        }
+        if(arg == 1) {
+            this->etarget = (Enemyplane *)tar;
+            std::cout << "enemyplane" ;
+
+        }
+        std::cout << std::endl;
+    }
     double speed;
 private:
     VAO *object;

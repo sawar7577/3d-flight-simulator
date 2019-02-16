@@ -9,7 +9,9 @@ class Fuelup :  public Cuboid, public Cylinder {
     public:
         glm::vec3 position;
         float radius;
+        bool kill;
         glm::vec3 dir;
+        Cuboid bounding;
         Fuelup() {}
         Fuelup(float x, float y, float z);
         glm::mat4 rotate;

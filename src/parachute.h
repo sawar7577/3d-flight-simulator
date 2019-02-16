@@ -6,6 +6,8 @@
 
 class Parachute :  public Enemy {
     public:
+        int arg;
+        bool kill;
         glm::vec3 position;
         float radius;
         Parachute() {}

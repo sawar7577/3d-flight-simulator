@@ -20,6 +20,7 @@ Missile::Missile(float x, float y, float z, float radius, float length, int vert
 
     this->rotate = glm::mat4(1.0f);
     this->position = glm::vec3(x, y, z);
+    this->kill = false;
     this->follow = NULL;
     this->dir = d;
     GLfloat vertex_buffer_data[100000];
@@ -64,12 +65,34 @@ void Missile::draw(glm::mat4 VP) {
 
 void Missile::tick()
 {
-    if(this->follow != NULL){
+    if(this->efollow != NULL) {
+        std::cout << "in" << std::endl;
+        this->dir = (glm::normalize((this->efollow)->position - this->position));
+        this->position += this->dir;
+ 
+        // std::cout << (this->follow)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
+        glm::vec3 d = glm::normalize((this->efollow)->position - this->position);
+        glm::vec3 k = glm::normalize(d + glm::vec3(0,1,0));
+        glm::vec3 a = glm::cross(k,d);
+        glm::vec3 b = glm::cross(a,d);
+        rotate[1][0] = d.x;
+        rotate[1][1] = d.y;
+        rotate[1][2] = d.z;
+        
+        rotate[2][0] = a.x;
+        rotate[2][1] = a.y;
+        rotate[2][2] = a.z;
+        
+        rotate[0][0] = b.x;
+        rotate[0][1] = b.y;
+        rotate[0][2] = b.z;
+    }
+    else if(this->follow != NULL){
         
         this->dir = (glm::normalize((this->follow)->position - this->position));
         this->position += this->dir;
  
-        std::cout << (this->follow)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
+        // std::cout << (this->follow)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
         glm::vec3 d = glm::normalize((this->follow)->position - this->position);
         glm::vec3 k = glm::normalize(d + glm::vec3(0,1,0));
         glm::vec3 a = glm::cross(k,d);
@@ -87,6 +110,7 @@ void Missile::tick()
         rotate[0][2] = b.z;
 
     }
+    
     else{
         this->position += this->dir;
 

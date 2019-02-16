@@ -1,4 +1,5 @@
 #include "main.h"
+#include "cuboid.h"
 
 #ifndef VOLCANO_H
 #define VOLCANO_H
@@ -8,6 +9,7 @@ class Volcano {
         glm::vec3 position;
         float rotation;
         float radius;
+        Cuboid bounding;
         glm::vec3 dir;
         Volcano() {}
         Volcano(int x, int y, int width);

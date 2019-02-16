@@ -2,25 +2,11 @@
 #include "parachute.h"
 
 
-// struct Point {
-//     float x, y, z;
-// };
-
-// std::vector <Point> returnRectangless(Point a, Point b, Point c, Point d) {
-//     std::vector <Point> rec;
-//     rec.push_back(a);
-//     rec.push_back(b);
-//     rec.push_back(c);
-//     rec.push_back(c);
-//     rec.push_back(d);
-//     rec.push_back(a);
-//     return rec;
-// }
-
-
 
 Parachute::Parachute(float x, float y, float z) : Enemy(x, y, z) {
     this->position = glm::vec3(x,y,z);
+    this->arg = 0;
+    this->kill = false;
     GLfloat vertex_buffer_data[100001];
     float angle = 0;
     float angle2 = 0;
@@ -92,6 +78,6 @@ void Parachute::draw(glm::mat4 VP) {
 glm::vec3 Parachute::locationScreen(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
-    std::cout << this->position.y << std::endl;
+    // std::cout << this->position.y << std::endl;
     return glm::vec3(VP * glm::vec4(this->position,1));
 }

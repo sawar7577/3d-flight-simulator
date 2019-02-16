@@ -6,6 +6,7 @@ CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/airplane.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/enemyplane.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/parachute.h
 
@@ -30,6 +31,7 @@ CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/canon.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/enemyplane.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/rectangle.h
@@ -58,6 +60,7 @@ CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/dashboard.cpp
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/dashboard.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/enemyplane.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/parachute.h
@@ -117,6 +120,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/volcano.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/enemyplane.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/missile.cpp
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/missile.h
@@ -152,6 +156,7 @@ CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o: ../src/terrain.h
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.h
 
+CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/volcano.cpp
 CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/volcano.h

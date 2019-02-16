@@ -21,6 +21,10 @@ cuboid.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 parachute.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+enemyplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+typeinfo
+-
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.cpp
 arrow.h
@@ -305,6 +309,8 @@ enemy.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
 parachute.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+enemyplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/nonedit.cpp
 iostream
@@ -417,4 +423,6 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 

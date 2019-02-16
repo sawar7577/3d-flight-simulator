@@ -47,9 +47,11 @@ Volcano v;
 Dashboard dash;
 int flag;
 int stop;
+bool tg;
 Arrow a;
 list <Missile> ms;
 list <Parachute> ps;
+list <Enemyplane> es;
 // extern list <Bullet> bs;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -82,13 +84,12 @@ template <typename Type> Type * check_enemy(list <Type> &l) {
         glm::mat4 VP = glm::ortho(left, right, bottom, top, 0.0f, 500.0f) * Matrices.view;
         glm::vec3 loc = (*it).locationScreen(VP);
         if(glm::dot(loc,loc) < 0.3f) {
+            tg = true;
             dash.setCrosshair(true);
-            air.target = &(*it);
+            air.setTarget((void *)(&(*it)),(*it).arg);
             return &(*it);
         }
     }
-    dash.setCrosshair(false);
-    air.target = NULL;
     return NULL;
 }
 
@@ -102,20 +103,29 @@ template <typename Type> void add_sprite(list <Type> &l, int seed, Point top, Po
     }
 }
 
+template <typename Type> void clear_lists(list <Type> &l) {
+    typename list <Type> :: iterator it;
+    std::cout << l.size() << std::endl;
+    for(it = l.begin() ; it != l.end() ;) {
+        glm::vec3 dist = (*it).position - air.position;
+        if(sqrt(glm::dot(dist, dist)) > 10000 || (*it).kill) {
+            l.erase(it++);
+        }
+        else{
+            it++;
+        }
+    }
+}
+
+
+
 Timer t60(1.0 / 60);
 
-/* Render the scene with openGL */
-/* Edit this function according to your assignment */
 void draw() {
-    // clear the color and depth in the frame buffer
-    if(stop == 0)glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // use the loaded shader program
-    // Don't change unless you know what you are doing
     glUseProgram (programID);
 
-    // Eye - Location of camera. Don't change unless you are sure!!
-    // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
     glm::vec3 pos = air.position - 40.0f*air.dir + 20.0f*air.up;
     glm::vec3 pos2= air.position;    
     pos2.y = air.position.y + 100.0f;
@@ -124,9 +134,8 @@ void draw() {
     eye[1] = pos2;
 
 
-    // Target - Where is the camera looking at.  Don't change unless you are sure!!
     glm::vec3 target (air.position.x, air.position.y , air.position.z );
-    // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
+    
     glm::vec3 up[2];
     up[0] = air.up;
     up[1] = glm::vec3(0,0,-1);
@@ -141,20 +150,14 @@ void draw() {
 
     // Compute Camera matrix (view)
     Matrices.view = glm::lookAt( eye[flag], target, up[flag] ); // Rotating Camera for 3D
-    // Don't change unless you are sure!!
-    // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
-
-    // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
-    // Don't change unless you are sure!!
     glm::mat4 VP = Matrices.projection * Matrices.view;
+    tg = false;
+    check_enemy(es);
     check_enemy(ps);
+    dash.setCrosshair(tg);
 
-    // Send our transformation to the currently bound shader, in the "MVP" uniform
-    // For each model you render, since the MVP will be different (at least the M part)
-    // Don't change unless you are sure!!
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
-    // Scene render
     st.draw(VP);
     air.draw(VP);
     sky.draw(VP);
@@ -163,9 +166,9 @@ void draw() {
     a.draw(VP);
     v.draw(VP);
     fu.draw(VP);
-    ep.draw(VP);
     dash.draw(VP);
     draw_sprite(ms, VP);
+    draw_sprite(es, VP);
     draw_sprite(ps, VP);
     draw_sprite(bs, VP);
 }
@@ -210,8 +213,9 @@ void tick_input(GLFWwindow *window) {
     {
         Missile m = Missile(air.position.x, air.position.y, air.position.z, 1.0f,1.0f,30, air.dir, COLOR_GREEN);
         m.follow = air.target;
+        m.efollow = air.etarget;
         // m.setPointer(p);
-        std::cout << &p << std::endl;
+        // std::cout << &p << std::endl;
         ms.push_back(m);
     }
     
@@ -223,12 +227,18 @@ void tick_elements(GLFWwindow *window) {
     // terr.tick();
     // d.tick();
     st.tick();
-    ep.tick();
+    // ep.tick();
     // p.tick();
     dash.tick(air);
     tick_sprite(ps);
     tick_sprite(ms);
     tick_sprite(bs);
+    tick_sprite(es);
+    clear_lists(ps);
+    clear_lists(ms);
+    clear_lists(bs);
+    clear_lists(es);
+
     c.tick();
     Point bottom, top;
     top.x = top.y = top.z = 200;
@@ -248,7 +258,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     // terr        = Terrain(0,0,60,60, COLOR_RED);
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
     ep          = Enemyplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
-    
+    es.push_back(ep);
     sky         = Cuboid(0, 0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
     d           = Cuboid(100,100,100, 10, 10, 10 ,10 ,10, COLOR_GREEN);
     st          = STerrain(0,0,513,COLOR_RED);

@@ -12,6 +12,8 @@ public:
     float pitch, yaw, roll;
     bool pitch_v, yaw_v, roll_v;
     float fvalue;
+    bool kill;
+    int arg;
     Cuboid bounding;
     Enemyplane() {}
     Enemyplane(float x, float y, float radius1, float radius2, float ecc, float height, int vertices, color_t color);
@@ -23,6 +25,8 @@ public:
     float rotation;
     void draw(glm::mat4 VP);
     void set_position(float x, float y);
+    glm::vec3 locationScreen(glm::mat4 VP);
+
     void tick();
     double speed;
 private:

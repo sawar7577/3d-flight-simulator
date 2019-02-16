@@ -6,6 +6,7 @@
 
 class Ball {
 public:
+
     Ball() {}
     Ball(float x, float y, color_t color);
     glm::vec3 position;

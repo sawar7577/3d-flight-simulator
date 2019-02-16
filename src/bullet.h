@@ -6,6 +6,7 @@
 
 class Bullet : public Cylinder {
     public:
+        bool kill;
         glm::vec3 position;
         glm::vec3 dir;
         float radius;
