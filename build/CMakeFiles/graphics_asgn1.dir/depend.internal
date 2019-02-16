@@ -97,6 +97,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
@@ -136,4 +137,6 @@ CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h
 CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.cpp
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h

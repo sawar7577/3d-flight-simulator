@@ -227,6 +227,8 @@ bullet.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
 arrow.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
+volcano.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h
 time.h
 -
 list
@@ -375,4 +377,12 @@ GLFW/glfw3.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.cpp
+volcano.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 

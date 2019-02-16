@@ -3,13 +3,14 @@
 #ifndef VOLCANO_H
 #define VOLCANO_H
 
-class Volcano : {
+class Volcano {
     public:
         glm::vec3 position;
+        float rotation;
         float radius;
         glm::vec3 dir;
         Volcano() {}
-        Volcano(float x, float y, float z,);
+        Volcano(int x, int y, int width);
         glm::mat4 rotate;
         void tick();
         void draw(glm::mat4 VP);

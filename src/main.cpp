@@ -13,6 +13,7 @@
 #include "canon.h"
 #include "bullet.h"
 #include "arrow.h"
+#include "volcano.h"
 #include <time.h>
 #include <list>
 
@@ -38,6 +39,7 @@ Cuboid sky;
 Ring r;
 Enemy en;
 Parachute p;
+Volcano v;
 Dashboard dash;
 int flag;
 int stop;
@@ -155,6 +157,7 @@ void draw() {
     r.draw(VP);
     c.draw(VP);
     a.draw(VP);
+    v.draw(VP);
     dash.draw(VP);
     draw_sprite(ms, VP);
     draw_sprite(ps, VP);
@@ -244,6 +247,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     r           = Ring(0,100,0,20,20,COLOR_BLACK);
     p           = Parachute(100,100,100);
     c           = Canon(200,200,200, &air);
+    v           = Volcano(0,0,33);
     ps.push_back(p);
     dash        = Dashboard(0,0,0);
     // Create and compile our GLSL program from the shaders

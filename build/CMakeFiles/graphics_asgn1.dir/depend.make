@@ -96,6 +96,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ring.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/sterrain.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/timer.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/volcano.h
 
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/missile.cpp.o: ../src/cylinder.h
@@ -135,5 +136,7 @@ CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o: ../src/terrain.h
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.h
 
+CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/volcano.cpp
+CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/volcano.h
 
