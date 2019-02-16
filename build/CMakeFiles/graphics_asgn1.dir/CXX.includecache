@@ -174,6 +174,18 @@ cylinder.h
 cuboid.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuelup.cpp
+fuelup.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuelup.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuelup.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/input.cpp
 iostream
 -
@@ -229,6 +241,8 @@ arrow.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
 volcano.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.h
+fuelup.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/fuelup.h
 time.h
 -
 list

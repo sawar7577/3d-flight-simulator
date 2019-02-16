@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"

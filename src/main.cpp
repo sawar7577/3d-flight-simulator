@@ -14,6 +14,7 @@
 #include "bullet.h"
 #include "arrow.h"
 #include "volcano.h"
+#include "fuelup.h"
 #include <time.h>
 #include <list>
 
@@ -31,6 +32,7 @@ GLFWwindow *window;
 Ball ball1;
 Cylinder cyl1;
 Canon c;
+Fuelup fu;
 // Terrain terr;
 STerrain st;
 Airplane air;
@@ -158,6 +160,7 @@ void draw() {
     c.draw(VP);
     a.draw(VP);
     v.draw(VP);
+    fu.draw(VP);
     dash.draw(VP);
     draw_sprite(ms, VP);
     draw_sprite(ps, VP);
@@ -248,6 +251,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     p           = Parachute(100,100,100);
     c           = Canon(200,200,200, &air);
     v           = Volcano(0,0,33);
+    fu          = Fuelup(300,300,300);
     ps.push_back(p);
     dash        = Dashboard(0,0,0);
     // Create and compile our GLSL program from the shaders

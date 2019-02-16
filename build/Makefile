@@ -447,6 +447,33 @@ src/fuel.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.s
 .PHONY : src/fuel.cpp.s
 
+src/fuelup.o: src/fuelup.cpp.o
+
+.PHONY : src/fuelup.o
+
+# target to build an object file
+src/fuelup.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.o
+.PHONY : src/fuelup.cpp.o
+
+src/fuelup.i: src/fuelup.cpp.i
+
+.PHONY : src/fuelup.i
+
+# target to preprocess a source file
+src/fuelup.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.i
+.PHONY : src/fuelup.cpp.i
+
+src/fuelup.s: src/fuelup.cpp.s
+
+.PHONY : src/fuelup.s
+
+# target to generate assembly for a file
+src/fuelup.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelup.cpp.s
+.PHONY : src/fuelup.cpp.s
+
 src/input.o: src/input.cpp.o
 
 .PHONY : src/input.o
@@ -816,6 +843,9 @@ help:
 	@echo "... src/fuel.o"
 	@echo "... src/fuel.i"
 	@echo "... src/fuel.s"
+	@echo "... src/fuelup.o"
+	@echo "... src/fuelup.i"
+	@echo "... src/fuelup.s"
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
