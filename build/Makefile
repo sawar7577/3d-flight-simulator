@@ -150,6 +150,33 @@ src/airplane.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.s
 .PHONY : src/airplane.cpp.s
 
+src/altimeter.o: src/altimeter.cpp.o
+
+.PHONY : src/altimeter.o
+
+# target to build an object file
+src/altimeter.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o
+.PHONY : src/altimeter.cpp.o
+
+src/altimeter.i: src/altimeter.cpp.i
+
+.PHONY : src/altimeter.i
+
+# target to preprocess a source file
+src/altimeter.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.i
+.PHONY : src/altimeter.cpp.i
+
+src/altimeter.s: src/altimeter.cpp.s
+
+.PHONY : src/altimeter.s
+
+# target to generate assembly for a file
+src/altimeter.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.s
+.PHONY : src/altimeter.cpp.s
+
 src/arrow.o: src/arrow.cpp.o
 
 .PHONY : src/arrow.o
@@ -864,6 +891,9 @@ help:
 	@echo "... src/airplane.o"
 	@echo "... src/airplane.i"
 	@echo "... src/airplane.s"
+	@echo "... src/altimeter.o"
+	@echo "... src/altimeter.i"
+	@echo "... src/altimeter.s"
 	@echo "... src/arrow.o"
 	@echo "... src/arrow.i"
 	@echo "... src/arrow.s"

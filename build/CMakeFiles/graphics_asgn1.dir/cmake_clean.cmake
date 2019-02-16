@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/enemyplane.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o"

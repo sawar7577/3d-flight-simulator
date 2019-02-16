@@ -26,6 +26,22 @@ enemyplane.h
 typeinfo
 -
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/altimeter.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+altimeter.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/altimeter.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/altimeter.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+airplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.cpp
 arrow.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
@@ -167,6 +183,8 @@ airplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 compass.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/compass.h
+altimeter.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/altimeter.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.cpp
 main.h

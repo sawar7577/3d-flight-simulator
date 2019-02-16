@@ -10,6 +10,16 @@ CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/enemyplane.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/parachute.h
 
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/altimeter.cpp
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/altimeter.h
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/cuboid.h
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/cylinder.h
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/enemyplane.h
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/altimeter.cpp.o: ../src/parachute.h
+
 CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o: ../src/arrow.cpp
 CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o: ../src/arrow.h
 CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o: ../src/cuboid.h
@@ -64,6 +74,7 @@ CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/altimeter.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/crosshair.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/cuboid.h
@@ -106,6 +117,7 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/altimeter.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/arrow.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bullet.h

@@ -6,22 +6,6 @@
 
 std::list <Bullet> bs;
 
-// struct Point {
-//     float x, y, z;
-// };
-
-// std::vector <Point> returnRectanglesss(Point a, Point b, Point c, Point d) {
-//     std::vector <Point> rec;
-//     rec.push_back(a);
-//     rec.push_back(b);
-//     rec.push_back(c);
-//     rec.push_back(c);
-//     rec.push_back(d);
-//     rec.push_back(a);
-//     return rec;
-// }
-
-
 
 Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
     this->position = glm::vec3(x,y,z);
