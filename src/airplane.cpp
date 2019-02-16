@@ -94,24 +94,24 @@ void Airplane::tick(GLFWwindow *window) {
     this->roll = 0.0f;
     this->fvalue = std::max(this->fvalue-0.0001f,0.0f);
     if(glfwGetKey(window, GLFW_KEY_UP)){
-        this->pitch = 0.01f;
+        this->pitch = 0.02f;
     }
     if(glfwGetKey(window, GLFW_KEY_DOWN)){
-        this->pitch = -0.01f ;    
+        this->pitch = -0.02f ;    
     }
     if(glfwGetKey(window, GLFW_KEY_RIGHT)){
-        this->roll = -0.01f;
+        this->roll = -0.02f;
     }
     if(glfwGetKey(window, GLFW_KEY_LEFT)){
-        this->roll = 0.01f;
+        this->roll = 0.02f;
     }
     if(glfwGetKey(window, GLFW_KEY_S)){
-        this->yaw = -0.01f;
+        this->yaw = -0.02f;
     }
     if(glfwGetKey(window, GLFW_KEY_E)){
-        this->yaw = 0.01f;
+        this->yaw = 0.02f;
     }
-    this->position += this->dir/4.0f;
+    this->position += this->dir/2.0f;
     this->bounding.position = this->position;
 }
 

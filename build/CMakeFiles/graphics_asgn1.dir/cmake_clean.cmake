@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"

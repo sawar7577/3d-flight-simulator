@@ -9,6 +9,11 @@ CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/enemy.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/parachute.h
 
+CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o: ../src/arrow.cpp
+CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o: ../src/arrow.h
+CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o: ../src/cuboid.h
+CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/main.h
@@ -73,6 +78,7 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/arrow.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bullet.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/canon.h

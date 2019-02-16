@@ -9,6 +9,11 @@ CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+CMakeFiles/graphics_asgn1.dir/src/arrow.cpp.o
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.cpp
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/ball.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/ball.h
@@ -74,6 +79,7 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/ball.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h

@@ -22,6 +22,16 @@ cuboid.h
 parachute.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.cpp
+arrow.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/ball.cpp
 ball.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/ball.h
@@ -215,6 +225,8 @@ canon.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
 bullet.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+arrow.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/arrow.h
 time.h
 -
 list

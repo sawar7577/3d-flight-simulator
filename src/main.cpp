@@ -12,6 +12,7 @@
 #include "dashboard.h"
 #include "canon.h"
 #include "bullet.h"
+#include "arrow.h"
 #include <time.h>
 #include <list>
 
@@ -40,6 +41,7 @@ Parachute p;
 Dashboard dash;
 int flag;
 int stop;
+Arrow a;
 list <Missile> ms;
 list <Parachute> ps;
 // extern list <Bullet> bs;
@@ -152,6 +154,7 @@ void draw() {
     sky.draw(VP);
     r.draw(VP);
     c.draw(VP);
+    a.draw(VP);
     dash.draw(VP);
     draw_sprite(ms, VP);
     draw_sprite(ps, VP);
@@ -237,6 +240,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     sky         = Cuboid(0, 0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
     d           = Cuboid(100,100,100, 10, 10, 10 ,10 ,10, COLOR_GREEN);
     st          = STerrain(0,0,513,COLOR_RED);
+    a           = Arrow(200,200,200);
     r           = Ring(0,100,0,20,20,COLOR_BLACK);
     p           = Parachute(100,100,100);
     c           = Canon(200,200,200, &air);
