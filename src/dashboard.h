@@ -4,6 +4,7 @@
 #include "crosshair.h"
 #include "fuel.h"
 #include "airplane.h"
+#include "compass.h"
 
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
@@ -14,6 +15,7 @@ class Dashboard : public Cylinder, public Cuboid{
         float radius;
         Crosshair cross;
         Fuel f;
+        Compass cp;
         Dashboard() {}
         Dashboard(float x, float y, float z);
         glm::mat4 rotate;

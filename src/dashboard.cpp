@@ -10,6 +10,7 @@ Dashboard::Dashboard(float x, float y, float z) {
     GLfloat vertex_buffer_data[1000001];
     int j = 0;
     this->cross = Crosshair(0,0,0);
+    this->cp = Compass(25,-25,0);
     this->f = Fuel(0,-25,0);
 }
 
@@ -28,10 +29,12 @@ void Dashboard::draw(glm::mat4 VP) {
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     cross.draw(VP);
     f.draw(VP);
+    cp.draw(VP);
 }
 
 void Dashboard::tick(Airplane &air) {
     this->f.tick(air.fvalue);
+    this->cp.changeOrientation(air);
 }
 
 void Dashboard::setCrosshair(bool flag) {

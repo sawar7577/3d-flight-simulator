@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/canon.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/color.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
+  "/home/sawar/Documents/graphics/3d-flight-simulator/src/compass.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/cuboid.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o"

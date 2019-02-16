@@ -39,6 +39,16 @@ CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o: ../src/rectangle.h
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/color.cpp
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/compass.cpp
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/compass.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/cuboid.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/cylinder.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/enemyplane.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/parachute.h
+
 CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.o: ../src/crosshair.cpp
 CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.o: ../src/crosshair.h
 CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.o: ../src/cuboid.h
@@ -54,6 +64,7 @@ CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/airplane.h
+CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/crosshair.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o: ../src/cylinder.h
@@ -100,6 +111,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bullet.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/canon.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/collision.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/crosshair.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cylinder.h

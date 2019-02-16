@@ -39,6 +39,16 @@ CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/color.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/compass.cpp
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/compass.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/crosshair.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
@@ -55,6 +65,7 @@ CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/compass.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
@@ -101,6 +112,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/collision.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/compass.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/crosshair.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
