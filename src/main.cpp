@@ -73,9 +73,7 @@ template <typename Type> Type * check_enemy(list <Type> &l) {
     for(it = l.begin() ; it != l.end() ; ++it) {
         glm::mat4 VP = glm::ortho(left, right, bottom, top, 0.0f, 500.0f) * Matrices.view;
         glm::vec3 loc = (*it).locationScreen(VP);
-        std::cout << loc.x << " " << loc.y << " " << loc.z << std::endl;
         if(glm::dot(loc,loc) < 0.3f) {
-            std::cout << "yes" << std::endl;
             dash.setCrosshair(true);
             air.target = &(*it);
             return &(*it);
@@ -86,6 +84,15 @@ template <typename Type> Type * check_enemy(list <Type> &l) {
     return NULL;
 }
 
+template <typename Type> void add_sprite(list <Type> &l, int seed, Point top, Point bottom) {
+    int ran = random()%seed;
+    if(ran == 0) {
+        float x = bottom.x + random()%( (int)(top.x - bottom.x) );
+        float y = bottom.y + random()%( (int)(top.y - bottom.y) );
+        float z = bottom.z + random()%( (int)(top.z - bottom.z) );
+        l.push_back(Type(x,y,z));
+    }
+}
 
 Timer t60(1.0 / 60);
 
@@ -199,19 +206,21 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements(GLFWwindow *window) {
-   if(stop == 0) {
+//    if(stop == 0) {
     air.tick(window);
     // terr.tick();
     // d.tick();
     st.tick();
     // p.tick();
     dash.tick(air);
-   }
-//    en.tick();
     tick_sprite(ps);
     tick_sprite(ms);
     tick_sprite(bs);
     c.tick();
+    Point bottom, top;
+    top.x = top.y = top.z = 200;
+    bottom.x = bottom.y = bottom.z = 100;
+    add_sprite(ps, 100, top, bottom);
 
 }
 

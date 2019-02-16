@@ -2,23 +2,24 @@
 #include "canon.h"
 #include "airplane.h"
 #include "bullet.h"
+#include "rectangle.h"
 
 std::list <Bullet> bs;
 
-struct Point {
-    float x, y, z;
-};
+// struct Point {
+//     float x, y, z;
+// };
 
-std::vector <Point> returnRectanglesss(Point a, Point b, Point c, Point d) {
-    std::vector <Point> rec;
-    rec.push_back(a);
-    rec.push_back(b);
-    rec.push_back(c);
-    rec.push_back(c);
-    rec.push_back(d);
-    rec.push_back(a);
-    return rec;
-}
+// std::vector <Point> returnRectanglesss(Point a, Point b, Point c, Point d) {
+//     std::vector <Point> rec;
+//     rec.push_back(a);
+//     rec.push_back(b);
+//     rec.push_back(c);
+//     rec.push_back(c);
+//     rec.push_back(d);
+//     rec.push_back(a);
+//     return rec;
+// }
 
 
 
@@ -56,7 +57,7 @@ Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
             c1.z = radius*sin(angle+inc2)*cos(angle2+inc);
             c1.y = radius*sin(angle2+inc);
 
-            std::vector < Point > recs = returnRectanglesss(a1,b1,c1,d1);
+            std::vector < Point > recs = returnRectangles(a1,b1,c1,d1);
             for(int m = 0 ; m < recs.size() ; ++m) {
                 vertex_buffer_data[j++] = recs[m].x;
                 vertex_buffer_data[j++] = recs[m].y;

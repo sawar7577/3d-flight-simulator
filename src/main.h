@@ -25,6 +25,12 @@ struct color_t {
     int b;
 };
 
+struct Point {
+    float x, y, z;
+};
+
+std::vector <Point> returnRectangles(Point a, Point b, Point c, Point d);
+
 // nonedit.cpp
 GLFWwindow *initGLFW(int width, int height);
 GLuint     LoadShaders(const char *vertex_file_path, const char *fragment_file_path);

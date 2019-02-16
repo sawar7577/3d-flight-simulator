@@ -1,21 +1,6 @@
 #include "ring.h"
 #include "main.h"
 
-struct Point {
-    float x, y, z;
-};
-
-std::vector <Point> returnRectangle(Point a, Point b, Point c, Point d) {
-    std::vector <Point> rec;
-    rec.push_back(a);
-    rec.push_back(b);
-    rec.push_back(c);
-    rec.push_back(c);
-    rec.push_back(d);
-    rec.push_back(a);
-    return rec;
-}
-
 
 Ring::Ring(float x, float y, float z, float radius, float width, color_t color) {
     this->position = glm::vec3(x,y,z);
@@ -60,7 +45,7 @@ Ring::Ring(float x, float y, float z, float radius, float width, color_t color) 
         c2.y = 0.9*radius*sin(angle+inc);
         c2.z = -width/2;
 
-        std::vector <Point> recs = returnRectangle(a1, b1, c1, d1);
+        std::vector <Point> recs = returnRectangles(a1, b1, c1, d1);
 
         for(int k = 0 ; k < recs.size() ; ++k) {
             vertex_buffer_data[j++] = recs[k].x;
@@ -69,7 +54,7 @@ Ring::Ring(float x, float y, float z, float radius, float width, color_t color) 
         }
 
         recs.clear();
-        recs = returnRectangle(a2, b2, c2, d2);
+        recs = returnRectangles(a2, b2, c2, d2);
 
         for(int k = 0 ; k < recs.size() ; ++k) {
             vertex_buffer_data[j++] = recs[k].x;
@@ -79,7 +64,7 @@ Ring::Ring(float x, float y, float z, float radius, float width, color_t color) 
 
         recs.clear();
 
-        recs = returnRectangle(a1, b1, b2, a2);
+        recs = returnRectangles(a1, b1, b2, a2);
         
         for(int k = 0 ; k < recs.size() ; ++k) {
             vertex_buffer_data[j++] = recs[k].x;
@@ -89,7 +74,7 @@ Ring::Ring(float x, float y, float z, float radius, float width, color_t color) 
 
         recs.clear();
 
-        recs = returnRectangle(d1, c1, c2, d2);
+        recs = returnRectangles(d1, c1, c2, d2);
 
         for(int k = 0 ; k < recs.size() ; ++k) {
             vertex_buffer_data[j++] = recs[k].x;

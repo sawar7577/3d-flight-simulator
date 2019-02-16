@@ -1,20 +1,20 @@
 #include "missile.h"
 #include "main.h"
 
-struct Point {
-    float x, y, z;
-};
+// struct Point {
+//     float x, y, z;
+// };
 
-std::vector <Point> returnRectangles(Point a, Point b, Point c, Point d) {
-    std::vector <Point> rec;
-    rec.push_back(a);
-    rec.push_back(b);
-    rec.push_back(c);
-    rec.push_back(c);
-    rec.push_back(d);
-    rec.push_back(a);
-    return rec;
-}
+// std::vector <Point> returnRectangles(Point a, Point b, Point c, Point d) {
+//     std::vector <Point> rec;
+//     rec.push_back(a);
+//     rec.push_back(b);
+//     rec.push_back(c);
+//     rec.push_back(c);
+//     rec.push_back(d);
+//     rec.push_back(a);
+//     return rec;
+// }
 
 Missile::Missile(float x, float y, float z, float radius, float length, int vertices, glm::vec3 d, color_t color) {
 
