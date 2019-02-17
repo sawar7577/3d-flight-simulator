@@ -14,7 +14,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     this->fvalue = 1.0f;
     this->velocity = glm::vec3(1.0f);
   
-    this->speed = 1;
+    this->speed = 0.1f;
     GLfloat vertex_buffer_data[100000];
     int i = 0;
     int j = 0;

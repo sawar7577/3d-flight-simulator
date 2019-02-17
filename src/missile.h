@@ -3,6 +3,7 @@
 #include "enemy.h"
 #include "parachute.h"
 #include "enemyplane.h"
+#include "cuboid.h"
 
 #ifndef MISSILE_H
 #define MISSILE_H
@@ -13,6 +14,7 @@ class Missile : public Cylinder {
         glm::vec3 dir;
         float radius;
         bool kill;
+        Cuboid bounding;
         Missile() {}
         Missile(float x, float y, float z, float radius, float length, int vertices, glm::vec3 d, color_t color);
         void draw(glm::mat4 VP);

@@ -29,6 +29,15 @@ CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/bomb.cpp
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/bomb.h
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/cuboid.h
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/cylinder.h
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/enemyplane.h
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o: ../src/parachute.h
+
 CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/bullet.cpp
 CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/bullet.h
 CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/cylinder.h
@@ -121,6 +130,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/airplane.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/altimeter.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/arrow.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/bullet.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/canon.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/collision.h

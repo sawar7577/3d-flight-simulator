@@ -29,7 +29,42 @@ struct Point {
     float x, y, z;
 };
 
+// Types
+struct VAO {
+    GLuint VertexArrayID;
+    GLuint VertexBuffer;
+    GLuint ColorBuffer;
+    GLuint NormalBuffer;
+
+    GLenum PrimitiveMode;
+    GLenum FillMode;
+    int    NumVertices;
+};
+typedef struct VAO VAO;
+
+class Cuboid {
+public:
+    float length1, length2, breadth1, breadth2, height;
+    Cuboid() {}
+    Cuboid(float x, float y, float z, float length1 , float length2, float breadth1, float breadth2, float height, color_t color);
+    GLfloat * CuboidArray(float length1, float length2, float breadth1, float breadth2, float height);
+    glm::vec3 position;
+    float rotation;
+    void draw(glm::mat4 VP);
+    void set_position(float x, float y);
+    void tick();
+    double speed;
+// private:
+    VAO *object;
+};
+
+
 std::vector <Point> returnRectangles(Point a, Point b, Point c, Point d);
+std::vector <glm::vec3> getAxis(Cuboid A, glm::mat4 rotateA);
+bool checkCollision(Cuboid A, glm::mat4 rotateA, Cuboid B, glm::mat4 rotateB);
+bool checkAxis(glm::vec3 axis, Cuboid A, glm::mat4 rotateA, Cuboid B, glm::mat4 rotateB);
+float getProjection(glm::vec3 axis, glm::vec3 point);
+
 
 // nonedit.cpp
 GLFWwindow *initGLFW(int width, int height);
@@ -51,18 +86,6 @@ void error_callback(int error, const char *description);
 void quit(GLFWwindow *window);
 void reshapeWindow(GLFWwindow *window, int width, int height);
 
-// Types
-struct VAO {
-    GLuint VertexArrayID;
-    GLuint VertexBuffer;
-    GLuint ColorBuffer;
-    GLuint NormalBuffer;
-
-    GLenum PrimitiveMode;
-    GLenum FillMode;
-    int    NumVertices;
-};
-typedef struct VAO VAO;
 
 struct GLMatrices {
     glm::mat4 projection;

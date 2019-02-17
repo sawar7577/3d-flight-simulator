@@ -1,27 +1,13 @@
 #include "missile.h"
 #include "main.h"
 
-// struct Point {
-//     float x, y, z;
-// };
-
-// std::vector <Point> returnRectangles(Point a, Point b, Point c, Point d) {
-//     std::vector <Point> rec;
-//     rec.push_back(a);
-//     rec.push_back(b);
-//     rec.push_back(c);
-//     rec.push_back(c);
-//     rec.push_back(d);
-//     rec.push_back(a);
-//     return rec;
-// }
-
 Missile::Missile(float x, float y, float z, float radius, float length, int vertices, glm::vec3 d, color_t color) {
 
     this->rotate = glm::mat4(1.0f);
     this->position = glm::vec3(x, y, z);
     this->kill = false;
     this->follow = NULL;
+    this->efollow = NULL;
     this->dir = d;
     GLfloat vertex_buffer_data[100000];
     int i = 0;
@@ -49,6 +35,7 @@ Missile::Missile(float x, float y, float z, float radius, float length, int vert
             vertex_buffer_data[j] = back[i];
     }
     free(back);
+    this->bounding = Cuboid(x,y,z,1.0f,1.0f,1.0f,1.0f,1.0f,COLOR_GREEN);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color, GL_FILL);
 }
 
@@ -66,7 +53,7 @@ void Missile::draw(glm::mat4 VP) {
 void Missile::tick()
 {
     if(this->efollow != NULL) {
-        std::cout << "in" << std::endl;
+        // std::cout << "in" << std::endl;
         this->dir = (glm::normalize((this->efollow)->position - this->position));
         this->position += this->dir;
  
@@ -130,7 +117,7 @@ void Missile::tick()
         rotate[0][1] = b.y;
         rotate[0][2] = b.z;
     }
-    
+    this->bounding.position = this->position;
 }
 
 

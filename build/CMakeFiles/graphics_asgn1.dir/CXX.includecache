@@ -62,6 +62,24 @@ main.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.cpp
+bomb.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+enemy.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+parachute.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+enemyplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+
 /home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.cpp
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
@@ -305,6 +323,8 @@ fuelup.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/fuelup.h
 enemyplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+bomb.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.h
 time.h
 -
 list
@@ -351,6 +371,8 @@ parachute.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 enemyplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/nonedit.cpp
 iostream
@@ -407,6 +429,8 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 enemy.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/rectangle.h
 main.h

@@ -58,12 +58,15 @@ Parachute::Parachute(float x, float y, float z) : Enemy(x, y, z) {
         }
     }
     free(body);
+    this->bounding = Cuboid(x,y,z,1.0f, 1.0f, 1.0f, 1.0f, 1.0f, COLOR_RED);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
 }
 
 void Parachute::tick(){
     this->position += glm::vec3(0,-0.1f,0);
+    this->bounding.position = this->position;
 }
+
 
 void Parachute::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);

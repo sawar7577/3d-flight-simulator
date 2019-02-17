@@ -28,9 +28,24 @@ Compass::Compass(float x, float y, float z) {
         }
     }
     
+    GLfloat *color_buffer_data = new GLfloat[j];
+    int i;
+
+    for(i = 0 ; i < j/6 ; ++i) {
+        color_buffer_data[3*i] = 0.1f;
+        color_buffer_data[3*i+1] = 0.1f;
+        color_buffer_data[3*i+2] = 0.1f;
+    }
+    for( ; i < j/3 ; ++i) {
+        color_buffer_data[3*i] = 0.8f;
+        color_buffer_data[3*i+1] = 0.8f;
+        color_buffer_data[3*i+2] = 0.8f;
+    }
+
+
     free(crosshar);
 
-    this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color_buffer_data, GL_FILL);
 
 }
 

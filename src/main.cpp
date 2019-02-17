@@ -16,6 +16,7 @@
 #include "volcano.h"
 #include "fuelup.h"
 #include "enemyplane.h"
+#include "bomb.h"
 #include <time.h>
 #include <list>
 
@@ -35,7 +36,6 @@ Cylinder cyl1;
 Canon c;
 Fuelup fu;
 Enemyplane ep;
-// Terrain terr;
 STerrain st;
 Airplane air;
 Cuboid d;
@@ -47,12 +47,12 @@ Volcano v;
 Dashboard dash;
 int flag;
 int stop;
-bool tg;
+bool tg[3];
 Arrow a;
 list <Missile> ms;
 list <Parachute> ps;
 list <Enemyplane> es;
-// extern list <Bullet> bs;
+list <Bomb> bms;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -74,7 +74,7 @@ template <typename Type> void draw_sprite(list <Type> &l, glm::mat4 VP) {
     }
 }
 
-template <typename Type> Type * check_enemy(list <Type> &l) {
+template <typename Type> void check_enemy(list <Type> &l) {
     float top    = screen_center_y + 30 / screen_zoom;
     float bottom = screen_center_y - 30 / screen_zoom;
     float left   = screen_center_x - 30 / screen_zoom;
@@ -84,13 +84,13 @@ template <typename Type> Type * check_enemy(list <Type> &l) {
         glm::mat4 VP = glm::ortho(left, right, bottom, top, 0.0f, 500.0f) * Matrices.view;
         glm::vec3 loc = (*it).locationScreen(VP);
         if(glm::dot(loc,loc) < 0.3f) {
-            tg = true;
+            tg[(*it).arg] = true;
             dash.setCrosshair(true);
             air.setTarget((void *)(&(*it)),(*it).arg);
-            return &(*it);
+            return;
         }
     }
-    return NULL;
+    return;
 }
 
 template <typename Type> void add_sprite(list <Type> &l, int seed, Point top, Point bottom) {
@@ -118,27 +118,44 @@ template <typename Type> void clear_lists(list <Type> &l) {
 }
 
 
+template <typename Type1, typename Type2> void check_collision(list <Type1> &a, list <Type2> &b) {
+    typename list <Type1> :: iterator it1;
+    typename list <Type2> :: iterator it2;
+    for(it1  = a.begin() ; it1 != a.end() ; it1++) {
+        for(it2 = b.begin() ; it2 != b.end() ; it2++) {
+            if(!checkCollision((*it1).bounding, (*it1).rotate, (*it2).bounding, (*it2).rotate)) {
+                (*it1).kill = true;
+                (*it2).kill = true;
+            }
+        }
+    }
+}
+
 
 Timer t60(1.0 / 60);
+
+glm::vec3 eye[6];
+glm::vec3 up[6];
+glm::vec3 target[6];
+clock_t ts;
 
 void draw() {
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glUseProgram (programID);
 
-    glm::vec3 pos = air.position - 40.0f*air.dir + 20.0f*air.up;
-    glm::vec3 pos2= air.position;    
-    pos2.y = air.position.y + 100.0f;
-    glm::vec3 eye[2];
-    eye[0] = pos;
-    eye[1] = pos2;
+    eye[0] = air.position - 40.0f*air.dir + 20.0f*air.up;
+    eye[1] = air.position + glm::vec3(0,100.0f,0);
 
-
-    glm::vec3 target (air.position.x, air.position.y , air.position.z );
-    
-    glm::vec3 up[2];
     up[0] = air.up;
     up[1] = glm::vec3(0,0,-1);
+    up[2] = glm::vec3(0,1,0);
+    target[2] = air.position;
+
+    target[0] = air.position;
+    target[1] = air.position + air.up * 10.0f;
+    // glm::vec3 target = air.position ;
+    
 
 
     glm::vec3 testTarget = r.position;
@@ -149,12 +166,18 @@ void draw() {
 
 
     // Compute Camera matrix (view)
-    Matrices.view = glm::lookAt( eye[flag], target, up[flag] ); // Rotating Camera for 3D
+    Matrices.view = glm::lookAt( eye[flag], target[flag], up[flag] ); // Rotating Camera for 3D
     glm::mat4 VP = Matrices.projection * Matrices.view;
-    tg = false;
+    tg[0] = tg[1] = false;
     check_enemy(es);
     check_enemy(ps);
-    dash.setCrosshair(tg);
+    if(tg[0] == false) {
+        air.target = NULL;
+    }
+    if(tg[1] == false) {
+        air.etarget = NULL;
+    }
+    dash.setCrosshair(tg[0] || tg[1]);
 
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
@@ -171,6 +194,7 @@ void draw() {
     draw_sprite(es, VP);
     draw_sprite(ps, VP);
     draw_sprite(bs, VP);
+    draw_sprite(bms, VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -180,21 +204,35 @@ void tick_input(GLFWwindow *window) {
     int down = glfwGetKey(window, GLFW_KEY_DOWN);
     int u = glfwGetKey(window, GLFW_KEY_X);
     int f = glfwGetKey(window, GLFW_KEY_Z);
+    int c = glfwGetKey(window, GLFW_KEY_C);
     int sp = glfwGetKey(window, GLFW_KEY_SPACE);
+    int b = glfwGetKey(window, GLFW_KEY_B);
+    double xpos, ypos;
+    glfwGetCursorPos(window, &xpos, &ypos);
+    float theta, phi, radius;
+    phi = -(M_PI * (xpos - 500)/1000)/2;
+    theta = -(M_PI * (ypos - 500)/1000)/2; 
+    radius = 40.0f;
+    eye[2] = air.position + radius * glm::vec3(cos(theta) * cos(phi), sin(theta), cos(theta) * sin(phi));
+
+    std::cout << xpos << " " << ypos << std::endl;
     if (u) {
         flag = 0;
     }
     if(f) {
         flag = 1;
     }
+    if(c) {
+        flag = 2;
+    }
     // if(flag == 1){
         camera_x = 0;
         camera_y = 170;
+    //     camera_x = 500.0f;
         camera_z = 0;
     // }
     // else
     // {
-    //     camera_x = 500.0f;
     //     camera_y = 0.0f;
     //     camera_z = 0.0f;
     // }
@@ -209,8 +247,9 @@ void tick_input(GLFWwindow *window) {
         cyl1.rotation -= 1.0f;
         // terr.rotation -= 1.0f;    
     }
-    if(sp)
+    if(sp && (clock() - ts)/CLOCKS_PER_SEC > 1.0f)
     {
+        ts = clock();
         Missile m = Missile(air.position.x, air.position.y, air.position.z, 1.0f,1.0f,30, air.dir, COLOR_GREEN);
         m.follow = air.target;
         m.efollow = air.etarget;
@@ -218,26 +257,31 @@ void tick_input(GLFWwindow *window) {
         // std::cout << &p << std::endl;
         ms.push_back(m);
     }
+    if(b) {
+        Bomb b = Bomb(air.position.x, air.position.y, air.position.z, 1.0f, 1.0f, 30, air.dir, COLOR_GREEN);
+        bms.push_back(b);
+    }
+
     
 }
 
 void tick_elements(GLFWwindow *window) {
-//    if(stop == 0) {
     air.tick(window);
-    // terr.tick();
-    // d.tick();
     st.tick();
-    // ep.tick();
-    // p.tick();
     dash.tick(air);
     tick_sprite(ps);
     tick_sprite(ms);
     tick_sprite(bs);
     tick_sprite(es);
+    tick_sprite(bms);
+
+    check_collision(ms, ps);
+
     clear_lists(ps);
     clear_lists(ms);
     clear_lists(bs);
     clear_lists(es);
+    clear_lists(bms);
 
     c.tick();
     Point bottom, top;
@@ -252,10 +296,6 @@ void tick_elements(GLFWwindow *window) {
 void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
-    // en = Enemy(100,100,100);
-    // ball1       = Ball(0, 0, COLOR_RED);
-    // cyl1        = Cylinder(0,0,2.0f,2.0f,1.0f,5.0f, 4, COLOR_RED);
-    // terr        = Terrain(0,0,60,60, COLOR_RED);
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
     ep          = Enemyplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
     es.push_back(ep);
@@ -299,7 +339,7 @@ int main(int argc, char **argv) {
     srand(time(0));
     int width  = 1000;
     int height = 1000;
-
+    ts = clock();
     window = initGLFW(width, height);
 
     initGL (window, width, height);
@@ -316,9 +356,6 @@ int main(int argc, char **argv) {
 
             tick_elements(window);
             tick_input(window);
-            // if(!checkCollision(d, glm::mat4(1.0f), air.bounding, air.rotate)){
-            //     stop = 1;
-            // }
         }
 
         // Poll for Keyboard and mouse events

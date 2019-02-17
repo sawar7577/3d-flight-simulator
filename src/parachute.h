@@ -1,5 +1,6 @@
 #include "main.h"
 #include "enemy.h"
+#include "cuboid.h"
 
 #ifndef PARACHUTE_H
 #define PARACHUTE_H
@@ -10,6 +11,7 @@ class Parachute :  public Enemy {
         bool kill;
         glm::vec3 position;
         float radius;
+        Cuboid bounding;
         Parachute() {}
         Parachute(float x, float y, float z);
         glm::mat4 rotate;
