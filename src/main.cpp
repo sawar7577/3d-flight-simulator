@@ -30,20 +30,19 @@ GLFWwindow *window;
 * Customizable functions *
 **************************/
 
+unsigned long int XOR()
+{
+  static unsigned long y=2463534242;
+  y = y ^ (y<<13);
+    y=(y>>17); 
+  return (y = y ^(y<<5)); 
+};
 
-Ball ball1;
-Cylinder cyl1;
+
 Canon c;
-Fuelup fu;
-Enemyplane ep;
 STerrain st;
 Airplane air;
-Cuboid d;
 Cuboid sky;
-Ring r;
-Enemy en;
-Parachute p;
-Volcano v;
 Dashboard dash;
 int flag;
 int stop;
@@ -53,6 +52,12 @@ list <Missile> ms;
 list <Parachute> ps;
 list <Enemyplane> es;
 list <Bomb> bms;
+list <Bullet> bs;
+list <Volcano> vs;
+list <Fuelup> fs;
+list <Ring> rs;
+list <STerrain> ss;
+
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -93,19 +98,18 @@ template <typename Type> void check_enemy(list <Type> &l) {
     return;
 }
 
-template <typename Type> void add_sprite(list <Type> &l, int seed, Point top, Point bottom) {
+template <typename Type> void add_sprite(list <Type> &l, int seed, glm::vec3 top, glm::vec3 bottom, int limit) {
     int ran = random()%seed;
-    if(ran == 0) {
-        float x = bottom.x + random()%( (int)(top.x - bottom.x) );
-        float y = bottom.y + random()%( (int)(top.y - bottom.y) );
-        float z = bottom.z + random()%( (int)(top.z - bottom.z) );
+    if(ran == 0 && l.size() < limit ) {
+        float x = bottom.x + XOR()%( (int)(top.x - bottom.x + 1) );
+        float y = bottom.y + XOR()%( (int)(top.y - bottom.y + 1) );
+        float z = bottom.z + XOR()%( (int)(top.z - bottom.z + 1) );
         l.push_back(Type(x,y,z));
     }
 }
 
 template <typename Type> void clear_lists(list <Type> &l) {
     typename list <Type> :: iterator it;
-    // std::cout << l.size() << std::endl;
     for(it = l.begin() ; it != l.end() ;) {
         glm::vec3 dist = (*it).position - air.position;
         if(sqrt(glm::dot(dist, dist)) > 10000 || (*it).kill) {
@@ -158,7 +162,7 @@ void draw() {
     
 
 
-    glm::vec3 testTarget = r.position;
+    // glm::vec3 testTarget = r.position;
     glm::vec3 testEye = glm::vec3(100,100,100);
     glm::vec3 testUp = glm::vec3(0,0,-1);
 
@@ -184,17 +188,20 @@ void draw() {
     st.draw(VP);
     air.draw(VP);
     sky.draw(VP);
-    r.draw(VP);
     c.draw(VP);
     a.draw(VP);
-    v.draw(VP);
-    fu.draw(VP);
+    // fu.draw(VP);
     dash.draw(VP);
     draw_sprite(ms, VP);
     draw_sprite(es, VP);
     draw_sprite(ps, VP);
     draw_sprite(bs, VP);
     draw_sprite(bms, VP);
+    draw_sprite(vs, VP);
+    draw_sprite(fs, VP);
+    draw_sprite(rs, VP);
+    draw_sprite(ss, VP);    
+
 }
 
 void tick_input(GLFWwindow *window) {
@@ -215,7 +222,7 @@ void tick_input(GLFWwindow *window) {
     radius = 40.0f;
     eye[2] = air.position + radius * glm::vec3(cos(theta) * cos(phi), sin(theta), cos(theta) * sin(phi));
 
-    std::cout << xpos << " " << ypos << std::endl;
+    // std::cout << xpos << " " << ypos << std::endl;
     if (u) {
         flag = 0;
     }
@@ -225,44 +232,6 @@ void tick_input(GLFWwindow *window) {
     if(c) {
         flag = 2;
     }
-    // if(flag == 1){
-        camera_x = 0;
-        camera_y = 170;
-    //     camera_x = 500.0f;
-        camera_z = 0;
-    // }
-    // else
-    // {
-    //     camera_y = 0.0f;
-    //     camera_z = 0.0f;
-    // }
-    if(up)
-    {
-        cyl1.rotation += 1.0f;
-        // terr.rotation += 1.0f;
-
-    }
-    if(down)
-    {
-        cyl1.rotation -= 1.0f;
-        // terr.rotation -= 1.0f;    
-    }
-    if(sp && (clock() - ts)/CLOCKS_PER_SEC > 1.0f)
-    {
-        ts = clock();
-        Missile m = Missile(air.position.x, air.position.y, air.position.z, 1.0f,1.0f,30, air.dir, COLOR_GREEN);
-        m.follow = air.target;
-        m.efollow = air.etarget;
-        // m.setPointer(p);
-        // std::cout << &p << std::endl;
-        ms.push_back(m);
-    }
-    if(b) {
-        Bomb b = Bomb(air.position.x, air.position.y, air.position.z, 1.0f, 1.0f, 30, air.dir, COLOR_GREEN);
-        bms.push_back(b);
-    }
-
-    
 }
 
 void tick_elements(GLFWwindow *window) {
@@ -276,18 +245,28 @@ void tick_elements(GLFWwindow *window) {
     tick_sprite(bms);
 
     check_collision(ms, ps);
+    check_collision(ms, es);
+
 
     clear_lists(ps);
     clear_lists(ms);
     clear_lists(bs);
     clear_lists(es);
     clear_lists(bms);
+    clear_lists(vs);
+    clear_lists(fs);
+    clear_lists(rs);
+    // clear_lists(ss);
+
+
+
 
     c.tick();
-    Point bottom, top;
-    top.x = top.y = top.z = 200;
-    bottom.x = bottom.y = bottom.z = 100;
-    add_sprite(ps, 100, top, bottom);
+    add_sprite(ps, 100, glm::vec3(200,200,200) + air.position, glm::vec3(-200,-200,-200) + air.position, 100);
+    add_sprite(vs, 200, air.position + glm::vec3(200,-air.position.y,200), air.position + glm::vec3(-200,-air.position.y,-200), 10);
+    add_sprite(es, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
+    add_sprite(fs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
+    add_sprite(rs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
 
 }
 
@@ -297,18 +276,10 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
-    ep          = Enemyplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
-    es.push_back(ep);
     sky         = Cuboid(0, 0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
-    d           = Cuboid(100,100,100, 10, 10, 10 ,10 ,10, COLOR_GREEN);
     st          = STerrain(0,0,513,COLOR_RED);
     a           = Arrow(200,200,200);
-    r           = Ring(0,100,0,20,20,COLOR_BLACK);
-    p           = Parachute(100,100,100);
     c           = Canon(200,200,200, &air);
-    v           = Volcano(0,0,33);
-    fu          = Fuelup(300,300,300);
-    ps.push_back(p);
     dash        = Dashboard(0,0,0);
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");

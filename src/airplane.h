@@ -3,6 +3,8 @@
 #include "cuboid.h"
 #include "parachute.h"
 #include "enemyplane.h"
+#include "missile.h"
+#include "bomb.h"
 #include <typeinfo>
 
 #ifndef AIRPLANE_H
@@ -14,6 +16,10 @@ public:
     float pitch, yaw, roll;
     float fvalue;
     float speed;
+    int counter;
+    bool barrel_roll;
+    bool loop_the_loop;
+    clock_t cooldown;
     Parachute *target;
     Enemyplane *etarget;
     Cuboid bounding;
@@ -31,17 +37,14 @@ public:
     void setTarget(void *tar, int arg) {
         if(arg == 0) {
             this->target = (Parachute *)tar;
-            // std::cout << "parachute" ;
         }
         if(arg == 1) {
             this->etarget = (Enemyplane *)tar;
-            // std::cout << "enemyplane" ;
-
         }
-        // std::cout << std::endl;
     }
 private:
     VAO *object;
 };
+
 
 #endif 

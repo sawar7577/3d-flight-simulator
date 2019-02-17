@@ -9,10 +9,11 @@ class Volcano {
         glm::vec3 position;
         float rotation;
         float radius;
+        bool kill;
         Cuboid bounding;
         glm::vec3 dir;
         Volcano() {}
-        Volcano(int x, int y, int width);
+        Volcano(int x, int y, int z, int width = 33);
         glm::mat4 rotate;
         void tick();
         void draw(glm::mat4 VP);

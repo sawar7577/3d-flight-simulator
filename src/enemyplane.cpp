@@ -2,8 +2,8 @@
 #include "main.h"
 
 
-Enemyplane::Enemyplane(float x, float y, float radius1 , float radius2, float ecc, float height, int vertices, color_t color) {
-    this->position = glm::vec3(x, y, 0);
+Enemyplane::Enemyplane(float x, float y, float z, float radius1 , float radius2, float ecc, float height, int vertices, color_t color) {
+    this->position = glm::vec3(x, y, z);
     this->arg = 1;
     this->kill = false;
     this->rotation = 0;

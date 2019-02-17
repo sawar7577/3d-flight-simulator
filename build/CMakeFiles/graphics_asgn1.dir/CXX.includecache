@@ -23,6 +23,10 @@ parachute.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 enemyplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+missile.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
+bomb.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.h
 typeinfo
 -
 

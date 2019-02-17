@@ -4,7 +4,7 @@
 #include "bullet.h"
 #include "rectangle.h"
 
-std::list <Bullet> bs;
+// std::list <Bullet> bs;
 
 
 Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {

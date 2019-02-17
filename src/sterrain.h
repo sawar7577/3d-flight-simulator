@@ -7,6 +7,7 @@
 
 class STerrain {
 public:
+    bool kill;
     STerrain() {}
     STerrain(int x, int y, int width, color_t color);
     glm::vec3 position;

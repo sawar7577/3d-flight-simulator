@@ -5,6 +5,7 @@
 Ring::Ring(float x, float y, float z, float radius, float width, color_t color) {
     this->position = glm::vec3(x,y,z);
     this->radius = radius;
+    this->kill = false;
 
     float angle = 0;
     float inc = 2*M_PI/30;

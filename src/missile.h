@@ -28,5 +28,6 @@ class Missile : public Cylinder {
         VAO *object;
 };
 
+extern std::list <Missile> ms;
 
 #endif

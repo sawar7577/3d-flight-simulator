@@ -66,7 +66,7 @@ STerrain::STerrain(int x, int y, int width, color_t color) {
     this->rotation = 0.0f;
     float scale = 1.0f;
     float scale2 = 2.5f;
-
+    this->kill = false;
     speed = 0.05;
     srand(0);
     arr[1][1] = arr[1][width] = arr[width][1] = arr[width][width] = 0;

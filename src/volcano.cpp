@@ -6,26 +6,21 @@
 float arrv[3000][3000];
 inline static float randomv(int range)
 {
-    static int k;
     int ret = (rand() % (range * 50)) - range;
     ret = std::max(ret, -50);
     ret = std::min(ret, 50);
-    if(k==0){
-        k++;
-        return ret;
-    }
-    return 0;
+    return ret;
 }
 float mxv;
 float mnv;
-void algo_stepv(int x, int y, int size) {
+void algo_stepv(int x, int y, int size, int cnt) {
     if(size <= 2){
         return;
     }
     arrv[x+size/2][y+size/2] = (arrv[x][y] + arrv[x+2*(size/2)][y] + 
     arrv[x][y+2*(size/2)] + arrv[x+2*(size/2)][y+2*(size/2)])/4;
-
-    arrv[x+size/2][y+size/2] += randomv(size);
+    if(cnt == 0)
+        arrv[x+size/2][y+size/2] += randomv(size);
 
     arrv[x+size/2][y+size/2] = std::min(mxv, arrv[x+size/2][y+size/2]);
     arrv[x+size/2][y+size/2] = std::max(mnv, arrv[x+size/2][y+size/2]);
@@ -57,25 +52,26 @@ void algo_stepv(int x, int y, int size) {
 
 
     //algo steps
-    algo_stepv(x,y,size/2 + 1);
-    algo_stepv(x+size/2,y,size/2 + 1);
-    algo_stepv(x,y+size/2,size/2 + 1);
-    algo_stepv(x+size/2,y+size/2,size/2 + 1);
+    algo_stepv(x,y,size/2 + 1, cnt + 1);
+    algo_stepv(x+size/2,y,size/2 + 1, cnt + 1);
+    algo_stepv(x,y+size/2,size/2 + 1, cnt + 1);
+    algo_stepv(x+size/2,y+size/2,size/2 + 1, cnt + 1);
 
 }
 
-Volcano::Volcano(int x, int y, int width) {
-    this->position = glm::vec3(x, y, 0);
+Volcano::Volcano(int x, int y, int z, int width) {
+    this->position = glm::vec3(x, y, z);
     this->rotation = 0.0f;
     float scale = 1.0f;
     float scale2 = 1.0f;
+    this->kill = false;
 
     srand(0);
     arrv[1][1] = arrv[1][width] = arrv[width][1] = arrv[width][width] = 0;
     arrv[1+width/2][1+width/2] = width;
     mxv = width;
     mnv = -width;
-    algo_stepv(1,1,width);   
+    algo_stepv(1,1,width,0);   
     int i,j,k;
     j = 0;
     GLfloat vertex_buffer_data[5000000];

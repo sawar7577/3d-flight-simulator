@@ -23,5 +23,6 @@ class Bomb : public Cylinder {
         VAO *object;
 };
 
+extern std::list <Bomb> bms;
 
 #endif

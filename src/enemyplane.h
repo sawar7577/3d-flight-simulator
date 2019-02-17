@@ -16,7 +16,7 @@ public:
     int arg;
     Cuboid bounding;
     Enemyplane() {}
-    Enemyplane(float x, float y, float radius1, float radius2, float ecc, float height, int vertices, color_t color);
+    Enemyplane(float x, float y, float z, float radius1 = 1.0f, float radius2 = 1.0f, float ecc = 1.0f, float height = 5.0f, int vertices = 30, color_t color = COLOR_GREEN);
     glm::vec3 position;
     glm::vec3 dir;
     glm::vec3 up;

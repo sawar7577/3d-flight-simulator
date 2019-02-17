@@ -7,8 +7,9 @@ class Ring {
     public:
         glm::vec3 position;
         float radius;
+        bool kill;
         Ring() {}
-        Ring(float x, float y, float z, float radius, float width, color_t color);
+        Ring(float x, float y, float z, float radius = 20, float width = 20, color_t color = COLOR_BLACK);
         void draw(glm::mat4 VP);
 
     private:
