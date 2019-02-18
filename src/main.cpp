@@ -168,10 +168,9 @@ void draw() {
 
     // Matrices.view = glm::lookAt( testEye, testTarget, testUp ); // Rotating Camera for 3D
 
-
-    // Compute Camera matrix (view)
     Matrices.view = glm::lookAt( eye[flag], target[flag], up[flag] ); // Rotating Camera for 3D
     glm::mat4 VP = Matrices.projection * Matrices.view;
+   
     tg[0] = tg[1] = false;
     check_enemy(es);
     check_enemy(ps);
@@ -190,7 +189,6 @@ void draw() {
     sky.draw(VP);
     c.draw(VP);
     a.draw(VP);
-    // fu.draw(VP);
     dash.draw(VP);
     draw_sprite(ms, VP);
     draw_sprite(es, VP);
@@ -238,6 +236,7 @@ void tick_elements(GLFWwindow *window) {
     air.tick(window);
     st.tick();
     dash.tick(air);
+    
     tick_sprite(ps);
     tick_sprite(ms);
     tick_sprite(bs);
