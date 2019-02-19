@@ -123,7 +123,7 @@ void Cuboid::draw(glm::mat4 VP) {
 }
 
 void Cuboid::set_position(float x, float y) {
-    this->position = glm::vec3(x, y, 0);
+    this->position = glm::vec3(x, 0, y);
 }
 
 void Cuboid::tick() {

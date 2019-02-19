@@ -9,6 +9,8 @@ Missile::Missile(float x, float y, float z, float radius, float length, int vert
     this->follow = NULL;
     this->efollow = NULL;
     this->dir = d;
+    this->damage = 2;
+    this->points = 0;
     GLfloat vertex_buffer_data[100000];
     int i = 0;
     int j = 0;

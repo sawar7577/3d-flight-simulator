@@ -4,6 +4,8 @@ Fuelup::Fuelup(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->rotate = glm::mat4(1.0f);
     this->kill = false;
+    this->damage = 0;
+    this->points = 1;
     GLfloat vertex_buffer_data[100000];
 
     int j = 0;

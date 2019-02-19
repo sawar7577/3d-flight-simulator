@@ -64,18 +64,18 @@ void algo_step(int x, int y, int size) {
 STerrain::STerrain(int x, int y, int width, color_t color) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0.0f;
-    float scale = 1.0f;
+    float scale = 2.5f;
     float scale2 = 2.5f;
     this->kill = false;
     speed = 0.05;
     srand(0);
     arr[1][1] = arr[1][width] = arr[width][1] = arr[width][width] = 0;
     mx = width;
-    mn = -width;
+    mn = -2;
     algo_step(1,1,width);   
     int i,j,k;
     j = 0;
-    GLfloat vertex_buffer_data[5000000];
+    GLfloat vertex_buffer_data[500000];
     for(i = 1; i < width ; ++i) {
         for(k = 1; k < width ; ++k){
 

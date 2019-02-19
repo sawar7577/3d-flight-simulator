@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/other_handlers.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
+  "/home/sawar/Documents/graphics/3d-flight-simulator/src/score.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/score.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o"

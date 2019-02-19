@@ -9,6 +9,7 @@ class Fuel : public Cylinder, public Cuboid{
     public:
         glm::vec3 position;
         float radius;
+
         Fuel() {}
         Fuel(float x, float y, float z);
         glm::mat4 rotate;

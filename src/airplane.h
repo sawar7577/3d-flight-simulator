@@ -17,6 +17,8 @@ public:
     float fvalue;
     float speed;
     int counter;
+    int score;
+    int health;
     bool barrel_roll;
     bool loop_the_loop;
     clock_t cooldown;

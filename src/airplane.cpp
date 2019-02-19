@@ -16,6 +16,8 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     this->barrel_roll = false;
     this->loop_the_loop = false;
     this->counter = 0;
+    this->score = 23;
+    this->health = 20;
     this->cooldown = clock();
 
     this->speed = 1.1f;
@@ -124,11 +126,22 @@ void Airplane::tick(GLFWwindow *window) {
         if(glfwGetKey(window, GLFW_KEY_SPACE)) {
             if( (clock() - this->cooldown)/CLOCKS_PER_SEC > 0.125f) {
                 this->cooldown = clock();
-                
+                std::cout << "in " << std::endl;
+                if(this->target == NULL) {
+                    std::cout << "follow null" << std::endl;
+                }
+                if(this->etarget == NULL) {
+                    std::cout << "efollow null" << std::endl;
+                }
                 Missile m = Missile(this->position.x, this->position.y, this->position.z, 1.0f,1.0f,30, this->dir, COLOR_GREEN);
                 m.follow = this->target;
                 m.efollow = this->etarget;
-            
+                if(m.follow == NULL) {
+                    std::cout << "2follow null" << std::endl;
+                }
+                if(m.efollow == NULL) {
+                    std::cout << "2efollow null" << std::endl;
+                }
                 ms.push_back(m);
             }
         }
@@ -157,7 +170,7 @@ void Airplane::tick(GLFWwindow *window) {
             }
         }
     }
-    this->position += glm::normalize(this->dir)*this->speed;
+    this->position += glm::normalize(this->dir)*this->speed*1.0f;
     this->bounding.position = this->position;
 }
 

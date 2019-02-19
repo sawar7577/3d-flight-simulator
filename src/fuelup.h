@@ -12,6 +12,8 @@ class Fuelup :  public Cuboid, public Cylinder {
         bool kill;
         glm::vec3 dir;
         Cuboid bounding;
+        int damage;
+        int points;
         Fuelup() {}
         Fuelup(float x, float y, float z);
         glm::mat4 rotate;

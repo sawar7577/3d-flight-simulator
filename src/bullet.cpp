@@ -6,6 +6,8 @@ Bullet::Bullet(float x, float y, float z, float radius, float length, int vertic
     this->dir = d;
     this->kill = false;
     this->rotate = glm::mat4(1.0f);
+    this->damage = 2;
+    this->points = 0;
     glm::vec3 d2 = glm::normalize(this->dir);
         glm::vec3 k = glm::normalize(d2 + glm::vec3(0,1,0));
         glm::vec3 a = glm::cross(k,d2);
@@ -48,6 +50,7 @@ Bullet::Bullet(float x, float y, float z, float radius, float length, int vertic
             vertex_buffer_data[j++] = back[i];
     }
     free(back);
+    this->bounding = Cuboid(x,y,z,5,5,5,5,5,COLOR_GREEN);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color, GL_FILL);
 
 }
@@ -64,4 +67,5 @@ void Bullet::draw(glm::mat4 VP) {
 
 void Bullet::tick() {
     this->position += this->dir*2.0f;
+    this->bounding.position = this->position;
 }

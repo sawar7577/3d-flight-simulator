@@ -17,6 +17,7 @@
 #include "fuelup.h"
 #include "enemyplane.h"
 #include "bomb.h"
+#include "score.h"
 #include <time.h>
 #include <list>
 
@@ -38,12 +39,13 @@ unsigned long int XOR()
   return (y = y ^(y<<5)); 
 };
 
-
 Canon c;
 STerrain st;
 Airplane air;
 Cuboid sky;
 Dashboard dash;
+// vector <Numbers> score;
+
 int flag;
 int stop;
 bool tg[3];
@@ -63,6 +65,18 @@ float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 float camera_x = 5, camera_y = 5, camera_z = 5;
 clock_t tme;
+
+
+template <typename Type> void collision_sprite(list <Type> &l, Airplane &airplane) {
+    typename list <Type> :: iterator it;
+    for(it = l.begin() ; it!=l.end(); ++it) {
+            if(!checkCollision((*it).bounding, (*it).rotate, airplane.bounding, airplane.rotate)) {
+                airplane.health -= (*it).damage;
+                airplane.score += (*it).points;
+                (*it).kill = true;
+            }
+    }
+}
 
 
 template <typename Type> void tick_sprite(list <Type> &l) {
@@ -112,7 +126,7 @@ template <typename Type> void clear_lists(list <Type> &l) {
     typename list <Type> :: iterator it;
     for(it = l.begin() ; it != l.end() ;) {
         glm::vec3 dist = (*it).position - air.position;
-        if(sqrt(glm::dot(dist, dist)) > 10000 || (*it).kill) {
+        if(sqrt(glm::dot(dist, dist)) > 10000 || (*it).kill || (*it).position.y < 0.0f) {
             l.erase(it++);
         }
         else{
@@ -128,6 +142,7 @@ template <typename Type1, typename Type2> void check_collision(list <Type1> &a, 
     for(it1  = a.begin() ; it1 != a.end() ; it1++) {
         for(it2 = b.begin() ; it2 != b.end() ; it2++) {
             if(!checkCollision((*it1).bounding, (*it1).rotate, (*it2).bounding, (*it2).rotate)) {
+                air.score += (*it1).damage;
                 (*it1).kill = true;
                 (*it2).kill = true;
             }
@@ -172,10 +187,13 @@ void draw() {
     glm::mat4 VP = Matrices.projection * Matrices.view;
    
     tg[0] = tg[1] = false;
+    air.target = NULL;
+    air.etarget = NULL;
+
     check_enemy(es);
     check_enemy(ps);
     if(tg[0] == false) {
-        air.target = NULL;
+        air.target = NULL;     
     }
     if(tg[1] == false) {
         air.etarget = NULL;
@@ -190,6 +208,7 @@ void draw() {
     c.draw(VP);
     a.draw(VP);
     dash.draw(VP);
+    // draw_score(score, VP);
     draw_sprite(ms, VP);
     draw_sprite(es, VP);
     draw_sprite(ps, VP);
@@ -237,6 +256,15 @@ void tick_elements(GLFWwindow *window) {
     st.tick();
     dash.tick(air);
     
+    collision_sprite(vs, air);
+    collision_sprite(bs, air);
+    collision_sprite(fs, air);
+    collision_sprite(rs, air);
+
+
+
+
+    sky.set_position(air.position.x, air.position.z);
     tick_sprite(ps);
     tick_sprite(ms);
     tick_sprite(bs);
@@ -245,7 +273,7 @@ void tick_elements(GLFWwindow *window) {
 
     check_collision(ms, ps);
     check_collision(ms, es);
-
+    // setscore(score, 10, 0, COLOR_RED);
 
     clear_lists(ps);
     clear_lists(ms);
@@ -257,7 +285,7 @@ void tick_elements(GLFWwindow *window) {
     clear_lists(rs);
     // clear_lists(ss);
 
-
+    // air.score++;
 
 
     c.tick();
@@ -275,11 +303,14 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
-    sky         = Cuboid(0, 0, 0, 1000.0f, 1000.0f, 1000.0f, 1000.0f, 1.0f,COLOR_BLACK);
-    st          = STerrain(0,0,513,COLOR_RED);
+    sky         = Cuboid(0, 0, 0, 10000.0f, 10000.0f, 10000.0f, 10000.0f, 1.0f,COLOR_BLACK);
+    st          = STerrain(0,0,129,COLOR_RED);
     a           = Arrow(200,200,200);
     c           = Canon(200,200,200, &air);
     dash        = Dashboard(0,0,0);
+
+
+
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform
@@ -315,9 +346,9 @@ int main(int argc, char **argv) {
     initGL (window, width, height);
 
     /* Draw in loop */
-    while (!glfwWindowShouldClose(window)) {
+    while (!glfwWindowShouldClose(window) && air.health > 0) {
         // Process timers
-        if (t60.processTick()) {
+        if (t60.processTick() ) {
             // 60 fps
             // OpenGL Draw commands
             draw();
@@ -341,5 +372,5 @@ void reset_screen() {
     float bottom = screen_center_y - 30 / screen_zoom;
     float left   = screen_center_x - 30 / screen_zoom;
     float right  = screen_center_x + 30 / screen_zoom;
-    Matrices.projection = glm::perspective(45.0f, (right - left)/(top - bottom), 1.0f, 500.0f);
+    Matrices.projection = glm::perspective(45.0f, (right - left)/(top - bottom), 1.0f, 1500.0f);
 }

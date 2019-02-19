@@ -45,6 +45,7 @@ CMakeFiles/graphics_asgn1.dir/src/bomb.cpp.o
 CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/bullet.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 CMakeFiles/graphics_asgn1.dir/src/canon.cpp.o
@@ -106,6 +107,7 @@ CMakeFiles/graphics_asgn1.dir/src/dashboard.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
 CMakeFiles/graphics_asgn1.dir/src/enemy.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
@@ -159,6 +161,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h
@@ -186,9 +189,22 @@ CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/ring.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
+CMakeFiles/graphics_asgn1.dir/src/score.cpp.o
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/missile.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/score.cpp
+ /home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
 CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp
 CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o

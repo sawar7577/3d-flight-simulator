@@ -13,6 +13,8 @@ public:
     bool pitch_v, yaw_v, roll_v;
     float fvalue;
     bool kill;
+    int damage;
+    int points;
     int arg;
     Cuboid bounding;
     Enemyplane() {}

@@ -13,6 +13,9 @@ class Missile : public Cylinder {
         glm::vec3 position;
         glm::vec3 dir;
         float radius;
+        
+        int damage;
+        int points;
         bool kill;
         Cuboid bounding;
         Missile() {}

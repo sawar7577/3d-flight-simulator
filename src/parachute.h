@@ -11,6 +11,8 @@ class Parachute :  public Enemy {
         bool kill;
         glm::vec3 position;
         float radius;
+        int damage;
+        int points;
         Cuboid bounding;
         Parachute() {}
         Parachute(float x, float y, float z);

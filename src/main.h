@@ -19,6 +19,7 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+
 struct color_t {
     int r;
     int g;

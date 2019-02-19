@@ -95,6 +95,8 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 cylinder.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/canon.cpp
 main.h
@@ -191,6 +193,8 @@ airplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 speedometer.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
+score.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/dashboard.h
 main.h
@@ -211,6 +215,8 @@ altimeter.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/altimeter.h
 speedometer.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.h
+score.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.cpp
 main.h
@@ -329,6 +335,8 @@ enemyplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemyplane.h
 bomb.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.h
+score.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
 time.h
 -
 list
@@ -449,6 +457,24 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/ring.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/score.cpp
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+score.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
+
+/home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
+main.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cylinder.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
+airplane.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp
 bits/stdc++.h

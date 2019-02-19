@@ -18,6 +18,8 @@ Enemyplane::Enemyplane(float x, float y, float z, float radius1 , float radius2,
     this->pitch_v = false;
     this->roll_v = false;
     this->yaw_v = false;
+    this->damage = 0;
+    this->points = 5;
   
     speed = 1;
     GLfloat vertex_buffer_data[100000];

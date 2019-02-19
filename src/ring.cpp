@@ -6,6 +6,9 @@ Ring::Ring(float x, float y, float z, float radius, float width, color_t color) 
     this->position = glm::vec3(x,y,z);
     this->radius = radius;
     this->kill = false;
+    this->rotate = glm::mat4(1.0f);
+    this->damage = 0;
+    this->points = 1;
 
     float angle = 0;
     float inc = 2*M_PI/30;
@@ -86,7 +89,7 @@ Ring::Ring(float x, float y, float z, float radius, float width, color_t color) 
         recs.clear();
         angle += inc;
     }
-
+    this->bounding = Cuboid(x,y,z,10.0f,10.0f,6.0f,6.0f,10.0f,COLOR_GREEN);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color, GL_FILL);
 
 }
@@ -99,6 +102,7 @@ void Ring::draw(glm::mat4 VP){
     
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
+    this->bounding.draw(VP);
 }
 
 

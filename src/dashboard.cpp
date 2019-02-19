@@ -4,6 +4,7 @@
 #include "fuel.h"
 #include "airplane.h"
 #include "speedometer.h"
+#include "score.h"
 
 Dashboard::Dashboard(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
@@ -15,6 +16,8 @@ Dashboard::Dashboard(float x, float y, float z) {
     this->f = Fuel(0,-25,0);
     this->ap = Altimeter(25,0,0);
     this->sp = Speedometer(0,-25,0);
+    this->sc = Score(25,25,0);
+    this->hc = Score(-25,20,0);
 }
 
 void Dashboard::draw(glm::mat4 VP) {
@@ -35,6 +38,8 @@ void Dashboard::draw(glm::mat4 VP) {
     cp.draw(VP);
     ap.draw(VP);
     sp.draw(VP);
+    sc.draw(VP);
+    hc.draw(VP);
 }
 
 void Dashboard::tick(Airplane &air) {
@@ -42,6 +47,8 @@ void Dashboard::tick(Airplane &air) {
     this->cp.changeOrientation(air);
     this->ap.changeHeight(air);
     this->sp.changeSpeed(air);
+    this->sc.changeScore(air.score);
+    this->hc.changeScore(air.health);
 }
 
 void Dashboard::setCrosshair(bool flag) {
