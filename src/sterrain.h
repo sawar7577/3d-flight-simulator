@@ -9,7 +9,7 @@ class STerrain {
 public:
     bool kill;
     STerrain() {}
-    STerrain(int x, int y, int width, color_t color);
+    STerrain(int x, int y, int z, int width = 129, color_t color = COLOR_RED);
     glm::vec3 position;
     float rotation;
     void draw(glm::mat4 VP);

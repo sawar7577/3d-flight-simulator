@@ -80,7 +80,7 @@ Volcano::Volcano(int x, int y, int z, int width) {
     this->damage = 100;
     this->points = 0;
 
-    srand(0);
+    srand(clock());
     arrv[1][1] = arrv[1][width] = arrv[width][1] = arrv[width][width] = 0;
     arrv[1+width/2][1+width/2] = 1233456;
     mxv = width;

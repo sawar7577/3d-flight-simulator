@@ -124,7 +124,7 @@ void Airplane::tick(GLFWwindow *window) {
             this->speed += 0.02f;
         }
         if(glfwGetKey(window, GLFW_KEY_SPACE)) {
-            if( (clock() - this->cooldown)/CLOCKS_PER_SEC > 0.125f) {
+            if( (clock() - this->cooldown)/CLOCKS_PER_SEC > 0.00125f) {
                 this->cooldown = clock();
                 std::cout << "in " << std::endl;
                 if(this->target == NULL) {
@@ -146,7 +146,7 @@ void Airplane::tick(GLFWwindow *window) {
             }
         }
         if(glfwGetKey(window, GLFW_KEY_B)) {
-            if( (clock() - this->cooldown)/CLOCKS_PER_SEC > 0.125f) {
+            if( (clock() - this->cooldown)/CLOCKS_PER_SEC > 0.00125f) {
                 this->cooldown = clock();
                 Bomb b = Bomb(this->position.x, this->position.y, this->position.z, 1.0f,1.0f,30, this->dir, COLOR_GREEN);
             

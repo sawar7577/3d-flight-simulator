@@ -61,14 +61,15 @@ void algo_step(int x, int y, int size) {
 
 }
 
-STerrain::STerrain(int x, int y, int width, color_t color) {
-    this->position = glm::vec3(x, y, 0);
+STerrain::STerrain(int x, int y, int z, int width, color_t color) {
+    this->position = glm::vec3(x, y, z);
     this->rotation = 0.0f;
     float scale = 2.5f;
     float scale2 = 2.5f;
     this->kill = false;
+    // width = 129;
     speed = 0.05;
-    srand(0);
+    srand(clock());
     arr[1][1] = arr[1][width] = arr[width][1] = arr[width][width] = 0;
     mx = width;
     mn = -2;

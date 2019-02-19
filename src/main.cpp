@@ -59,6 +59,7 @@ list <Volcano> vs;
 list <Fuelup> fs;
 list <Ring> rs;
 list <STerrain> ss;
+list <Canon> cs;
 
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -202,13 +203,13 @@ void draw() {
 
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
-    st.draw(VP);
     air.draw(VP);
     sky.draw(VP);
-    c.draw(VP);
+    // c.draw(VP);
     a.draw(VP);
     dash.draw(VP);
     // draw_score(score, VP);
+    draw_sprite(cs, VP);
     draw_sprite(ms, VP);
     draw_sprite(es, VP);
     draw_sprite(ps, VP);
@@ -253,7 +254,7 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements(GLFWwindow *window) {
     air.tick(window);
-    st.tick();
+    // st.tick();
     dash.tick(air);
     
     collision_sprite(vs, air);
@@ -270,10 +271,10 @@ void tick_elements(GLFWwindow *window) {
     tick_sprite(bs);
     tick_sprite(es);
     tick_sprite(bms);
+    tick_sprite(cs);
 
     check_collision(ms, ps);
     check_collision(ms, es);
-    // setscore(score, 10, 0, COLOR_RED);
 
     clear_lists(ps);
     clear_lists(ms);
@@ -283,18 +284,18 @@ void tick_elements(GLFWwindow *window) {
     clear_lists(vs);
     clear_lists(fs);
     clear_lists(rs);
-    // clear_lists(ss);
+    clear_lists(ss);
 
     // air.score++;
 
 
-    c.tick();
+    // c.tick();
     add_sprite(ps, 100, glm::vec3(200,200,200) + air.position, glm::vec3(-200,-200,-200) + air.position, 100);
     add_sprite(vs, 200, air.position + glm::vec3(200,-air.position.y,200), air.position + glm::vec3(-200,-air.position.y,-200), 10);
     add_sprite(es, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
     add_sprite(fs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
     add_sprite(rs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
-
+    add_sprite(ss, 100, glm::vec3(1000 + air.position.x, 0 , 1000+ air.position.z), glm::vec3(-1000 + air.position.x, 0 , -1000+ air.position.z),10);
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -304,10 +305,12 @@ void initGL(GLFWwindow *window, int width, int height) {
     // Create the models
     air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
     sky         = Cuboid(0, 0, 0, 10000.0f, 10000.0f, 10000.0f, 10000.0f, 1.0f,COLOR_BLACK);
-    st          = STerrain(0,0,129,COLOR_RED);
+    st          = STerrain(0,0,0,129,COLOR_RED);
     a           = Arrow(200,200,200);
     c           = Canon(200,200,200, &air);
+    cs.push_back(c);
     dash        = Dashboard(0,0,0);
+    ss.push_back(st);
 
 
 
