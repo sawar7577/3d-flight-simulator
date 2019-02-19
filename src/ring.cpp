@@ -102,7 +102,7 @@ void Ring::draw(glm::mat4 VP){
     
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
-    this->bounding.draw(VP);
+    // this->bounding.draw(VP);
 }
 
 

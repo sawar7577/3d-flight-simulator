@@ -18,16 +18,18 @@ Objective of the game is to maximize score by destroying parachutes, passing thr
 13. compass
 14. arrow : pointing to the current checkpoint
 15. smoke rings
+16. Enemyplanes
 
 # Views:
 1. Follow Cam
 2. Top View
-3. pilot view
-4. Tower view
-5. Helicam
+3. Helicam
+4. pilot view
+5. Tower view
 
 # Controls :
-W : move forward
+W : Increase speed
+S : Decrease speed
 SPACE : Move Up
 Q and E : yaw
 A and D : roll
@@ -36,6 +38,5 @@ F or LEFT Mouse click : fire missiles
 B or RIGHT Mouse click : drop bombs 
 Mouse scroll-wheel : Zooming in helicam
 V : change views
-P : pause
-L : looping the loop
-R : Barrel Roll
+1 : looping the loop
+2 : Barrel Roll

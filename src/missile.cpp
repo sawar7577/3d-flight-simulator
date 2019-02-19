@@ -57,7 +57,6 @@ void Missile::tick()
     if(this->efollow != NULL) {
         // std::cout << "in" << std::endl;
         this->dir = (glm::normalize((this->efollow)->position - this->position));
-        this->position += this->dir;
  
         // std::cout << (this->follow)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
         glm::vec3 d = glm::normalize((this->efollow)->position - this->position);
@@ -79,7 +78,7 @@ void Missile::tick()
     else if(this->follow != NULL){
         
         this->dir = (glm::normalize((this->follow)->position - this->position));
-        this->position += this->dir;
+        // this->position += this->dir;
  
         // std::cout << (this->follow)->position.x << " " << (this->follow)->position.y << " " << (this->follow)->position.z << std::endl;
         glm::vec3 d = glm::normalize((this->follow)->position - this->position);
@@ -101,7 +100,7 @@ void Missile::tick()
     }
     
     else{
-        this->position += this->dir;
+        // this->position += this->dir*3.0f;
 
         glm::vec3 d = glm::normalize(this->dir);
         glm::vec3 k = glm::normalize(d + glm::vec3(0,1,0));
@@ -119,6 +118,7 @@ void Missile::tick()
         rotate[0][1] = b.y;
         rotate[0][2] = b.z;
     }
+        this->position += this->dir*2.0f;
     this->bounding.position = this->position;
 }
 

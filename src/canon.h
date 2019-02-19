@@ -3,6 +3,7 @@
 #include "airplane.h"
 #include "bullet.h"
 
+
 #ifndef CANON_H
 #define CANON_H
 
@@ -11,6 +12,10 @@ class Canon :  public Enemy {
         glm::vec3 position;
         float radius;
         glm::vec3 dir;
+        int damage;
+        int points;
+        bool kill;
+        Cuboid bounding;
         Canon() {}
         Canon(float x, float y, float z, Airplane *target);
         glm::mat4 rotate;

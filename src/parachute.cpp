@@ -61,7 +61,7 @@ Parachute::Parachute(float x, float y, float z) : Enemy(x, y, z) {
     }
     free(body);
     this->bounding = Cuboid(x,y,z,1.0f, 1.0f, 1.0f, 1.0f, 1.0f, COLOR_RED);
-    this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_PARACHUTE, GL_FILL);
 }
 
 void Parachute::tick(){

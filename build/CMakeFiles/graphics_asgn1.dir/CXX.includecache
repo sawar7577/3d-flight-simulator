@@ -77,6 +77,8 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 cylinder.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cylinder.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 enemy.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/enemy.h
 parachute.h
@@ -505,6 +507,8 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.h
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
+cuboid.h
+/home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.cpp
 terrain.h

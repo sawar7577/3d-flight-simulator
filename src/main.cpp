@@ -39,17 +39,19 @@ unsigned long int XOR()
   return (y = y ^(y<<5)); 
 };
 
-Canon c;
+// Canon c;
 STerrain st;
 Airplane air;
 Cuboid sky;
 Dashboard dash;
-// vector <Numbers> score;
 
 int flag;
 int stop;
 bool tg[3];
+float radiusc;
+
 Arrow a;
+list <Arrow> as;
 list <Missile> ms;
 list <Parachute> ps;
 list <Enemyplane> es;
@@ -79,6 +81,17 @@ template <typename Type> void collision_sprite(list <Type> &l, Airplane &airplan
     }
 }
 
+template <typename Type> void collision_sprite2(list <Type> &l, Airplane &airplane) {
+    typename list <Type> :: iterator it;
+    for(it = l.begin() ; it!=l.end(); ++it) {
+            if(!checkCollision((*it).bounding, (*it).rotate, airplane.bounding, airplane.rotate)) {
+                airplane.health -= (*it).damage;
+                airplane.score += (*it).points;
+                airplane.fvalue = 1.0f;
+                (*it).kill = true;
+            }
+    }
+}
 
 template <typename Type> void tick_sprite(list <Type> &l) {
     typename list <Type> :: iterator it;
@@ -127,7 +140,7 @@ template <typename Type> void clear_lists(list <Type> &l) {
     typename list <Type> :: iterator it;
     for(it = l.begin() ; it != l.end() ;) {
         glm::vec3 dist = (*it).position - air.position;
-        if(sqrt(glm::dot(dist, dist)) > 10000 || (*it).kill || (*it).position.y < 0.0f) {
+        if(sqrt(glm::dot(dist, dist)) > 1000 || (*it).kill || (*it).position.y < 0.0f) {
             l.erase(it++);
         }
         else{
@@ -151,6 +164,38 @@ template <typename Type1, typename Type2> void check_collision(list <Type1> &a, 
     }
 }
 
+template <typename Type1, typename Type2> void add_arrow(list <Type1> &l, list <Type2> &a) {
+    typename list <Type1> :: iterator it;
+    a.clear();
+    for(it = l.begin() ; it!=l.end() ; ++it) {
+        a.push_back(Arrow((*it).position.x, (*it).position.y + 150, (*it).position.z));
+    }
+}
+
+template <typename Type1, typename Type2> void remove_colobjects(list <Type1> &a, list <Type2> &b) {
+    typename list <Type1> :: iterator it1;
+    typename list <Type2> :: iterator it2;
+    for(it1 = a.begin() ; it1!=a.end() ; ++it1) {
+        for(it2 = b.begin() ; it2!=b.end() ; ) {
+            if(!checkCollision((*it1).bounding, (*it1).rotate, (*it2).bounding, (*it2).rotate)) {
+                b.erase(it2++);
+            }
+            else {
+                it2++;
+            }
+        }
+    }
+}
+
+void add_canons(list <Canon> &l, int seed, glm::vec3 top, glm::vec3 bottom, int limit) {
+    int ran = random()%seed;
+    if(ran == 0 && l.size() < limit ) {
+        float x = bottom.x + XOR()%( (int)(top.x - bottom.x + 1) );
+        float y = bottom.y + XOR()%( (int)(top.y - bottom.y + 1) );
+        float z = bottom.z + XOR()%( (int)(top.z - bottom.z + 1) );
+        l.push_back(Canon(x,y,z,&air));
+    }
+}
 
 Timer t60(1.0 / 60);
 
@@ -166,14 +211,23 @@ void draw() {
 
     eye[0] = air.position - 40.0f*air.dir + 20.0f*air.up;
     eye[1] = air.position + glm::vec3(0,100.0f,0);
+    eye[3] = air.position + 10.0f*air.dir;
+    eye[4] = air.position + glm::vec3(40.0f,80.0f,80.0f);
+    
+
 
     up[0] = air.up;
     up[1] = glm::vec3(0,0,-1);
     up[2] = glm::vec3(0,1,0);
-    target[2] = air.position;
+    up[3] = air.up;
+    up[4] = glm::vec3(0,1,0);
 
     target[0] = air.position;
     target[1] = air.position + air.up * 10.0f;
+    target[2] = air.position;
+    target[3] = air.position + 11.0f*air.dir;
+    target[4] = air.position;
+
     // glm::vec3 target = air.position ;
     
 
@@ -205,11 +259,10 @@ void draw() {
 
     air.draw(VP);
     sky.draw(VP);
-    // c.draw(VP);
-    a.draw(VP);
+    // a.draw(VP);
     dash.draw(VP);
-    // draw_score(score, VP);
     draw_sprite(cs, VP);
+    draw_sprite(as, VP);
     draw_sprite(ms, VP);
     draw_sprite(es, VP);
     draw_sprite(ps, VP);
@@ -223,43 +276,33 @@ void draw() {
 }
 
 void tick_input(GLFWwindow *window) {
-    int left  = glfwGetKey(window, GLFW_KEY_LEFT);
-    int right = glfwGetKey(window, GLFW_KEY_RIGHT);
-    int up = glfwGetKey(window, GLFW_KEY_UP);
-    int down = glfwGetKey(window, GLFW_KEY_DOWN);
-    int u = glfwGetKey(window, GLFW_KEY_X);
-    int f = glfwGetKey(window, GLFW_KEY_Z);
-    int c = glfwGetKey(window, GLFW_KEY_C);
-    int sp = glfwGetKey(window, GLFW_KEY_SPACE);
-    int b = glfwGetKey(window, GLFW_KEY_B);
     double xpos, ypos;
     glfwGetCursorPos(window, &xpos, &ypos);
-    float theta, phi, radius;
+    float theta, phi;
     phi = -(M_PI * (xpos - 500)/1000)/2;
     theta = -(M_PI * (ypos - 500)/1000)/2; 
-    radius = 40.0f;
-    eye[2] = air.position + radius * glm::vec3(cos(theta) * cos(phi), sin(theta), cos(theta) * sin(phi));
+    eye[2] = air.position + radiusc * glm::vec3(cos(theta) * cos(phi), sin(theta), cos(theta) * sin(phi));
 
-    // std::cout << xpos << " " << ypos << std::endl;
-    if (u) {
-        flag = 0;
-    }
-    if(f) {
-        flag = 1;
-    }
-    if(c) {
-        flag = 2;
+    if(glfwGetKey(window, GLFW_KEY_V)){
+        if((clock() - ts)/CLOCKS_PER_SEC > 0.5f) {
+            ts = clock();
+            flag++;
+            flag = flag%5;
+            if(flag !=  2) {
+                radiusc = 40.0f;
+            }
+        }
     }
 }
+    // st.tick();
 
 void tick_elements(GLFWwindow *window) {
     air.tick(window);
-    // st.tick();
     dash.tick(air);
     
     collision_sprite(vs, air);
     collision_sprite(bs, air);
-    collision_sprite(fs, air);
+    collision_sprite2(fs, air);
     collision_sprite(rs, air);
 
 
@@ -275,8 +318,17 @@ void tick_elements(GLFWwindow *window) {
 
     check_collision(ms, ps);
     check_collision(ms, es);
+    check_collision(ms, cs);
+    check_collision(bms, ps);
+    check_collision(bms, es);
+    check_collision(bms, cs);
+
+
+    remove_colobjects(ss, cs);
+    remove_colobjects(vs, cs);
 
     clear_lists(ps);
+    clear_lists(cs);
     clear_lists(ms);
     clear_lists(bs);
     clear_lists(es);
@@ -287,15 +339,16 @@ void tick_elements(GLFWwindow *window) {
     clear_lists(ss);
 
     // air.score++;
-
+    add_arrow(cs, as);
 
     // c.tick();
     add_sprite(ps, 100, glm::vec3(200,200,200) + air.position, glm::vec3(-200,-200,-200) + air.position, 100);
     add_sprite(vs, 200, air.position + glm::vec3(200,-air.position.y,200), air.position + glm::vec3(-200,-air.position.y,-200), 10);
-    add_sprite(es, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
-    add_sprite(fs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
+    add_sprite(es, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 50);
+    add_sprite(fs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 50);
     add_sprite(rs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
     add_sprite(ss, 100, glm::vec3(1000 + air.position.x, 0 , 1000+ air.position.z), glm::vec3(-1000 + air.position.x, 0 , -1000+ air.position.z),10);
+    add_canons(cs, 1, glm::vec3(1000 + air.position.x, 0 , 1000+ air.position.z), glm::vec3(-1000 + air.position.x, 0 , -1000+ air.position.z),1);
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -303,12 +356,13 @@ void tick_elements(GLFWwindow *window) {
 void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
-    air         = Airplane(0,20.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_GREEN);
-    sky         = Cuboid(0, 0, 0, 10000.0f, 10000.0f, 10000.0f, 10000.0f, 1.0f,COLOR_BLACK);
+    radiusc = 40.0f;
+    air         = Airplane(0,40.0f,1.0f,1.0f,1.0f,5.0f,30,COLOR_STEEL);
+    sky         = Cuboid(0, 0, 0, 10000.0f, 10000.0f, 10000.0f, 10000.0f, 1.0f,COLOR_BLUE);
     st          = STerrain(0,0,0,129,COLOR_RED);
-    a           = Arrow(200,200,200);
-    c           = Canon(200,200,200, &air);
-    cs.push_back(c);
+    // a           = Arrow(200,200,200);
+    // c           = Canon(200,200,200, &air);
+    // cs.push_back(c);
     dash        = Dashboard(0,0,0);
     ss.push_back(st);
 
@@ -349,7 +403,7 @@ int main(int argc, char **argv) {
     initGL (window, width, height);
 
     /* Draw in loop */
-    while (!glfwWindowShouldClose(window) && air.health > 0) {
+    while (!glfwWindowShouldClose(window) && air.health > 0 && air.position.y > 0.0f) {
         // Process timers
         if (t60.processTick() ) {
             // 60 fps

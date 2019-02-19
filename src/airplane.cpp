@@ -87,7 +87,6 @@ void Airplane::draw(glm::mat4 VP) {
     int lp = glGetUniformLocation(programID, "lightpos");
     glProgramUniform3f(programID, lp, this->position.x, this->position.y, this->position.z); 
     draw3DObject(this->object);
-    // draw3DObject((this->bounding).object);
 }
 
 void Airplane::set_position(float x, float y) {
@@ -95,68 +94,91 @@ void Airplane::set_position(float x, float y) {
 }
 
 void Airplane::tick(GLFWwindow *window) {
-    static float total_pitch;
+    static float total_pitch, total_roll;
     this->pitch = 0.0f;
     this->yaw = 0.0f;
     this->roll = 0.0f;
     this->fvalue = std::max(this->fvalue-0.0001f,0.0f);
     if(!this->loop_the_loop && !this->barrel_roll) {
         this->counter = 0;
+        if(glfwGetKey(window, GLFW_KEY_W)){
+            this->speed += 0.1f;
+            this->speed = std::min(this->speed, 10.0f);
+        }
+        if(glfwGetKey(window, GLFW_KEY_S)){
+            this->speed -= 0.1f;
+            this->speed = std::max(this->speed,0.0f);
+        }
         if(glfwGetKey(window, GLFW_KEY_UP)){
             this->pitch = 0.02f;
         }
         if(glfwGetKey(window, GLFW_KEY_DOWN)){
             this->pitch = -0.02f ;    
         }
-        if(glfwGetKey(window, GLFW_KEY_RIGHT)){
+        if(glfwGetKey(window, GLFW_KEY_D)){
             this->roll = -0.02f;
         }
-        if(glfwGetKey(window, GLFW_KEY_LEFT)){
+        if(glfwGetKey(window, GLFW_KEY_A)){
             this->roll = 0.02f;
         }
-        if(glfwGetKey(window, GLFW_KEY_S)){
+        if(glfwGetKey(window, GLFW_KEY_Q)){
             this->yaw = -0.02f;
         }
         if(glfwGetKey(window, GLFW_KEY_E)){
             this->yaw = 0.02f;
         }
-        if(glfwGetKey(window, GLFW_KEY_T)){
-            this->speed += 0.02f;
+        if(glfwGetKey(window, GLFW_KEY_1)){
+            this->barrel_roll = true;
         }
-        if(glfwGetKey(window, GLFW_KEY_SPACE)) {
-            if( (clock() - this->cooldown)/CLOCKS_PER_SEC > 0.00125f) {
-                this->cooldown = clock();
-                std::cout << "in " << std::endl;
-                if(this->target == NULL) {
-                    std::cout << "follow null" << std::endl;
-                }
-                if(this->etarget == NULL) {
-                    std::cout << "efollow null" << std::endl;
-                }
+        if(glfwGetKey(window, GLFW_KEY_2)){
+            this->loop_the_loop = true;
+        }
+        if(glfwGetKey(window, GLFW_KEY_SPACE)){
+            this->position.y += 1.0f;
+        }
+        clock_t t = clock();
+        if(glfwGetKey(window, GLFW_KEY_F)) {
+            if( (t - this->cooldown)/CLOCKS_PER_SEC > 0.0000f) {
+                this->cooldown = t;
+                // std::cout << "in " << std::endl;
+                // if(this->target == NULL) {
+                    // std::cout << "follow null" << std::endl;
+                // }
+                // if(this->etarget == NULL) {
+                    // std::cout << "efollow null" << std::endl;
+                // }
                 Missile m = Missile(this->position.x, this->position.y, this->position.z, 1.0f,1.0f,30, this->dir, COLOR_GREEN);
                 m.follow = this->target;
                 m.efollow = this->etarget;
-                if(m.follow == NULL) {
-                    std::cout << "2follow null" << std::endl;
-                }
-                if(m.efollow == NULL) {
-                    std::cout << "2efollow null" << std::endl;
-                }
+                // if(m.follow == NULL) {
+                    // std::cout << "2follow null" << std::endl;
+                // }
+                // if(m.efollow == NULL) {
+                    // std::cout << "2efollow null" << std::endl;
+                // }
                 ms.push_back(m);
             }
         }
         if(glfwGetKey(window, GLFW_KEY_B)) {
-            if( (clock() - this->cooldown)/CLOCKS_PER_SEC > 0.00125f) {
-                this->cooldown = clock();
+            // if( (t - this->cooldown)/CLOCKS_PER_SEC > 0.0000f) {
+                this->cooldown = t;
                 Bomb b = Bomb(this->position.x, this->position.y, this->position.z, 1.0f,1.0f,30, this->dir, COLOR_GREEN);
             
                 bms.push_back(b);
-            }
+            // }
         }
     }
     else {
         if(this->barrel_roll) {
-
+            if(total_roll >= 2*M_PI) {
+                this->barrel_roll = false;
+                total_pitch = 0.0f;
+            }
+            else {
+                this->counter++;
+                this->roll = 0.008f;
+                total_roll += 0.008f;
+            }
         }
         if(this->loop_the_loop) {
             if(total_pitch >= 2*M_PI) {

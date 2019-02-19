@@ -74,6 +74,7 @@ void algo_stepv(int x, int y, int size, int cnt) {
 Volcano::Volcano(int x, int y, int z, int width) {
     this->position = glm::vec3(x, y, z);
     this->rotation = 0.0f;
+    this->rotate = glm::mat4(1.0f);
     float scale = 2.5f;
     float scale2 = 1.0f;
     this->kill = false;
@@ -178,7 +179,7 @@ Volcano::Volcano(int x, int y, int z, int width) {
         color_buffer_data[3*i+1] = 0.1f;
         color_buffer_data[3*i+2] = 0.1f;
     }
-    this->bounding = Cuboid(x, y, z, (float)width, (float)width, (float)width, (float)width, mxh, COLOR_GREEN);
+    this->bounding = Cuboid(x+scale2+width/2, mxh/2, z+scale2+width/2, (float)width-20, (float)width-20, (float)width-20, (float)width-20, mxh, COLOR_RED);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color_buffer_data, GL_FILL);
 }
 
@@ -192,6 +193,7 @@ void Volcano::draw(glm::mat4 VP) {
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
+    // this->bounding.draw(VP);
 }
 
 

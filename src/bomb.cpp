@@ -7,6 +7,8 @@ Bomb::Bomb(float x, float y, float z, float radius, float length, int vertices, 
     this->position = glm::vec3(x, y, z);
     this->kill = false;
     this->dir = d;
+    this->damage = 0;
+    this->points = 0;
     GLfloat vertex_buffer_data[100000];
     int i = 0;
     int j = 0;
@@ -33,6 +35,7 @@ Bomb::Bomb(float x, float y, float z, float radius, float length, int vertices, 
             vertex_buffer_data[j] = back[i];
     }
     free(back);
+    this->bounding = Cuboid(x,y,z,2,2,2,2,2,COLOR_GREEN);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color, GL_FILL);
 }
 
@@ -49,6 +52,7 @@ void Bomb::draw(glm::mat4 VP) {
 
 void Bomb::tick(){
     this->position += glm::vec3(0,-1.0f,0);
+    this->bounding.position = this->position;
 }
 
 

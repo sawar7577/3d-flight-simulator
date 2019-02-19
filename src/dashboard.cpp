@@ -13,7 +13,7 @@ Dashboard::Dashboard(float x, float y, float z) {
     int j = 0;
     this->cross = Crosshair(0,0,0);
     this->cp = Compass(25,-25,0);
-    this->f = Fuel(0,-25,0);
+    this->f = Fuel(0,-27,0);
     this->ap = Altimeter(25,0,0);
     this->sp = Speedometer(0,-25,0);
     this->sc = Score(25,25,0);

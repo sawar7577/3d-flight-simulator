@@ -13,7 +13,7 @@ class Ring : public Cuboid{
         int points;
         Cuboid bounding;
         Ring() {}
-        Ring(float x, float y, float z, float radius = 20, float width = 20, color_t color = COLOR_BLACK);
+        Ring(float x, float y, float z, float radius = 20, float width = 20, color_t color = COLOR_GREY);
         void draw(glm::mat4 VP);
         glm::mat4 rotate;
 

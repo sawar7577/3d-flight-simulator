@@ -219,6 +219,7 @@ CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/speedometer.cpp
 CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/speedometer.h
 
+CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/sterrain.cpp
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/sterrain.h

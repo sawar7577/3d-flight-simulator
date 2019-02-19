@@ -8,7 +8,7 @@
 
 
 Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
-    this->position = glm::vec3(x,y,z);
+    this->position = glm::vec3(x,y+4,z);
     this->dir = glm::vec3(0,1,0);
     this->target = target;
     this->rotate = glm::mat4(1.0f);
@@ -20,6 +20,10 @@ Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
     float radius = 10.0f;
     float radius2 = 02.5f;
     float width = 1.0f;
+    this->damage = 0;
+    this->points = 10;
+    this->kill = false;
+    this->bounding = Cuboid(x,y+4,z,20,20,20,20,20,COLOR_GREEN);
     int j = 0;
     for(int i = 0 ; i < 20 ; ++i){
         angle = 0;
@@ -52,7 +56,7 @@ Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
         angle2+=inc;
     }
     
-    GLfloat *body = CuboidArray(1.0f,1.0f,1.0f,1.0f, 30.5f);;
+    GLfloat *body =CuboidArray(1.0f,1.0f,1.0f,1.0f, 30.5f);;
     for(int i = 0 ; i < 6*6*3 ; ++i){
         if(i%3 == 0){
             vertex_buffer_data[j++] = body[i] - 2.0f;
@@ -112,4 +116,5 @@ void Canon::draw(glm::mat4 VP) {
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
+    // this->bounding.draw(VP);
 }
