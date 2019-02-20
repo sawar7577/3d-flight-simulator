@@ -205,8 +205,6 @@ CMakeFiles/graphics_asgn1.dir/src/score.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/score.cpp.o: ../src/score.cpp
 CMakeFiles/graphics_asgn1.dir/src/score.cpp.o: ../src/score.h
 
-CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o: ../src/selfterrain.cpp
-
 CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/airplane.h
 CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o: ../src/cuboid.h
@@ -223,10 +221,6 @@ CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/cuboid.h
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/sterrain.cpp
 CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o: ../src/sterrain.h
-
-CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o: ../src/main.h
-CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o: ../src/terrain.cpp
-CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o: ../src/terrain.h
 
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.h

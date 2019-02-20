@@ -9,7 +9,7 @@ Bomb::Bomb(float x, float y, float z, float radius, float length, int vertices, 
     this->dir = d;
     this->damage = 0;
     this->points = 0;
-    GLfloat vertex_buffer_data[100000];
+    GLfloat vertex_buffer_data[10000];
     int i = 0;
     int j = 0;
     GLfloat *body = Cylinder::CylinderArray(radius, 0.8*radius, 1, 0.7*length, 25);

@@ -29,10 +29,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/ring.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/score.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/score.cpp.o"
-  "/home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o"
-  "/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/timer.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
   "/home/sawar/Documents/graphics/3d-flight-simulator/src/volcano.cpp" "/home/sawar/Documents/graphics/3d-flight-simulator/build/CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o"
   )

@@ -15,7 +15,7 @@ unsigned long int XOR2()
     return 17234;
 };
 
-float arrv[3000][3000];
+float arrv[300][300];
 // inline static float randomv(int range)
 // {
 //     int ret = (rand() % (range * 70)) - range;
@@ -101,7 +101,7 @@ Volcano::Volcano(int x, int y, int z, int width) {
     }
     j = 0;
     float mxh = 0.0f;
-    GLfloat vertex_buffer_data[5000000];
+    GLfloat vertex_buffer_data[500000];
     for(i = 1; i < width ; ++i) {
         for(k = 1; k < width ; ++k){
 
@@ -175,11 +175,11 @@ Volcano::Volcano(int x, int y, int z, int width) {
     GLfloat *color_buffer_data = new GLfloat[j];
 
     for(int i = 0 ; i < j/3 ; ++i) {
-        color_buffer_data[3*i] = 1.0f - vertex_buffer_data[3*i+1]/(mxh+100);
+        color_buffer_data[3*i] = vertex_buffer_data[3*i+1]/(mxh+90);
         color_buffer_data[3*i+1] = 0.1f;
         color_buffer_data[3*i+2] = 0.1f;
     }
-    this->bounding = Cuboid(x+scale2+width/2, mxh/2, z+scale2+width/2, (float)width-20, (float)width-20, (float)width-20, (float)width-20, mxh, COLOR_RED);
+    this->bounding = Cuboid(x+scale2+width/2, mxh/2, z+scale2+width/2, (float)width-30, (float)width-30, (float)width-30, (float)width-30, mxh-10, COLOR_RED);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color_buffer_data, GL_FILL);
 }
 

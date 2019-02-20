@@ -478,10 +478,6 @@ cuboid.h
 airplane.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
 
-/home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp
-bits/stdc++.h
--
-
 /home/sawar/Documents/graphics/3d-flight-simulator/src/speedometer.cpp
 main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
@@ -509,16 +505,6 @@ main.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 cuboid.h
 /home/sawar/Documents/graphics/3d-flight-simulator/src/cuboid.h
-
-/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.cpp
-terrain.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.h
-main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
-
-/home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.h
-main.h
-/home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
 
 /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.cpp
 timer.h

@@ -342,12 +342,12 @@ void tick_elements(GLFWwindow *window) {
     add_arrow(cs, as);
 
     // c.tick();
-    add_sprite(ps, 100, glm::vec3(200,200,200) + air.position, glm::vec3(-200,-200,-200) + air.position, 100);
-    add_sprite(vs, 200, air.position + glm::vec3(200,-air.position.y,200), air.position + glm::vec3(-200,-air.position.y,-200), 10);
-    add_sprite(es, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 50);
-    add_sprite(fs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 50);
+    add_sprite(ps, 100, glm::vec3(200,200,200) + air.position, glm::vec3(-200,-200,-200) + air.position, 30);
+    add_sprite(vs, 200, air.position + glm::vec3(200,-air.position.y,200), air.position + glm::vec3(-200,-air.position.y,-200), 3);
+    add_sprite(es, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 25);
+    add_sprite(fs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 25);
     add_sprite(rs, 100, air.position + glm::vec3(400,400,400), air.position + glm::vec3(200,200,200), 100);
-    add_sprite(ss, 100, glm::vec3(1000 + air.position.x, 0 , 1000+ air.position.z), glm::vec3(-1000 + air.position.x, 0 , -1000+ air.position.z),10);
+    add_sprite(ss, 100, glm::vec3(1000 + air.position.x, 0 , 1000+ air.position.z), glm::vec3(-1000 + air.position.x, 0 , -1000+ air.position.z),5);
     add_canons(cs, 1, glm::vec3(1000 + air.position.x, 0 , 1000+ air.position.z), glm::vec3(-1000 + air.position.x, 0 , -1000+ air.position.z),1);
 }
 

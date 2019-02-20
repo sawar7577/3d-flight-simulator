@@ -205,8 +205,6 @@ CMakeFiles/graphics_asgn1.dir/src/score.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/parachute.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/score.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/score.h
-CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o
- /home/sawar/Documents/graphics/3d-flight-simulator/src/selfterrain.cpp
 CMakeFiles/graphics_asgn1.dir/src/speedometer.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/airplane.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/bomb.h
@@ -224,10 +222,6 @@ CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
  /home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/sterrain.h
-CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o
- /home/sawar/Documents/graphics/3d-flight-simulator/src/main.h
- /home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.cpp
- /home/sawar/Documents/graphics/3d-flight-simulator/src/terrain.h
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o
  /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.cpp
  /home/sawar/Documents/graphics/3d-flight-simulator/src/timer.h

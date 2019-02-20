@@ -798,33 +798,6 @@ src/score.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/score.cpp.s
 .PHONY : src/score.cpp.s
 
-src/selfterrain.o: src/selfterrain.cpp.o
-
-.PHONY : src/selfterrain.o
-
-# target to build an object file
-src/selfterrain.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.o
-.PHONY : src/selfterrain.cpp.o
-
-src/selfterrain.i: src/selfterrain.cpp.i
-
-.PHONY : src/selfterrain.i
-
-# target to preprocess a source file
-src/selfterrain.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.i
-.PHONY : src/selfterrain.cpp.i
-
-src/selfterrain.s: src/selfterrain.cpp.s
-
-.PHONY : src/selfterrain.s
-
-# target to generate assembly for a file
-src/selfterrain.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/selfterrain.cpp.s
-.PHONY : src/selfterrain.cpp.s
-
 src/speedometer.o: src/speedometer.cpp.o
 
 .PHONY : src/speedometer.o
@@ -878,33 +851,6 @@ src/sterrain.s: src/sterrain.cpp.s
 src/sterrain.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/sterrain.cpp.s
 .PHONY : src/sterrain.cpp.s
-
-src/terrain.o: src/terrain.cpp.o
-
-.PHONY : src/terrain.o
-
-# target to build an object file
-src/terrain.cpp.o:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.o
-.PHONY : src/terrain.cpp.o
-
-src/terrain.i: src/terrain.cpp.i
-
-.PHONY : src/terrain.i
-
-# target to preprocess a source file
-src/terrain.cpp.i:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.i
-.PHONY : src/terrain.cpp.i
-
-src/terrain.s: src/terrain.cpp.s
-
-.PHONY : src/terrain.s
-
-# target to generate assembly for a file
-src/terrain.cpp.s:
-	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/terrain.cpp.s
-.PHONY : src/terrain.cpp.s
 
 src/timer.o: src/timer.cpp.o
 
@@ -1044,18 +990,12 @@ help:
 	@echo "... src/score.o"
 	@echo "... src/score.i"
 	@echo "... src/score.s"
-	@echo "... src/selfterrain.o"
-	@echo "... src/selfterrain.i"
-	@echo "... src/selfterrain.s"
 	@echo "... src/speedometer.o"
 	@echo "... src/speedometer.i"
 	@echo "... src/speedometer.s"
 	@echo "... src/sterrain.o"
 	@echo "... src/sterrain.i"
 	@echo "... src/sterrain.s"
-	@echo "... src/terrain.o"
-	@echo "... src/terrain.i"
-	@echo "... src/terrain.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"

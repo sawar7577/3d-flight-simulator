@@ -153,7 +153,7 @@ Score::Score(float x, float y, float z) {
     hsh.push_back("0111011");
     this->position = glm::vec3(x, y, z);
     this->rotate = glm::mat4(1.0f);
-    GLfloat vertex_buffer_data[1000001];
+    GLfloat vertex_buffer_data[100001];
     int j = 0;
     float angle = 0.0f;
     float inc = M_PI/20;
@@ -209,7 +209,7 @@ void Score::draw(glm::mat4 VP) {
 void Score::changeScore(int numb) {
     free(this->object);
     int score = numb;
-    GLfloat vertex_buffer_data[1000001];
+    GLfloat vertex_buffer_data[100001];
     int j = 0;
     float adder = 0.0f;
     for(int i = 0 ; score != 0 ; ++i) {

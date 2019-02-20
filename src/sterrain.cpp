@@ -3,7 +3,7 @@
 #include "main.h"
 
 
-float arr[3000][3000];
+float arr[300][300];
 inline static float random(int range)
 {
     int ret = (rand() % (range * 2)) - range;
@@ -79,7 +79,7 @@ STerrain::STerrain(int x, int y, int z, int width, color_t color) {
     algo_step(1,1,width);   
     int i,j,k;
     j = 0;
-    GLfloat vertex_buffer_data[500000];
+    GLfloat vertex_buffer_data[400000];
     for(i = 1; i < width ; ++i) {
         for(k = 1; k < width ; ++k){
 

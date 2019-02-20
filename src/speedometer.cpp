@@ -4,7 +4,7 @@
 Speedometer::Speedometer(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->rotate = glm::mat4(1.0f);
-    GLfloat vertex_buffer_data[1000001];
+    GLfloat vertex_buffer_data[100001];
     int j = 0;
     float angle = 0.0f;
     float inc = M_PI/20;

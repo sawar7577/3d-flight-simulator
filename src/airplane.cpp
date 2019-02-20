@@ -21,7 +21,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     this->cooldown = clock();
 
     this->speed = 1.1f;
-    GLfloat vertex_buffer_data[100000];
+    GLfloat vertex_buffer_data[10000];
     int i = 0;
     int j = 0;
     GLfloat *body = Cylinder::CylinderArray(1.25f, 0.75f, 1, 10.0f, 25);
@@ -58,7 +58,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     }
     // std::cout << j << std::endl;    
     free(back);
-    this->bounding = Cuboid(x,y,0,10, 10, 10, 10, 10, COLOR_RED);
+    this->bounding = Cuboid(x,y,0,5, 5, 5, 5, 10, COLOR_RED);
     this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, color, GL_FILL);
 }
 
@@ -82,11 +82,13 @@ void Airplane::draw(glm::mat4 VP) {
     this->up = glm::normalize(glm::vec3(rotate[2][0],rotate[2][1],rotate[2][2]));
 
     Matrices.model = (translate * this->rotate);
+    this->bounding.rotate = this->rotate;
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     int lp = glGetUniformLocation(programID, "lightpos");
     glProgramUniform3f(programID, lp, this->position.x, this->position.y, this->position.z); 
     draw3DObject(this->object);
+    // this->bounding.draw(VP);
 }
 
 void Airplane::set_position(float x, float y) {
@@ -172,7 +174,7 @@ void Airplane::tick(GLFWwindow *window) {
         if(this->barrel_roll) {
             if(total_roll >= 2*M_PI) {
                 this->barrel_roll = false;
-                total_pitch = 0.0f;
+                total_roll = 0.0f;
             }
             else {
                 this->counter++;

@@ -5,7 +5,7 @@ Crosshair::Crosshair(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->rotate = glm::mat4(1.0f);
     changeColor(false);
-    GLfloat vertex_buffer_data[1000001];
+    GLfloat vertex_buffer_data[10001];
     int j = 0;
 
     // Crosshair

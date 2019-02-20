@@ -8,7 +8,7 @@
 
 
 Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
-    this->position = glm::vec3(x,y+4,z);
+    this->position = glm::vec3(x,y+8,z);
     this->dir = glm::vec3(0,1,0);
     this->target = target;
     this->rotate = glm::mat4(1.0f);
@@ -23,7 +23,7 @@ Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
     this->damage = 0;
     this->points = 10;
     this->kill = false;
-    this->bounding = Cuboid(x,y+4,z,20,20,20,20,20,COLOR_GREEN);
+    this->bounding = Cuboid(x,y+8,z,20,20,20,20,20,COLOR_GREEN);
     int j = 0;
     for(int i = 0 ; i < 20 ; ++i){
         angle = 0;
@@ -80,7 +80,7 @@ Canon::Canon(float x, float y, float z, Airplane *target) : Enemy(x, y, z) {
         }
     }
     // free(body);
-    this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_RED, GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES, j/3, vertex_buffer_data, COLOR_STEEL, GL_FILL);
 }
 
 void Canon::tick(){

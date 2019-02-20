@@ -12,7 +12,7 @@ Ring::Ring(float x, float y, float z, float radius, float width, color_t color) 
 
     float angle = 0;
     float inc = 2*M_PI/30;
-    GLfloat vertex_buffer_data[1000001];
+    GLfloat vertex_buffer_data[100001];
     int j = 0;
     for(int i = 0 ; i < 50 ; ++i) {
         Point a1, b1, c1, d1;
