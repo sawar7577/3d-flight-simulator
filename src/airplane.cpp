@@ -138,6 +138,9 @@ void Airplane::tick(GLFWwindow *window) {
         if(glfwGetKey(window, GLFW_KEY_SPACE)){
             this->position.y += 1.0f;
         }
+        if(glfwGetKey(window, GLFW_KEY_BACKSPACE)) {
+            this->position.y -= 1.0f;
+        }
         clock_t t = clock();
         if(glfwGetKey(window, GLFW_KEY_F)) {
             if( (t - this->cooldown)/CLOCKS_PER_SEC > 0.0000f) {

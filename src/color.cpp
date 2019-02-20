@@ -6,7 +6,7 @@ const color_t COLOR_BLACK = { 0, 0, 0 };
 const color_t COLOR_BACKGROUND = { 242, 241, 239 };
 const color_t COLOR_GREY = { 162, 162, 162 };
 const color_t COLOR_BLUE = {    84, 159, 184 };
-const color_t COLOR_BROWN = {   150     , 123, 110 };
+const color_t COLOR_BROWN = {   200 , 70, 50 };
 const color_t COLOR_STEEL = {    101, 95, 126 };
 const color_t COLOR_PARACHUTE = {   143, 178, 31 };
 
