@@ -19,6 +19,7 @@ Airplane::Airplane(float x, float y, float radius1 , float radius2, float ecc, f
     this->score = 23;
     this->health = 20;
     this->cooldown = clock();
+    this->flag = 0;
 
     this->speed = 1.1f;
     GLfloat vertex_buffer_data[10000];
@@ -142,7 +143,7 @@ void Airplane::tick(GLFWwindow *window) {
             this->position.y -= 1.0f;
         }
         clock_t t = clock();
-        if(glfwGetKey(window, GLFW_KEY_F)) {
+        if(glfwGetKey(window, GLFW_KEY_F) || this->flag == 1) {
             if( (t - this->cooldown)/CLOCKS_PER_SEC > 0.0000f) {
                 this->cooldown = t;
                 // std::cout << "in " << std::endl;
@@ -164,7 +165,7 @@ void Airplane::tick(GLFWwindow *window) {
                 ms.push_back(m);
             }
         }
-        if(glfwGetKey(window, GLFW_KEY_B)) {
+        if(glfwGetKey(window, GLFW_KEY_B) || this->flag == 2) {
             // if( (t - this->cooldown)/CLOCKS_PER_SEC > 0.0000f) {
                 this->cooldown = t;
                 Bomb b = Bomb(this->position.x, this->position.y, this->position.z, 1.0f,1.0f,30, this->dir, COLOR_GREEN);

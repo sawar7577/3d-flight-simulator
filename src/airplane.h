@@ -21,6 +21,7 @@ public:
     int health;
     bool barrel_roll;
     bool loop_the_loop;
+    int flag;
     clock_t cooldown;
     Parachute *target;
     Enemyplane *etarget;

@@ -46,6 +46,7 @@ Cuboid sky;
 Dashboard dash;
 
 int flag;
+int flagger;
 int stop;
 bool tg[3];
 float radiusc;
@@ -293,6 +294,7 @@ void tick_input(GLFWwindow *window) {
             }
         }
     }
+    air.flag = flagger;
 }
     // st.tick();
 

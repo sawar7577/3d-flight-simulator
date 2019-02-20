@@ -19,7 +19,7 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 extern float radiusc;
-
+extern int flagger;
 
 struct color_t {
     int r;

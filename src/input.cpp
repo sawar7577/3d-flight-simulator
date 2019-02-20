@@ -69,19 +69,17 @@ void mouseButton(GLFWwindow *window, int button, int action, int mods) {
     case GLFW_MOUSE_BUTTON_LEFT:
         if (action == GLFW_PRESS) {
             // Do something
+            flagger = 1;
             return;
-        } else if (action == GLFW_RELEASE) {
-            // Do something
         }
-        break;
-    // case GLFW_MOUSE_BUTTON_RIGHT:
-    // if (action == GLFW_RELEASE) {
-    // rectangle_rot_dir *= -1;
-    // }
-    // break;
-    default:
-        break;
+    
+    case GLFW_MOUSE_BUTTON_RIGHT:
+        if (action == GLFW_PRESS) {
+            flagger = 2;
+            return;
+        }
     }
+    flagger = 0;
 }
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {
